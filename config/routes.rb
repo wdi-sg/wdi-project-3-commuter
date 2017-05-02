@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { sessions: 'users/sessions' }
     root 'pages#home'
     get '/about' => 'pages#about'
     # post '/about' => update_attributes(params[:post])
