@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
     root 'pages#home'
     get '/about' => 'pages#about'
+    # post '/about' => update_attributes(params[:post])
     get '/commuters' => 'pages#view_commuters'
     get '/contact' => 'pages#contact_us'
     get '/profile' => 'pages#profile'

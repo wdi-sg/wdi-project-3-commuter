@@ -8,7 +8,7 @@
         <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     </head>
     <header>
-        <h1>Commuter</h1>
+        <h1><i class="fa fa-subway" aria-hidden="true"></i> Commuter</h1>
         <p class="navbar-text pull-right">
         <% if user_signed_in? %>
           Logged in as <strong><%= current_user.email %></strong>.
@@ -26,7 +26,8 @@
             <li><a href="contact">Contact Us</a></li>
         </ul>
     </header>
-    <main>
+    <body>
+      <%= render "partials/nav" %>
       <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
       <% end %>
@@ -34,7 +35,7 @@
       <p class="alert alert-danger"><%= alert %></p>
       <% end %>
         <%= yield %>
-    </main>
+    </body>
     <footer>
         <ul>
             <li>About us</li>
