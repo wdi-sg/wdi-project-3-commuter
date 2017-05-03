@@ -1,7 +1,7 @@
 
-# Your Project Name
+# Commuter
 
-This is the starter code for WDI projects. Please update this README file with information specific to your project. Replace this paragraph for instance, with a short description of your project. Then update the sections below. Refer to your project specificaion for instructions on how to submit your projects.
+This is the best team ever.
 
 ## Getting Started
 
@@ -13,6 +13,9 @@ What is needed to install and run the project, how do we install them
 
 ```
 Code example
+
+### ERD
+![erd image](http://i.imgur.com/LS6OLfp.png)
 ```
 
 ### How to Use

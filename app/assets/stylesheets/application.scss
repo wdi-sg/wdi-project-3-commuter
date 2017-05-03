@@ -1,0 +1,20 @@
+ // *= require_tree .
+ // *= require_self
+
+//app/assets/stylesheets/application.scss
+
+
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+@import "variables";
+
+body {
+  color: $navy;
+  font: $font-type;
+}
+
+h1 {
+  color: $red;
+}
