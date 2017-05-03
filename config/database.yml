@@ -16,5 +16,4 @@ test:
 production:
   <<: *default
   database: commuter_prod
-  username:
-  password:
+  url: <%= ENV['DATABASE_URL'] %>
