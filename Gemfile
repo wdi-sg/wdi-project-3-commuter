@@ -12,10 +12,12 @@ gem 'rails', '~> 5.0.2'
 # gem 'sqlite3'
 # PG
 gem 'pg'
+
 # Carrierwave for Cloudinary
 gem 'carrierwave', '~> 1.0'
 #Cloudinary
 gem 'cloudinary'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
