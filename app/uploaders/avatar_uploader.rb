@@ -21,8 +21,8 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   end
 
-class Post < ActiveRecord::Base
-
-  mount_uploader :picture, PictureUploader
-
-end
+# class Post < ActiveRecord::Base
+#
+#   mount_uploader :picture, PictureUploader
+# 
+# end
