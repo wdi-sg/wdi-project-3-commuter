@@ -12,6 +12,12 @@ gem 'rails', '~> 5.0.2'
 # gem 'sqlite3'
 # PG
 gem 'pg'
+
+# Carrierwave for Cloudinary
+gem 'carrierwave', '~> 1.0'
+#Cloudinary
+gem 'cloudinary'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -36,6 +42,17 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+#bootstrap
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+# font awesome
+gem "font-awesome-rails"
+#pry
+gem 'pry'
+
+#devise
+gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
