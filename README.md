@@ -7,6 +7,9 @@ This is the best team ever.
 
 Provide instructions here about how to get your project running on our local machine. Do we just need to clone and open a certain file or do we need to install anything first.
 
+### ERD
+![erd image](http://i.imgur.com/mRDlY6L.png)
+
 ### Prerequisites
 
 What is needed to install and run the project, how do we install them
@@ -14,8 +17,6 @@ What is needed to install and run the project, how do we install them
 ```
 Code example
 
-### ERD
-![erd image](public/images/commutererd.png)
 ```
 
 ### How to Use
