@@ -9,8 +9,6 @@ development:
   database: commuter_dev
   password: felixtan
 
-
-
 test:
   <<: *default
   database: commuter_test

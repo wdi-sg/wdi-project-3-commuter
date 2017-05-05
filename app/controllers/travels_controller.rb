@@ -3,6 +3,9 @@ class TravelsController < ApplicationController
   def index
     @all_travels = Travel.all
     gon.travels = Travel.all
+    if params[:search]
+    @all_travels = Travel.search(params[:search]).order("created_at DESC")
+    end
   end
 
   def show

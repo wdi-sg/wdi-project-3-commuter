@@ -1,2 +1,5 @@
 <h1>Pages#view_commuters</h1>
-<p>Find me in app/views/pages/view_commuters.html.erb</p>
+<%= form_tag(commuters_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Commuters" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
