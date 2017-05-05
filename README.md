@@ -15,7 +15,7 @@ What is needed to install and run the project, how do we install them
 Code example
 
 ### ERD
-![erd image](http://i.imgur.com/mRDlY6L.png)
+![erd image](public/images/commutererd.png)
 ```
 
 ### How to Use
