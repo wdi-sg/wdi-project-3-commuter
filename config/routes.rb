@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations'}
+  # devise_for :users, :controllers => { registrations: 'registrations' }
     root 'pages#home'
     get '/about' => 'pages#about'
+    # post '/about' => update_attributes(params[:post])
     get '/commuters' => 'pages#view_commuters'
     get '/contact' => 'pages#contact_us'
     get '/profile' => 'pages#profile'
@@ -11,6 +13,8 @@ Rails.application.routes.draw do
     get '/signup' => 'pages#signup'
     get 'register' => 'users#new'
     post 'register' => 'users#create'
+
+    resources :travels
 
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
