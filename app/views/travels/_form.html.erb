@@ -1,0 +1,31 @@
+<%= form_for travel_data do |t| %>
+  <div class="field">
+    Start Route:
+    <%= t.label :start_route, class: 'label' %>
+    <p class="control">
+      <%= t.text_field :start_route, class: 'input' %>
+    </p>
+  </div>
+
+  <div class="field">
+    End Route:
+    <%= t.label :end_route, class: 'label' %>
+    <p class="control">
+      <%= t.text_field :end_route, class: 'input' %>
+    </p>
+  </div>
+
+  <div class="field">
+    Timeslot:
+    <%= t.label :timeslot, class: 'label' %>
+    <p class="control">
+      <%= t.text_field :timeslot, class: 'input' %>
+    </p>
+  </div>
+
+  <div class="field">
+    <p class="control">
+      <%= t.submit 'Submit', class: 'button is-primary' %>
+    </p>
+  </div>
+<% end %>
