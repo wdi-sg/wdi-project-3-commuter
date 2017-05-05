@@ -1,0 +1,23 @@
+<%= form_for interest_data do |i| %>
+  <div class="field">
+    Interest Category:
+    <%= i.label :category, class: 'label' %>
+    <p class="control">
+      <%= i.text_field :category, class: 'input' %>
+    </p>
+  </div>
+
+  <div class="field">
+    Interest Description:
+    <%= i.label :description, class: 'label' %>
+    <p class="control">
+      <%= i.text_field :description, class: 'input' %>
+    </p>
+  </div>
+
+  <div class="field">
+    <p class="control">
+      <%= i.submit 'Submit', class: 'button is-primary' %>
+    </p>
+  </div>
+<% end %>
