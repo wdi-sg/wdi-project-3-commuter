@@ -1,5 +1,13 @@
 <h1>Pages#view_commuters</h1>
-<%= form_tag(commuters_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Commuters" %>
-    <%= submit_tag "Search", :name => nil %>
+<p>Find me in app/views/pages/view_commuters.html.erb</p>
+
+
+
+<% @users = User.all %>
+<% @users.each do |user| %>
+  <%= user.first_name %><br/>
+  <%= user.last_name %><br/>
+  <%= user.email %><br/>
+  <%= user.address %><br/>
+  <%= user.personal_description %><br/>
 <% end %>

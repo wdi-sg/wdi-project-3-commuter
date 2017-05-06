@@ -3,13 +3,10 @@ class TravelsController < ApplicationController
   def index
     @all_travels = Travel.all
     gon.travels = Travel.all
-    if params[:search]
-    @all_travels = Travel.search(params[:search]).order("created_at DESC")
-    end
   end
 
   def show
-    # find flight by id
+    # find travel by id
     @individual_travel = Travel.find(params[:id])
     # pass the data into your js
     gon.travel = Travel.find(params[:id])

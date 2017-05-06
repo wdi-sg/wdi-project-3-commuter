@@ -16,7 +16,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user.personal_description = configure_sign_up_params[:personal_description]
     @user.save
 
-    puts 'hello'
   end
 
   # GET /resource/edit
