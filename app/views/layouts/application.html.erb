@@ -1,44 +1,28 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>WdiProject3</title>
+        <title>Commuter</title>
         <%= csrf_meta_tags %>
 
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     </head>
-    <header>
-        <h1><i class="fa fa-subway" aria-hidden="true"></i> Commuter</h1>
-        <p class="navbar-text pull-right">
-        <% if user_signed_in? %>
-          Logged in as <strong><%= current_user.email %></strong>.
-          <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-        <% else %>
-          <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-          <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-        <% end %>
-        </p>
-        <ul>
-            <li><a href="http://localhost:3000/">Home</a></li>
-            <li><a href="http://localhost:3000/about">About</a></li>
-            <li><a href="http://localhost:3000/commuters">View Commuters</a></li>
-            <li><a href="http://localhost:3000/contact">Contact Us</a></li>
-            <li><a href="http://localhost:3000/travels">All Routes</a></li>
-            <li><a href="http://localhost:3000/interests">All Interests</a></li>
-        </ul>
-    </header>
+
     <body>
       <!-- arif: ive set-up nav for each page in "partials/nav/_home_nav.html.erb" -->
-      <!-- <%= render "partials/nav/" %> -->
+
       <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
+        <p class="alert alert-success"><%= notice %></p>
       <% end %>
+
       <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
+        <p class="alert alert-danger"><%= alert %></p>
       <% end %>
+
         <%= yield %>
+
     </body>
+
     <footer>
         <ul>
             <li>About us</li>
