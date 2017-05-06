@@ -3,12 +3,11 @@
 
 //app/assets/stylesheets/application.scss
 
-
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
 @import "variables";
+@import "nav";
 
 body {
   color: $navy;
@@ -17,4 +16,10 @@ body {
 
 h1 {
   color: $red;
+}
+
+.card {
+  border-style: solid;
+  width: 25%;
+  margin-bottom: 10px;
 }

@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170502153632) do
+=======
+ActiveRecord::Schema.define(version: 20170505070954) do
+>>>>>>> 1bc5227483ff7048fcd2c4f8cd7b88ec1cfa7b82
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +24,16 @@ ActiveRecord::Schema.define(version: 20170502153632) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer  "interest_id"
+    t.integer  "interested_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["interest_id", "interested_id"], name: "index_relationships_on_interest_id_and_interested_id", unique: true, using: :btree
+    t.index ["interest_id"], name: "index_relationships_on_interest_id", using: :btree
+    t.index ["interested_id"], name: "index_relationships_on_interested_id", using: :btree
   end
 
   create_table "travels", force: :cascade do |t|

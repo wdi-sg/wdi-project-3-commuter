@@ -1,3 +1,24 @@
+# default: &default
+#   adapter: postgresql
+#   encoding: unicode
+#   pool: 5
+#
+# development:
+#   <<: *default
+#   database: commuter_dev
+#
+#
+#
+# test:
+#   <<: *default
+#   database: commuter_test
+#
+# production:
+#   <<: *default
+#   database: commuter_prod
+#   username:
+#   password:
+
 default: &default
   adapter: postgresql
   encoding: unicode
