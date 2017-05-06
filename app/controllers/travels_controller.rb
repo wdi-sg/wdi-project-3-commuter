@@ -57,7 +57,6 @@ class TravelsController < ApplicationController
 
   private
 
-  #
   def filter_params
     params.require(:travel).permit(:start_route, :end_route, :timeslot)
   end
