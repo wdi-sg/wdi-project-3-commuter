@@ -1,42 +1,18 @@
-# default: &default
-#   adapter: postgresql
-#   encoding: unicode
-#   pool: 5
-#
-# development:
-#   <<: *default
-#   database: commuter_dev
-#
-#
-#
-# test:
-#   <<: *default
-#   database: commuter_test
-#
-# production:
-#   <<: *default
-#   database: commuter_prod
-#   username:
-#   password:
-
 default: &default
   adapter: postgresql
   encoding: unicode
-  username: postgres
   pool: 5
 
 development:
   <<: *default
   database: commuter_dev
-  password: felixtan
 
 test:
   <<: *default
   database: commuter_test
-  password: felixtan
 
 production:
   <<: *default
   database: commuter_prod
   username:
-  password: felixtan
+  password:
