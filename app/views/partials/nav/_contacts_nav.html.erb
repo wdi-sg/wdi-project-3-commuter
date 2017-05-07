@@ -1,0 +1,82 @@
+<!--header-->
+<header class="home-header" id="header">
+  <div class="bg-color">
+    <!--nav-->
+    <nav class="nav navbar-default navbar-fixed-top">
+      <div class="home-container">
+        <div class="col-md-12">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myleftnavbar" aria-expanded="false" aria-controls="navbar">
+              <span class="fa fa-bars"></span>
+            </button>
+            <a href="/" class="navbar-brand">Commuter</a>
+          </div>
+
+          <div class="collapse navbar-collapse navbar-left" id="myleftnavbar">
+
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/">
+                  <span class="glyphicon glyphicon-home"></span>
+                  Home</a>
+              </li>
+            </ul>
+
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/commuters">
+                  <span class="glyphicon glyphicon-user"></span>
+                  View Commuter</a>
+              </li>
+            </ul>
+
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/travels">
+                  <span class="glyphicon glyphicon-road"></span>
+                  Routes</a>
+              </li>
+            </ul>
+
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/interests">
+                  <span class="glyphicon glyphicon-list"></span>
+                  Interests</a>
+              </li>
+            </ul>
+
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/about">
+                  <span class="glyphicon glyphicon-info-sign  "></span>
+                  About</a>
+              </li>
+            </ul>
+
+          </div>
+
+          <div class="collapse navbar-collapse navbar-right" id="myrightnavbar">
+            <ul class="nav navbar-nav">
+
+              <% if user_signed_in? %>
+
+              <li><%= link_to current_user.email, edit_user_registration_path, :class => 'glyphicon glyphicon-edit' %></li>
+
+              <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'glyphicon glyphicon-log-out' %> </li>
+
+            <% else %>
+
+              <li><%= link_to " SignUp", new_user_registration_path, :class =>'glyphicon glyphicon-share'  %></li>
+
+              <li><%= link_to " Login", new_user_session_path, :class =>'glyphicon glyphicon-log-in'  %></li>
+
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+  </div>
+</header>

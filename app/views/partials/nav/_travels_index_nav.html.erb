@@ -48,7 +48,7 @@
 
             <ul class="nav navbar-nav">
               <li>
-                <a href="/interests">
+                <a href="/contact">
                   <span class="glyphicon glyphicon-earphone"></span>
                   Contact Us</a>
               </li>
@@ -61,13 +61,9 @@
 
               <% if user_signed_in? %>
 
-              <li>Logged in as:
-                <strong><%= current_user.email %></strong>
-              </li>
+              <li><%= link_to current_user.email, edit_user_registration_path, :class => 'glyphicon glyphicon-edit' %></li>
 
-              <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'glyphicon glyphicon-edit' %></li>
-
-              <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'glyphicon glyphicon-log-out'  %></li>
+              <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'glyphicon glyphicon-log-out' %> </li>
 
             <% else %>
 

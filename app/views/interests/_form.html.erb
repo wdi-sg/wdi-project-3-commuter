@@ -1,17 +1,17 @@
 <%= form_for interest_data do |i| %>
   <div class="field">
     Interest Category:
-    <%= i.label :category, class: 'label' %>
+    <%= i.label :interest_category, class: 'label' %>
     <p class="control">
-      <%= i.text_field :category, class: 'input' %>
+      <%= i.text_field :interest_category, class: 'input' %>
     </p>
   </div>
 
   <div class="field">
-    Interest Description:
-    <%= i.label :description, class: 'label' %>
+    Interest:
+    <%= i.label :interest, class: 'label' %>
     <p class="control">
-      <%= i.text_field :description, class: 'input' %>
+      <%= i.text_field :interest, class: 'input' %>
     </p>
   </div>
 
