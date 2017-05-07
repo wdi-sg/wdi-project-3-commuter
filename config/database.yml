@@ -1,39 +1,18 @@
-# default: &default
-#   adapter: postgresql
-#   encoding: unicode
-#   pool: 5
-#
-# development:
-#   <<: *default
-#   database: commuter_dev
-#
-# test:
-#   <<: *default
-#   database: commuter_test
-#
-# production:
-#   <<: *default
-#   database: commuter_prod
-#   username:
-#   password:
-
 default: &default
   adapter: postgresql
   encoding: unicode
-  username: postgres
-
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool: 5
 
 development:
   <<: *default
-  database: airporter-rails_development
-  password: 12345
+  database: commuter_dev
 
 test:
   <<: *default
-  database: airporter-rails_test
-  password: 12345
+  database: commuter_test
 
 production:
   <<: *default
-  database: <%= ENV['DATABASE_URL'] %>
+  database: commuter_prod
+  username:
+  password:
