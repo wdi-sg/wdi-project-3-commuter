@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20170506125507) do
 
   # These are extensions that must be enabled in order to support this database
@@ -20,6 +21,16 @@ ActiveRecord::Schema.define(version: 20170506125507) do
     t.string   "interest"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer  "interest_id"
+    t.integer  "interested_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["interest_id", "interested_id"], name: "index_relationships_on_interest_id_and_interested_id", unique: true, using: :btree
+    t.index ["interest_id"], name: "index_relationships_on_interest_id", using: :btree
+    t.index ["interested_id"], name: "index_relationships_on_interested_id", using: :btree
   end
 
   create_table "travels", force: :cascade do |t|

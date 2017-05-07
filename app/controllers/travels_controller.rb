@@ -6,7 +6,7 @@ class TravelsController < ApplicationController
   end
 
   def show
-    # find flight by id
+    # find travel by id
     @individual_travel = Travel.find(params[:id])
     # pass the data into your js
     gon.travel = Travel.find(params[:id])
@@ -57,7 +57,6 @@ class TravelsController < ApplicationController
 
   private
 
-  #
   def filter_params
     params.require(:travel).permit(:start_route, :end_route, :timeslot)
   end
