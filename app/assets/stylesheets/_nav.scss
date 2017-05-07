@@ -1,5 +1,13 @@
 @import "variables";
 
+.home-header .navbar-default .navbar-brand {
+  color: $red-pink;
+  font-size: 34px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
 .navbar-default {
     background-color: transparent;
 }
