@@ -6,6 +6,7 @@
 @import "nav";
 @import "animate";
 @import "home";
+@import "footer";
 
 .card {
   border-style: solid;
@@ -56,120 +57,8 @@ h6 {
 }
 
 
-
-.bg-color {
-  background-color: RGBA(0, 0, 0, 0.41);
-}
-
-.nav > li > a {
-  padding: 0;
-}
-
-.navbar-brand {
-  padding: 0;
-  height: inherit;
-  font-family: 'Lato', sans-serif;
-}
-
-.navbar-default .navbar-brand {
-  color: #fff;
-  font-size: 34px;
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
-
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:focus,
-.navbar-default .navbar-nav > .active > a:hover {
-  color: $red-pink;
-  background-color: transparent;
-  text-transform: uppercase;
-}
-
-.navbar-default .navbar-nav > li > a {
-  color: white;
-  padding: 0 20px;
-  text-transform: uppercase;
-}
-
-.navbar-default .navbar-nav > li > a:focus,
-.navbar-default .navbar-nav > li > a:hover {
-  color: $red-pink;
-}
-
-.navbar-fixed-top {
-  padding: 40px 0;
-  transition: all 0.5s;
-}
-
-.top-nav-collapse {
-  background: rgba(242, 17, 37, 0.6);
-  padding: 25px 0;
-}
-
-.wrapper {
-  padding: 90px 0 130px;
-}
-
-.top-title {
-  z-index: 5;
-  font-size: 27px;
-  font-weight: 700;
-  color: #fff;
-  line-height: 38px;
-  letter-spacing: 4px;
-  opacity: 1;
-  text-transform: uppercase;
-}
-
-.sub-title {
-  font-size: 50px;
-  font-weight: 700;
-  color: #fff;
-  line-height: 71px;
-  letter-spacing: 4px;
-  opacity: 1;
-  text-transform: uppercase;
-}
-
-.title {
-  font-size: 123px;
-  font-weight: 700;
-  color: #fff;
-  line-height: 88px;
-  letter-spacing: 4px;
-  opacity: 1;
-  text-transform: uppercase;
-  padding: 25px 0;
-}
-
-.btn-submit {
-  background: $red-pink;
-  border: 0;
-  display: inline-block;
-  font-size: 16px;
-  text-transform: uppercase;
-  padding: 10px 40px;
-  font-weight: normal;
-  border-radius: 0;
-  letter-spacing: 1px;
-  color: #333;
-  position: relative;
-  overflow: hidden;
-  -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
-  -ms-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
-  margin-top: 25px;
-  border: 2px solid $red-pink;
-}
-
-.btn-submit:hover {
-  background: #fff;
-}
 /****/
+
 #cta-1 {
   padding: 40px 0;
 }
@@ -189,6 +78,7 @@ h6 {
   font-size: 34px;
 }
 /****/
+
 #feature {
   background-color: #f8f8f8;
 }
@@ -247,6 +137,7 @@ h3.txt-tl {
   line-height: 1.35;
 }
 /****/
+
 .parallax {
   background-attachment: fixed;
   background-repeat: repeat-y;
@@ -282,6 +173,7 @@ h3.txt-tl {
   color: #fff;
 }
 /****/
+
 .portfolio-box {
   margin-bottom: 15px;
 }
@@ -291,7 +183,7 @@ h3.txt-tl {
 }
 
 .black {
-  color: #000 !important;
+  color: rgba(0, 0, 0, 0.5) !important;
   font-weight: 600;
 }
 
@@ -344,90 +236,4 @@ a:hover {
   -moz-transform: rotate(20deg);
   -webkit-transform: rotate(20deg);
   transform: rotate(20deg);
-}
-/*footer*/
-#footer {
-  background-color: $red-pink;
-  padding: 50px 0;
-  height: 180px;
-  margin-top: 50px;
-}
-
-.footer-copyright {
-  color: #fff;
-  line-height: 32px;
-  text-align: left;
-}
-
-.link-dec,
-.link-dec:hover {
-  color: #000;
-}
-/****/
-@media (min-width: 451px) and (max-width: 900px) {
-  .section-title {
-    margin-bottom: 15px;
-  }
-}
-@media (min-width: 20px) and (max-width: 450px) {
-  .navbar-toggle,
-  .navbar-toggle:hover {
-    background-color: rgba(242, 17, 37, 0.5);
-    color: #000;
-  }
-
-  .navbar-toggle {
-    margin-top: 0;
-  }
-
-  .navbar-default .navbar-nav > li > a {
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.32);
-    color: #000;
-  }
-
-  .navbar-default .navbar-nav > .active > a,
-  .navbar-default .navbar-nav > .active > a:focus,
-  .navbar-default .navbar-nav > .active > a:hover,
-  .navbar-default .navbar-nav > li > a:focus,
-  .navbar-default .navbar-nav > li > a:hover {
-    background-color: rgba(255, 255, 255, 0.32);
-    color: $red-pink;
-  }
-
-  .top-title {
-    font-size: 15px;
-  }
-
-  .title {
-    font-size: 50px;
-  }
-
-  .sub-title {
-    font-size: 24px;
-  }
-
-  .footer-copyright {
-    text-align: center;
-  }
-
-  .padding-right-zero {
-    padding-right: 15px;
-  }
-
-  .section-title {
-    margin-bottom: 15px;
-  }
-
-  .cta-txt h3 {
-    font-size: 28px;
-  }
-
-  body {
-    font-size: 14px;
-  }
-
-  h3.txt-tl {
-    font-size: 20px;
-  }
 }

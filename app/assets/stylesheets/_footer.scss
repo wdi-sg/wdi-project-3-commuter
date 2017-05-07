@@ -1,19 +1,39 @@
 @import "variables";
 
+// #footer {
+//   background-color: $red-pink;
+//   padding: 50px 0;
+//   height: 180px;
+//   margin-top: 50px;
+//   position: absolute;
+//   right: 0;
+//   bottom: 0;
+//   left: 0;
+// }
+//
+// .footer-copyright {
+//   color: #fff;
+//   line-height: 32px;
+//   text-align: left;
+//   padding-left: 20px;
+// }
+
+/*footer*/
+
 #footer {
   background-color: $red-pink;
-  padding: 10px 0;
-  height: 10px 0;
-  margin-top: 25px;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  padding: 50px 0 50px;
+  height: 250px;
+  margin-top: 50px;
 }
 
 .footer-copyright {
   color: #fff;
   line-height: 32px;
   text-align: left;
-  padding-left: 20px;
+}
+
+.link-dec,
+.link-dec:hover {
+  color: #000;
 }
