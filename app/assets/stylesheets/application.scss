@@ -1,8 +1,6 @@
- // *= require_tree .
- // *= require_self
-
+// *= require_tree .
+// *= require_self
 //app/assets/stylesheets/application.scss
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
@@ -15,7 +13,25 @@ body {
 }
 
 h1 {
-  color: $red;
+  color: $red-pink;
+}
+
+#footer {
+  background-color: $red-pink;
+  padding: 10px 0 10px;
+  height: 10px 0px;
+  margin-top: 25px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.footer-copyright {
+  color: #fff;
+  line-height: 32px;
+  text-align: left;
+  padding-left: 20px;
 }
 
 .card {

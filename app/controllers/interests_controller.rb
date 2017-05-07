@@ -8,19 +8,27 @@ class InterestsController < ApplicationController
         end
     end
 
-    def show
-        @individual_interest = Interest.find(params[:id])
-        gon.interest = Interest.find(params[:id])
-    end
+  def show
 
-    def edit
-        @individual_interest = Interest.find(params[:id])
-        gon.interest = Interest.find(params[:id])
-    end
+    # find interest by id
+    @individual_interest = Interest.find(params[:id])
+    # pass the data into your js
+    gon.interest = Interest.find(params[:id])
+    # alert the data into the screen
+  end
 
-    def new
-        @new_interest = Interest.new
-    end
+
+  def edit
+    # find interest by id
+    @individual_interest = Interest.find(params[:id])
+    gon.interest = Interest.find(params[:id])
+  end
+
+
+  def new
+    # find interest by id
+    @new_interest = Interest.new
+  end
 
     def create
         @submitted_interest = params[:interest]
@@ -33,8 +41,8 @@ class InterestsController < ApplicationController
     def update
         # url: /interest/:id/edit put request
         @updated_interest = Interest.find(params[:id])
-        redirect_to root_path
         if @updated_interest.update(filter_params)
+          redirect_to root_path
         end
     end
 

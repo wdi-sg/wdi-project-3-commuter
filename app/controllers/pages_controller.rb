@@ -20,6 +20,9 @@ class PagesController < ApplicationController
     def matches
     end
 
+    def combos
+    end
+
     def login
     end
 
