@@ -3,6 +3,8 @@ class CombosController < ApplicationController
   end
 
   def show
+    @all_combos = Combo.all
+    gon.combos = Combo.all
   end
 
   def edit
