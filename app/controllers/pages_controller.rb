@@ -1,30 +1,31 @@
 class PagesController < ApplicationController
-  def home
+    def home
+      end
 
-  end
+    def about
+    end
 
-  def about
-    
-  end
+    def view_commuters
+    end
 
-  def view_commuters
-  end
+    def contact_us
+    end
 
-  def contact_us
-  end
+    def profile
+    end
 
-  def profile
-  end
+    def dashboard
+    end
 
-  def dashboard
-  end
+    def matches
+    end
 
-  def combos
-  end
+    def combos
+    end
 
-  def login
-  end
+    def login
+    end
 
-  def signup
-  end
+    def signup
+    end
 end

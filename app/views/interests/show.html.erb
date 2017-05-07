@@ -1,7 +1,9 @@
 <section id="show-interests" class="section">
   <h1 class="title">
-    Route ID#<%= @individual_interest.id %>
-    <%= @individual_interest.category %>-<%= @individual_interest.description %>
+
+    Interest ID#<%= @individual_interest.id %>
+    <%= @individual_interest.interest_category %>:<%= @individual_interest.interest %>
+
   </h1>
 
 <%= link_to "Edit Interest", edit_interest_path, class: "button is-primary" %>
@@ -10,7 +12,9 @@
 <br />
 
 <%= form_for @individual_interest, method: :delete do |i| %>
-  <%= i.submit 'Delete Interest', class: 'button is-primary' %>
+
+  <%= i.submit 'Delete Interests', class: 'button is-primary' %>
+
 <% end %>
 
   <pre>
