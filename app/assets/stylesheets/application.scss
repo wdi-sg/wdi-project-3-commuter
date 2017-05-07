@@ -3,7 +3,6 @@
 @import "materialize";
 @import "font-awesome";
 @import "variables";
-@import "nav";
 @import "animate";
 @import "home";
 @import "footer";
@@ -65,8 +64,8 @@ h6 {
 
 .cta-info {
   border: 0 solid;
-  border-top: 5px solid $red-pink;
-  border-bottom: 5px solid $red-pink;
+  border-top: 10px solid $red-pink;
+  border-bottom: 10px solid $red-pink;
   padding: 40px 0;
 }
 
@@ -183,7 +182,8 @@ h3.txt-tl {
 }
 
 .black {
-  color: rgba(0, 0, 0, 0.5) !important;
+  color: white !important;
+  background-color: $dark-gray;
   font-weight: 600;
 }
 
