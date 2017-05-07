@@ -1,0 +1,31 @@
+<%= form_for combo_data do |m| %>
+  <div class="field">
+    User ID:
+    <%= m.label :user_id, class: 'label' %>
+    <p class="control">
+      <%= m.text_field :user_id, class: 'input' %>
+    </p>
+  </div>
+
+  <div class="field">
+    Travel ID:
+    <%= m.label :travel_id, class: 'label' %>
+    <p class="control">
+      <%= m.text_field :travel_id, class: 'input' %>
+    </p>
+  </div>
+
+  <div class="field">
+    Interest ID:
+    <%= m.label :interest_id, class: 'label' %>
+    <p class="control">
+      <%= m.text_field :interest_id, class: 'input' %>
+    </p>
+  </div>
+
+  <div class="field">
+    <p class="control">
+      <%= m.submit 'Submit', class: 'button is-primary' %>
+    </p>
+  </div>
+<% end %>

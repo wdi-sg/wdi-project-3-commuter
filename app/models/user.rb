@@ -10,4 +10,13 @@ class User < ApplicationRecord
   has_many :interests, through: :active_relationships, source: :interested
   has_many :interesteds, through: :passive_relationships, source: :interest
 
+  has_many :combos
+  has_many :travels, through: :combos
+  has_many :interests, through: :combos
+
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+
 end

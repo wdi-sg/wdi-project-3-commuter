@@ -31,8 +31,8 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get matches" do
-    get pages_matches_url
+  test "should get combos" do
+    get pages_combos_url
     assert_response :success
   end
 

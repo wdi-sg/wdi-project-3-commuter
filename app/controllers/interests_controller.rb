@@ -25,7 +25,7 @@ class InterestsController < ApplicationController
   def new
     # find interest by id
     @new_interest = Interest.new
-
+  end
 
   def create
     @submitted_interest = params[:interest]
@@ -35,7 +35,7 @@ class InterestsController < ApplicationController
     redirect_to profile_path
   end
 
-
+  def update
   #url: /interest/:id/edit put request
     @updated_interest = Interest.find(params[:id])
     if @updated_interest.update(filter_params)
