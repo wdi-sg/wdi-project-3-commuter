@@ -14,8 +14,8 @@
 
   <form class="filter_form", method="get">
     <% Interest.all.each do |i| %>
-        <%= check_box_tag("interests[]", i.description) %>
-        <%=h i.description %>
+        <%= check_box_tag("interests_category[]", i.interest) %>
+        <%=h i.interest %>
     <% end %>
     <input type="submit" value="Filter" />
   </form>
