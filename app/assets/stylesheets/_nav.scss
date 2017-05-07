@@ -1,15 +1,21 @@
 @import "variables";
 
+.navbar-default {
+  background-color: transparent;
+}
+
+.home-header {
+  background: url("track.jpg") no-repeat;
+  background-size: cover;
+  min-height: 610px;
+}
+
 .home-header .navbar-default .navbar-brand {
-  color: $red-pink;
+  color: white;
   font-size: 34px;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 2px;
-}
-
-.navbar-default {
-    background-color: transparent;
 }
 
 .navbar-default .navbar-brand {
@@ -18,4 +24,10 @@
 
 .navbar-default .navbar-nav > li > a {
   color: $red-pink;
+}
+
+
+.navbar-inverse {
+  background-color: #111111;
+  padding: 15px 0;
 }
