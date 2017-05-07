@@ -1,33 +1,41 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Commuter</title>
-        <%= csrf_meta_tags %>
+  <head>
+    <title>Commuter</title>
+    <%= csrf_meta_tags %>
 
-        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    </head>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
 
-    <body>
-      <!-- arif: ive set-up nav for each page in "partials/nav/_home_nav.html.erb" -->
+  <body>
+    <!-- arif: ive set-up nav for each page in "partials/nav/_home_nav.html.erb" -->
 
-      <% if notice %>
-        <p class="alert alert-success"><%= notice %></p>
-      <% end %>
+    <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+    <% end %>
 
-      <% if alert %>
-        <p class="alert alert-danger"><%= alert %></p>
-      <% end %>
+    <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
 
-        <%= yield %>
+    <%= yield %>
 
-    </body>
+  </body>
 
-    <footer>
-        <ul>
-            <li>About us</li>
-            <li>Team</li>
-            <li>Terms and conditions</li>
-        </ul>
-    </footer>
+  <footer class="" id="footer">
+
+    <div class="footer-container">
+      <div class="row">
+        <div class="col-sm-7 footer-copyright">
+          <h4><b>Commuter, Inc.</b><br></h4>
+          <h4><b>Team:</b> Maria, Robin, Felix, Arif<br></h4>
+          <h4>GA Singapore WDI 9</h4>
+          <br>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
 </html>
