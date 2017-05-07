@@ -19,7 +19,7 @@ class PagesController < ApplicationController
   def dashboard
   end
 
-  def matches
+  def combos
   end
 
   def login
