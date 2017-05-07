@@ -1,0 +1,25 @@
+<section id="all-interest" class="section">
+  <div class="container">
+    <%= link_to "New Interest", new_interest_path, class: "button is-warning" %>
+
+    <div class="columns">
+      <% @all_interests.each do |interest| %>
+      <div class="column">
+        <p class="notification is-info">
+          Interest Category: <%= interest.interest_category%><br>
+          Interest: <%= interest.interest %><br>
+
+            <%= link_to "View Interests", interest_path(interest.id), class: "button is-primary" %><br /><br />
+
+            <%= link_to "Edit Interests", edit_interest_path(interest.id), class: "button is-primary" %><br /><br />
+
+            <%= link_to "Delete Interests",  interest_path(interest.id), method: :delete , class: "button is-primary" %><br /><br />
+
+
+
+        </p>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</section>

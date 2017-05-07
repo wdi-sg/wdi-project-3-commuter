@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'interests/interest_category'
+
+  get 'interests/interest'
+
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations'}
   # devise_for :users, :controllers => { registrations: 'registrations' }
     root 'pages#home'
@@ -15,6 +19,7 @@ Rails.application.routes.draw do
     post 'register' => 'users#create'
 
     resources :travels
+    resources :interests
 
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
