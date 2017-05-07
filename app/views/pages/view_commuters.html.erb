@@ -3,6 +3,23 @@
 <h1>Pages#view_commuters</h1>
 <p>Find me in app/views/pages/view_commuters.html.erb</p>
 
+<div class="filter_options_container">
+
+  <form class="filter_form", method="get">
+    <%= select("interest", "description", Interest.all.collect(&:description), {:prompt => 'All Interests'}) %><br>
+    <input type="submit" value="Filter" />
+  </form>
+
+  <br><br>
+
+  <form class="filter_form", method="get">
+    <% Interest.all.each do |i| %>
+        <%= check_box_tag("interests[]", i.id) %>
+        <%=h i.description %>
+    <% end %>
+    <input type="submit" value="Filter" />
+  </form>
+</div>
 
 
 <% @users = User.all %>
