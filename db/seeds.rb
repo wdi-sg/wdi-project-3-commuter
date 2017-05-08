@@ -26,8 +26,8 @@ end
 
 100.times do
 Interest.create(
-  category: Faker::Company.buzzword,
-  description: Faker::Company.buzzword
+  interest_category: Faker::Company.buzzword,
+  interest: Faker::Company.buzzword
 )
 end
 
