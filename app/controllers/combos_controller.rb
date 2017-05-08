@@ -7,10 +7,6 @@ class CombosController < ApplicationController
     def show
       if(params[:interest_id])
         @all_combos = Combo.find(params[:interest_id])
-      #     puts "=============================================="
-      #     puts @all_combos
-      # # if params[:interests_id] Combo.all.collect(&:interest).include?(params[:interests_id])
-      #     # @all_combos = Combo.send(params[:interest_id])
       else
           @all_combos = Combo.all
           gon.interests = Combo.all
