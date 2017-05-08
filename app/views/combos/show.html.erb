@@ -17,12 +17,13 @@
       <form class="filter_form", method="get">
         <% Interest.all.each do |i| %>
             <%= check_box_tag("interest_id[]", i.id) %>
-            <%=h i.interest %>
+            <%= i.interest %>
+            <%= i.id %>
         <% end %>
         <input type="submit" value="Filter" />
       </form>
     </div>
-
+    
       <div class="columns">
         <% @all_combos.each do |combo| %>
         <div class="column">
