@@ -1,0 +1,9 @@
+development:
+  cloud_name: "commuter"
+  api_key: "297666632894352"
+  api_secret: "jIX0PVTs8P27CHudek_8RyPsABQ"
+
+production:
+  cloud_name: "commuter"
+  api_key: "297666632894352"
+  api_secret: "jIX0PVTs8P27CHudek_8RyPsABQ"
