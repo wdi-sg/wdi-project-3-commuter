@@ -20,8 +20,14 @@ gem 'cloudinary'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
+#bootstrap
+gem 'bootstrap-sass', '~> 3.2.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+# # Use MateralizeCSS
+# gem 'materialize-sass'
+# # Use MateralizeCSS font
+# gem 'material_icons'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -48,8 +54,6 @@ gem 'jbuilder', '~> 2.5'
 
 #gon
 gem 'gon'
-#bootstrap
-gem 'bootstrap-sass', '~> 3.2.0'
 
 gem 'autoprefixer-rails'
 # font awesome
