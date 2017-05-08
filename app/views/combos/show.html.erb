@@ -1,5 +1,3 @@
-<%= render "partials/nav/views_commuters_nav"%>
-
 <div class="combos-form">
 
   <section id="all-combo" class="section">
@@ -27,7 +25,9 @@
         <% @all_combos.each do |combo| %>
         <div class="column">
           <p class="notification is-info">
-
+            <% if combo.user.avatar_url %>
+            <%= image_tag combo.user.avatar_url(:display) %>
+            <% end %>
             <%= combo.user.first_name %>
             <%= combo.user.last_name %>
             <%= combo.interest.interest %>
@@ -39,6 +39,8 @@
             <%= combo.travel.start_route %><br/>
             Travel End:
             <%= combo.travel.end_route %><br/>
+            Timeslot:
+            <%= combo.travel.timeslot %><br/>
             Timeslot:
             <%= combo.travel.timeslot %><br/>
 

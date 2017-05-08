@@ -6,6 +6,18 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  <ul>
+      <li><a href="http://localhost:3000/">Home</a></li>
+      <li><a href="http://localhost:3000/commuters">View Commuters</a></li>
+       <li><a href="http://localhost:3000/travels">All Routes</a></li>
+       <li><a href="http://localhost:3000/interests">All Interests</a></li>
+        <li><a href="http://localhost:3000/users/sign_in">Sign In</a></li>
+        <li><a href="http://localhost:3000/users/sign_up">Sign Up</a></li>
+        <li><a href="http://localhost:3000/users/sign_out">Sign Out</a></li>
+        <li><a href="http://localhost:3000/users/edit">Profile</a></li>
+   </ul>
+
   </head>
 
   <body>
@@ -22,20 +34,5 @@
     <%= yield %>
 
   </body>
-
-  <footer class="" id="footer">
-
-    <div class="footer-container">
-      <div class="row">
-        <div class="col-sm-7 footer-copyright">
-          <h5><b>Commuter, Inc.</b><br></h5>
-          <h5><b>Team:</b> Maria, Robin, Felix, Arif<br></h5>
-          <h5>GA Singapore WDI 9</h5>
-          <br>
-        </div>
-      </div>
-    </div>
-
-  </footer>
 
 </html>

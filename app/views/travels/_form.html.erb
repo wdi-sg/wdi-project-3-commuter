@@ -19,7 +19,15 @@
     Timeslot:
     <%= t.label :timeslot, class: 'label' %>
     <p class="control">
-      <%= t.text_field :timeslot, class: 'input' %>
+      <%= t.select :timeslot, Travel::TIMESLOT, class: 'input' %>
+    </p>
+  </div>
+
+  <div class="field">
+    MRT Line:
+    <%= t.label :mrt_line, class: 'label' %>
+    <p class="control">
+      <%= t.select :mrt_line, Travel::MRTLINE, class: 'input' %>
     </p>
   </div>
 
