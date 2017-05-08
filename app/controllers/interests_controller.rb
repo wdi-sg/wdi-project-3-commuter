@@ -1,34 +1,27 @@
 class InterestsController < ApplicationController
     def index
-        if params[:interest] && Interest.all.collect(&:interest).include?(params[:area][:interest])
-            @all_interests = Interest.send(params[:area][:interest].downcase)
-        else
-            @all_interests = Interest.all
-            gon.interests = Interest.all
-        end
+        @all_interests = Interest.all
+        gon.interests = Interest.all
     end
 
-  def show
+    def show
+        # find interest by id
+        @individual_interest = Interest.find(params[:id])
+        # pass the data into your js
+        gon.interest = Interest.find(params[:id])
+        # alert the data into the screen
+    end
 
-    # find interest by id
-    @individual_interest = Interest.find(params[:id])
-    # pass the data into your js
-    gon.interest = Interest.find(params[:id])
-    # alert the data into the screen
-  end
+    def edit
+        # find interest by id
+        @individual_interest = Interest.find(params[:id])
+        gon.interest = Interest.find(params[:id])
+    end
 
-
-  def edit
-    # find interest by id
-    @individual_interest = Interest.find(params[:id])
-    gon.interest = Interest.find(params[:id])
-  end
-
-
-  def new
-    # find interest by id
-    @new_interest = Interest.new
-  end
+    def new
+        # find interest by id
+        @new_interest = Interest.new
+    end
 
     def create
         @submitted_interest = params[:interest]
@@ -41,9 +34,7 @@ class InterestsController < ApplicationController
     def update
         # url: /interest/:id/edit put request
         @updated_interest = Interest.find(params[:id])
-        if @updated_interest.update(filter_params)
-          redirect_to root_path
-        end
+        redirect_to root_path if @updated_interest.update(filter_params)
     end
 
     def destroy
@@ -55,6 +46,6 @@ class InterestsController < ApplicationController
     private
 
     def filter_params
-       params.require(:interest).permit(:interest_category, :interest)
+        params.require(:interest).permit(:interest_category, :interest)
     end
 end
