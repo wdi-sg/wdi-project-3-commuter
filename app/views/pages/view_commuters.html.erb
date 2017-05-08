@@ -6,7 +6,7 @@
 <div class="filter_options_container">
 
   <form class="filter_form", method="get">
-    <%= select("interest_category", "interest", Interest.all.collect(&:interest), {:prompt => 'All Interests'}) %><br>
+    <%= select("end_route", "start_route", Travel.all.collect(&:start_route), {:prompt => 'All Routes'}) %><br>
     <input type="submit" value="Filter" />
   </form>
 
