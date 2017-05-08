@@ -12,7 +12,7 @@ gem 'rails', '~> 5.0.2'
 # gem 'sqlite3'
 # PG
 gem 'pg'
-
+gem 'bcrypt', '3.1.11', :require => 'bcrypt'
 # Carrierwave for Cloudinary
 gem 'carrierwave', '~> 1.0'
 #Cloudinary
