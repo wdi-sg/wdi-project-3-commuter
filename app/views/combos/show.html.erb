@@ -1,58 +1,63 @@
 <%= render "partials/nav/views_commuters_nav"%>
 
-<div class="combos-form">
+<!-- added div by arif -->
+<div class="combo-container">
 
-  <section id="all-combo" class="section">
+  <div class="combos-form">
 
-    <div class="container">
-      <%= link_to "New Combo", new_combo_path, class: "button is-warning" %>
+    <section id="all-combo" class="section">
 
-      <div class="filter_options_container">
+      <div class="container">
+        <%= link_to "New Combo", new_combo_path, class: "button is-warning" %>
 
-        <form class="filter_form" , method="get">
-          <%= select("travel_id", "start_route", Travel.all.collect(&:start_route), {:prompt => 'All Routes'}) %><br>
-          <input type="submit" value="Filter"/>
-        </form>
+        <div class="filter_options_container">
 
-        <br><br>
+          <form class="filter_form" , method="get">
+            <%= select("travel_id", "start_route", Travel.all.collect(&:start_route), {:prompt => 'All Routes'}) %><br>
+            <input type="submit" value="Filter"/>
+          </form>
 
-        <form class="filter_form" , method="get">
-          <% Interest.all.each do |i| %>
-          <%= check_box_tag("interest_id[]", i.id) %>
-          <%=h i.interest %>
-          <% end %>
-          <input type="submit" value="Filter"/>
-        </form>
+          <br><br>
 
-      </div>
+          <form class="filter_form" , method="get">
+            <% Interest.all.each do |i| %>
+            <%= check_box_tag("interest_id[]", i.id) %>
+            <%=h i.interest %>
+            <% end %>
+            <input type="submit" value="Filter"/>
+          </form>
 
-      <div class="columns">
-        <% @all_combos.each do |combo| %>
-        <div class="column">
-          <p class="notification is-info">
-
-            <%= combo.user.first_name %>
-            <%= combo.user.last_name %>
-            <%= combo.interest.interest %>
-            <br/>
-            Personal Description:
-            <%= combo.user.personal_description %>
-            <br/>
-            Travel Start:
-            <%= combo.travel.start_route %><br/>
-            Travel End:
-            <%= combo.travel.end_route %><br/>
-            Timeslot:
-            <%= combo.travel.timeslot %><br/>
-
-          </p>
         </div>
-        <% end %>
+
+        <div class="columns">
+          <% @all_combos.each do |combo| %>
+          <div class="column">
+            <p class="notification is-info">
+
+              <%= combo.user.first_name %>
+              <%= combo.user.last_name %>
+              <%= combo.interest.interest %>
+              <br/>
+              Personal Description:
+              <%= combo.user.personal_description %>
+              <br/>
+              Travel Start:
+              <%= combo.travel.start_route %><br/>
+              Travel End:
+              <%= combo.travel.end_route %><br/>
+              Timeslot:
+              <%= combo.travel.timeslot %><br/>
+
+            </p>
+          </div>
+          <% end %>
+
+        </div>
 
       </div>
 
-    </div>
+    </section>
 
-  </section>
+  </div>
 
 </div>

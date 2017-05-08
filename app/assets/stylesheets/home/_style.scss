@@ -94,7 +94,7 @@
 }
 
 .title {
-  font-size: 123px;
+  font-size: 100px;
   font-weight: 700;
   color: black;
   line-height: 88px;
@@ -132,7 +132,7 @@
 }
 
 .home-header {
-  background: url("main_train.jpg") no-repeat;
+  background: url("singapore-mrt.jpg") no-repeat;
   background-size: cover;
   min-height: 610px;
 }
@@ -215,3 +215,41 @@
     font-size: 20px;
   }
 }
+
+/****/
+
+.parallax {
+  background-attachment: fixed;
+  background-repeat: repeat-y;
+  background-position: center center;
+}
+
+.bg-image-2 {
+  background: url('banner-img.jpg') no-repeat center fixed;
+  -webkit-background-size: 100% auto;
+  -moz-background-size: 100% auto;
+  -o-background-size: 100% auto;
+  background-size: 100% auto;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.section {
+  position: relative;
+  padding: 88px 0 67px;
+  display: block;
+}
+
+.cta-txt h3 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.cta-txt p {
+  color: #fff;
+}
+/****/
