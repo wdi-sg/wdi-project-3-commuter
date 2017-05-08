@@ -1,18 +1,15 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  username: postgres
   pool: 5
 
 development:
   <<: *default
   database: commuter_dev
 
-
 test:
   <<: *default
   database: commuter_test
-
 
 production:
   <<: *default

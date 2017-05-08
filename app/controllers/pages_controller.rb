@@ -6,6 +6,7 @@ class PagesController < ApplicationController
     end
 
     def view_commuters
+      redirect_to "http://localhost:3000/combos/show"
     end
 
     def contact_us

@@ -42,3 +42,11 @@ $(document).on('submit', '.new_message', function (e) {
   App.conversation.speak(values)
   $(this).trigger('reset')
 })
+
+$('#submit_enter').keypress(function (e) {
+  if (e.which == 13) {
+    var values = $(this).serializeArray()
+    App.conversation.speak(values)
+    $(this).trigger('reset')
+  }
+})

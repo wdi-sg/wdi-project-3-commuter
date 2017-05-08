@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     get '/contact' => 'pages#contact_us'
     get '/profile' => 'pages#profile'
     get '/dashboard' => 'pages#dashboard'
-    get '/combos' => 'pages#combos'
+    # get '/combos' => 'pages#combos'
     get '/login' => 'pages#login'
     get '/signup' => 'pages#signup'
     get 'register' => 'users#new'
