@@ -1,39 +1,80 @@
 @import "variables";
 
-// #footer {
-//   background-color: $red-pink;
-//   padding: 50px 0;
-//   height: 180px;
-//   margin-top: 50px;
-//   position: absolute;
-//   right: 0;
-//   bottom: 0;
-//   left: 0;
-// }
-//
-// .footer-copyright {
-//   color: #fff;
-//   line-height: 32px;
-//   text-align: left;
-//   padding-left: 20px;
-// }
+// footer new
 
-/*footer*/
-
-#footer {
-  background-color: $red-pink;
-  padding: 50px 0 50px;
-  height: 250px;
-  margin-top: 50px;
+footer {
+	background: $red-pink;
+	text-align: center;
+	color: #ddd;
+	padding:50px 0 50px;
 }
 
-.footer-copyright {
-  color: #fff;
-  line-height: 32px;
-  text-align: left;
+footer a {
+    color: #ddd;
 }
 
-.link-dec,
-.link-dec:hover {
-  color: #000;
+footer a:hover {
+    color: #fff;
+}
+
+footer ul.social-networks {
+	list-style:none;
+  text-align: center;
+  padding-right: 20px;
+}
+
+footer ul.social-networks li {
+	display:inline;
+}
+
+footer ul.social-networks li i {
+	display:inline-block;
+}
+
+footer ul.social-networks li a {
+	color: white;
+	margin: 0 5px;
+}
+
+footer ul.social-networks li a:hover {
+	text-decoration:none;
+	-webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	-ms-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
+}
+
+footer ul.social-networks li i.icon-bgdark {
+	background:#414141;
+	color: #656565;
+}
+
+
+footer ul.social-networks li a i.fa-facebook:hover {
+	// background: #ba7b3d;
+	color: #4267b2;
+}
+
+footer ul.social-networks li a i.fa-twitter:hover {
+	// background: #5ad2eb;
+	color: #5ad2eb;
+}
+footer ul.social-networks li a i.fa-instagram:hover {
+	// background: #f57b71;
+	color: #ba7b3d;
+}
+footer ul.social-networks li a i.fa-pinterest:hover {
+	// background: #d84848;
+	color: #bd081c;
+}
+
+.copyright {
+  color: white;
+  text-align: center;
+}
+
+.team-footer {
+  color: white;
+  text-align: center;
 }

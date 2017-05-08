@@ -1,16 +1,16 @@
 class CombosController < ApplicationController
     def index
-        if params[:interest_id] && Combo.all.collect(&:interest_id).include?(params[:interest_id])
-            @all_combos = Combo.send(params[:interest_id])
-        else
-            @all_combos = Combo.all
-            gon.interests = Combo.all
-        end
+      @all_combos = Combo.all
+      gon.interests = Combo.all
     end
 
     def show
-      @all_combos = Combo.all
-      gon.combos = Combo.all
+      if(params[:interest_id])
+        @all_combos = Combo.find(params[:interest_id])
+      else
+          @all_combos = Combo.all
+          gon.interests = Combo.all
+      end
     end
 
     def edit

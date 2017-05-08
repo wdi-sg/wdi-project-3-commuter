@@ -1,11 +1,13 @@
 // @import "materialize";
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
 @import "font-awesome";
 @import "variables";
 @import "animate";
 @import "home";
 @import "footer";
+@import "prettyPhoto";
 
 .card {
   border-style: solid;
@@ -51,7 +53,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+a {
   font-family: 'Lato', sans-serif;
 }
 
@@ -236,4 +239,35 @@ a:hover {
   -moz-transform: rotate(20deg);
   -webkit-transform: rotate(20deg);
   transform: rotate(20deg);
+}
+
+ul {
+  list-style: none;
+}
+
+.messages-list {
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.message-sent {
+  position: relative;
+  background-color: #D9EDF7;
+  border-color: #BCE8F1;
+  margin: 5px 20px;
+  padding: 10px;
+  float: right;
+}
+
+.message-received {
+  background-color: #F1F0F0;
+  border-color: #EEEEEE;
+  margin: 5px 20px;
+  padding: 10px;
+  float: left;
+}
+
+.remove_bullet {
+    list-style-type: none;
 }
