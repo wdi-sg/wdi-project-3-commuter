@@ -2,32 +2,14 @@
 
 <div class="combos-form">
 
-
   <section id="all-combo" class="section">
+
     <div class="container">
       <%= link_to "New Combo", new_combo_path, class: "button is-warning" %>
 
       <div class="filter_options_container">
-
-      <form class="filter_form", method="get">
-        <%= select("travel_id", "start_route", Travel.all.collect(&:start_route), {:prompt => 'All Routes'}) %><br>
-        <input type="submit" value="Filter" />
-      </form>
-
-      <br><br>
-
-      <form class="filter_form", method="get">
-        <% Interest.all.each do |i| %>
-            <%= check_box_tag("interests_category[]", i.id) %>
-            <%=h i.interest %>
-        <% end %>
-        <input type="submit" value="Filter" />
-      </form>
-    </div>
-
-
         <form class="filter_form" , method="get">
-          <%= select("interest_category", "interest", Interest.all.collect(&:interest), {:prompt => 'All Interests'}) %><br>
+          <%= select("travel_id", "start_route", Travel.all.collect(&:start_route), {:prompt => 'All Routes'}) %><br>
           <input type="submit" value="Filter"/>
         </form>
 
@@ -35,11 +17,12 @@
 
         <form class="filter_form" , method="get">
           <% Interest.all.each do |i| %>
-          <%= check_box_tag("interests_category[]", i.interest) %>
+          <%= check_box_tag("interests_category[]", i.id) %>
           <%=h i.interest %>
           <% end %>
           <input type="submit" value="Filter"/>
         </form>
+
       </div>
 
       <div class="columns">
@@ -67,6 +50,7 @@
       </div>
 
     </div>
+    
   </section>
 
 </div>
