@@ -1,11 +1,13 @@
 // @import "materialize";
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
 @import "font-awesome";
 @import "variables";
 @import "animate";
 @import "home";
 @import "footer";
+@import "prettyPhoto";
 
 .card {
   border-style: solid;

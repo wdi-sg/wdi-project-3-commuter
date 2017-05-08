@@ -81,6 +81,8 @@ GEM
     ffi (1.9.18-x86-mingw32)
     font-awesome-rails (4.7.0.2)
       railties (>= 3.2, < 5.2)
+    font-awesome-sass (4.7.0)
+      sass (>= 3.2)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     gon (6.1.0)
@@ -232,6 +234,7 @@ DEPENDENCIES
   devise
   faker
   font-awesome-rails
+  font-awesome-sass
   gon
   jbuilder (~> 2.5)
   jquery-rails

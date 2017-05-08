@@ -24,6 +24,10 @@ gem 'puma', '~> 3.0'
 gem 'bootstrap-sass', '~> 3.2.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+# font awesome
+gem "font-awesome-rails"
+# font aswesome for sass
+gem 'font-awesome-sass'
 # # Use MateralizeCSS
 # gem 'materialize-sass'
 # # Use MateralizeCSS font
@@ -56,8 +60,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'gon'
 
 gem 'autoprefixer-rails'
-# font awesome
-gem "font-awesome-rails"
 #pry
 gem 'pry'
 
