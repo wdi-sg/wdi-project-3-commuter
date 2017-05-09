@@ -1,2 +1,258 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%= render "partials/nav/home_nav"%>
+
+<div class="home-container">
+  <div class="container text-center">
+    <div class="wrapper wow">
+      <h2 class="top-title">Welcome To</h2>
+      <h5 class="title">Commuter</h5>
+      <h6 class="top-title">Re-Energise Your</h6>
+      <h6 class="top-title">Daily Commute</h6>
+      <a class="btn btn-submit" href="/users/sign_in">
+        <b>Login</b>
+      </a>
+      <br>
+      <a class="btn btn-submit" href="/users/sign_up">
+        <b>Join Us Commuter!</b>
+      </a>
+    </div>
+  </div>
+</div>
+</header>
+<!-- === -->
+<section id="cta-1">
+<div class="container">
+  <div class="row">
+    <div class="cta-info text-center">
+      <h2>
+        <i>Commuter
+          <b>Matching</b>
+          individual travelling
+          <br>
+          so they can
+          <b>Share Skill and Interest</b>
+        </i>
+      </h2>
+    </div>
+  </div>
+</div>
+</section>
+<!-- === -->
+<!-- === -->
+<section id="feature" class="section-padding">
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 wow">
+      <div class="section-title">
+        <h2 class="head-title">About
+        </h2>
+        <hr class="botm-line">
+        <p class="sec-para">
+          <b>Why join us:</b>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  laborum..</p>
+        <p class="sec-para">
+          <b>Statistic:</b>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  laborum.</p><br>
+      </div>
+    </div>
+    <!-- === -->
+    <div class="col-md-9">
+      <!-- === -->
+      <div class="col-md-4 wow">
+        <div class="icon">
+          <i class="fa fa-pencil"></i>
+        </div>
+        <div class="icon-text">
+          <h3 class="txt-tl">STEPS 1: Create Your Profile</h3>
+          <p class="txt-para">Let everyone know what you are looking for in your commuter buddy and what you can offer. For example, you could be looking for a quick 30 min Mandarin lesson or even just a simple conversation on current affairs.</p>
+          <p>Include a profile picture and also details on your daily commute.</p>
+        </div>
+      </div>
+      <!-- === -->
+      <div class="col-md-4 wow">
+        <div class="icon">
+          <i class="fa fa-compress"></i>
+        </div>
+        <div class="icon-text">
+          <h3 class="txt-tl">Step 2: Find a Match</h3>
+          <p class="txt-para">Browse through potential matches on our search page and connect with fellow commuters by letting them know you are interested in sharing your commute with them. If they say yes too, then we have a match.</p>
+        </div>
+      </div>
+      <!-- === -->
+      <div class="col-md-4 wow">
+        <div class="icon">
+          <i class="fa fa-map-marker"></i>
+        </div>
+        <div class="icon-text">
+          <h3 class="txt-tl">Step 3: Finally, Go on your Commute!</h3>
+          <p class="txt-para">Re-energise your commute! Meet your commuter buddy and have a good time.</p>
+        </div>
+      </div>
+      <!-- === -->
+    </div>
+  </div>
+</div>
+</section>
+<!---->
+<section class="section-padding parallax bg-image-2 section wow" id="cta-2">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="cta-txt">
+        <h2 class="sub-title text-center">COMMUTER'S JOURNEY</h2>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<!---->
+<!-- Team Section -->
+<section id="team-section" class="bg-light-gray">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 text-center">
+      <h1 class="section-heading"><b>Our Amazing Team</b></h1>
+      <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+    </div>
+  </div>
+  <div class="row team-row">
+    <!-- Maria -->
+    <div class="col-sm-3 team-col">
+      <div class="team-member">
+        <%= image_tag("maria.jpg", class: "img-responsive img-circle", alt: "no image")  %>
+        <h4>Maria Wilson</h4>
+        <p class="text-muted">Team Leader</p>
+        <ul class="list-inline social-buttons">
+          <li>
+            <a href="#">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-linkedin"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Robin -->
+    <div class="col-sm-3 team-col">
+      <div class="team-member">
+        <%= image_tag("robin.png", class: "img-responsive img-circle", alt: "no image")  %>
+        <h4>Robin Chua</h4>
+        <p class="text-muted">Git & Chat Master</p>
+        <ul class="list-inline social-buttons">
+          <li>
+            <a href="#">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-linkedin"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Arif -->
+    <div class="col-sm-3 team-col">
+      <div class="team-member">
+        <%= image_tag("arif.jpg", class: "img-responsive img-circle", alt: "no image")  %>
+        <h4>Arif Rahman</h4>
+        <p class="text-muted">Lead Designer</p>
+        <ul class="list-inline social-buttons">
+          <li>
+            <a href="#">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-linkedin"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- felix -->
+    <div class="col-sm-3 team-col">
+      <div class="team-member">
+        <%= image_tag("felix.JPG", class: "img-responsive img-circle", alt: "no image")  %>
+        <h4>Felix Tan</h4>
+        <p class="text-muted">Rails Master</p>
+        <ul class="list-inline social-buttons">
+          <li>
+            <a href="#">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-linkedin"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- name end -->
+  </div>
+
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 text-center">
+      <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+    </div>
+  </div>
+</div>
+</section>
+<!---->
+<section class="section-padding wow" id="contact">
+<div class="container">
+  <div class="row white">
+    <div class="col-md-8 col-sm-12">
+      <div class="section-title">
+        <h2 class="head-title black">Contact Us</h2>
+        <hr class="botm-line">
+        <p class="sec-para black">Join us Commuter's today!, feel free to contact us!</p>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-md-4 col-sm-10">
+    <div class="location-info">
+      <p class="white">
+        <span aria-hidden="true" class="fa fa-map-marker"></span>8 Claymore Hill, Singapore</p>
+      <p class="white">
+        <span aria-hidden="true" class="fa fa-phone"></span>Phone: +65 all-team-no.</p>
+      <p class="white">
+        <span aria-hidden="true" class="fa fa-envelope"></span>Email:
+        <a href="" class="link-dec">awesome@commuter.com</a>
+      </p>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!---->

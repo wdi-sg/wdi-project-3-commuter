@@ -1,0 +1,259 @@
+@import "variables";
+
+
+// home
+.home-container {
+  position: relative;
+}
+
+.bg-color {
+  background-color: RGBA(0, 0, 0, 0.41);
+}
+
+// main navbar-default bg color
+.navbar-default {
+  background-color: $red-pink;
+}
+
+// other pages nav
+.navbar-default .navbar-brand {
+  color: white;
+}
+
+
+.nav > li > a {
+  padding: 0;
+}
+
+.navbar-brand {
+  padding: 0;
+  height: inherit;
+  font-family: 'Lato', sans-serif;
+}
+
+.navbar-brand {
+  color: #fff;
+  font-size: 34px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover {
+  color: black;
+  background-color: rgba(242, 17, 37, 0.6);
+  text-transform: uppercase;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: white;
+  padding: 0 20px;
+  text-transform: uppercase;
+}
+
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:hover {
+  color: $dark-gray;
+}
+
+.navbar-fixed-top {
+  padding: 40px 0;
+  transition: all 0.5s;
+}
+
+.top-nav-collapse {
+  background: rgba(242, 17, 37, 0.5);
+  padding: 25px 0 50px;
+}
+
+.wrapper {
+  padding: 90px 0px 130px;
+}
+
+.top-title {
+  z-index: 5;
+  font-size: 27px;
+  font-weight: 700;
+  color: $dark-gray;
+  line-height: 38px;
+  letter-spacing: 4px;
+  opacity: 1;
+  text-transform: uppercase;
+}
+
+.sub-title {
+  font-size: 50px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 71px;
+  letter-spacing: 4px;
+  opacity: 1;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 100px;
+  font-weight: 700;
+  color: black;
+  line-height: 88px;
+  letter-spacing: 4px;
+  opacity: 1;
+  text-transform: uppercase;
+  padding: 25px 0;
+}
+
+.btn-submit {
+  background: $red-pink;
+  border: 0px;
+  display: inline-block;
+  font-size: 16px;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: uppercase;
+  font-weight: normal;
+  border-radius: 0px;
+  letter-spacing: 1px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  margin-top: 25px;
+  border: 2px solid $red-pink;
+}
+
+.btn-submit:hover {
+  background: #fff;
+}
+
+.home-header {
+  background: url("singapore-mrt.jpg") no-repeat;
+  background-size: cover;
+  min-height: 610px;
+}
+
+.home-header .navbar-default .navbar-brand {
+  color: white;
+  font-size: 34px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/****/
+@media (min-width: 451px) and (max-width: 900px) {
+  .section-title {
+    margin-bottom: 15px;
+  }
+
+}
+
+@media (min-width: 20px) and (max-width: 450px) {
+  .navbar-toggle,
+  .navbar-toggle:hover {
+    background-color: rgba(242, 17, 37, 0.5);
+    color: #000;
+  }
+
+  .navbar-toggle {
+    margin-top: 0;
+  }
+
+  .navbar-default .navbar-nav > li > a {
+    text-align: center;
+    background-color: rgba(242, 17, 37, 0.5);
+    color: #000;
+  }
+
+  .navbar-default .navbar-nav > .active > a,
+  .navbar-default .navbar-nav > .active > a:focus,
+  .navbar-default .navbar-nav > .active > a:hover,
+  .navbar-default .navbar-nav > li > a:focus,
+  .navbar-default .navbar-nav > li > a:hover {
+    background-color: rgba(242, 17, 37, 0.5);
+    color: $dark-gray;
+  }
+
+  .top-title {
+    font-size: 15px;
+  }
+
+  .title {
+    font-size: 50px;
+  }
+
+  .sub-title {
+    font-size: 24px;
+  }
+
+  .footer-copyright {
+    text-align: center;
+  }
+
+  .padding-right-zero {
+    padding-right: 15px;
+  }
+
+  .section-title {
+    margin-bottom: 15px;
+  }
+
+  .cta-txt h3 {
+    font-size: 28px;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  h3.txt-tl {
+    font-size: 20px;
+  }
+}
+
+/****/
+
+.parallax {
+  background-attachment: fixed;
+  background-repeat: repeat-y;
+  background-position: center center;
+  padding: 150px;
+}
+
+.section-padding {
+  padding: 150px 0;
+}
+
+.bg-image-2 {
+  background: url('banner-img.jpg') no-repeat center fixed;
+  -webkit-background-size: 100% auto;
+  -moz-background-size: 100% auto;
+  -o-background-size: 100% auto;
+  background-size: 100% auto;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.section {
+  position: relative;
+  display: block;
+}
+
+.cta-txt h3 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.cta-txt p {
+  color: #fff;
+}
+/****/

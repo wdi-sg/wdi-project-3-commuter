@@ -1,11 +1,4 @@
+<%= render "partials/nav/about_nav"%>
+
 <h1>Pages#about</h1>
 <p>Find me in app/views/pages/about.html.erb</p>
-
-<%= form_for(:post) do |post_form| %>
-  <%= post_form.hidden_field(:picture_cache) %>
-  <%= post_form.file_field(:picture) %>
-<% end %>
-
-<!-- image_tag(post.picture_url, :alt => post.short_name)
-
-image_tag(post.picture_url(:thumbnail), :width => 50, :height => 50) -->

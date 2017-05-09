@@ -1,26 +1,42 @@
-<section id="all-travel" class="section">
-  <div class="container">
-    <%= link_to "New Route", new_travel_path, class: "button is-warning" %>
+<%= render "partials/nav/travels_index_nav"%>
 
-    <div class="columns">
-      <% @all_travels.each do |travel| %>
-      <div class="column">
-        <p class="notification is-info">
-          Start Route: <%= travel.start_route%><br>
-          End Route: <%= travel.end_route %><br>
-          Timeslot: <%= travel.timeslot %><br>
+<!-- added div container -->
+<div class="travel-container">
 
-            <%= link_to "View Route", travel_path(travel.id), class: "button is-primary" %><br /><br />
+  <section id="all-travel" class="section">
 
-            <%= link_to "Edit Route", edit_travel_path(travel.id), class: "button is-primary" %><br /><br />
+    <div class="container">
+      <%= link_to "New Route", new_travel_path, class: "button is-warning" %>
 
-            <%= link_to "Delete Route",  travel_path(travel.id), method: :delete , class: "button is-primary" %><br /><br />
+      <div class="columns">
 
-          
+        <% @all_travels.each do |travel| %>
 
-        </p>
+        <div class="column">
+
+          <p class="notification is-info">
+
+            Start Route: <%= travel.start_route%><br>
+            End Route: <%= travel.end_route %><br>
+            Timeslot: <%= travel.timeslot %><br>
+            MRT Line: <%= travel.mrt_line %><br>
+
+              <%= link_to "View Route", travel_path(travel.id), class: "button is-primary" %><br /><br />
+
+              <%= link_to "Edit Route", edit_travel_path(travel.id), class: "button is-primary" %><br /><br />
+
+              <%= link_to "Delete Route",  travel_path(travel.id), method: :delete , class: "button is-primary" %><br /><br />
+
+          </p>
+
+        </div>
+
+        <% end %>
+
       </div>
-      <% end %>
+
     </div>
-  </div>
-</section>
+
+  </section>
+
+</div>

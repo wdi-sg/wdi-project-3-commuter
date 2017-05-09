@@ -1,7 +1,15 @@
-<section class="section">
 
-<h1 class="title">Create Route</h1>
+<%= render "partials/nav/travels_index_nav"%>
 
-<%= render "travels/form", travel_data: @new_travel %>
+<!-- added div container -->
+<div class="travel-container">
 
-</section>
+  <section class="section">
+
+    <h1 class="title">Create New Travel Route</h1>
+
+    <%= render "travels/form", travel_data: @new_travel %>
+
+  </section>
+
+</div>

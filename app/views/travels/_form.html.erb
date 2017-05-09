@@ -1,19 +1,40 @@
-<%= form_for travel_data do |f| %>
+<%= form_for travel_data do |t| %>
+  <div class="field">
+    Start Route:
+    <%= t.label :start_route, class: 'label' %>
+    <p class="control">
+      <%= t.text_field :start_route, class: 'input' %>
+    </p>
+  </div>
 
-<div class="field">
-  <%= f.label :start_route, class: 'label' %>
-  <%= f.text_field :start_route, class: 'input' %>
-</div>
+  <div class="field">
+    End Route:
+    <%= t.label :end_route, class: 'label' %>
+    <p class="control">
+      <%= t.text_field :end_route, class: 'input' %>
+    </p>
+  </div>
 
-<div class="field">
-  <%= f.label :end_route, class: 'label' %>
-  <%= f.text_field :end_route, class: 'input' %>
-</div>
+  <div class="field">
+    Timeslot:
+    <%= t.label :timeslot, class: 'label' %>
+    <p class="control">
+      <%= t.select :timeslot, Travel::TIMESLOT, class: 'input' %>
+    </p>
+  </div>
 
-<div class="field">
-  <%= f.label :timeslot, class: 'label' %>
-  <%= f.text_field :timeslot, class: 'input' %>
-</div>
+  <div class="field">
+    MRT Line:
+    <%= t.label :mrt_line, class: 'label' %>
+    <p class="control">
+      <%= t.select :mrt_line, Travel::MRTLINE, class: 'input' %>
+    </p>
+  </div>
 
-<%= f.submit %>
+  <div class="field">
+    <p class="control">
+      <%= t.submit 'Submit', class: 'button is-primary' %>
+    </p>
+  </div>
+
 <% end %>

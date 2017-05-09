@@ -14,9 +14,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user.last_name = configure_sign_up_params[:last_name]
     @user.address = configure_sign_up_params[:address]
     @user.personal_description = configure_sign_up_params[:personal_description]
+    @user.avatar = configure_sign_up_params[:avatar]
     @user.save
 
-    puts 'hello'
   end
 
   # GET /resource/edit
@@ -25,9 +25,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    super
+    @user.first_name = configure_sign_up_params[:first_name]
+    @user.last_name = configure_sign_up_params[:last_name]
+    @user.address = configure_sign_up_params[:address]
+    @user.personal_description = configure_sign_up_params[:personal_description]
+    @user.avatar = configure_sign_up_params[:avatar]
+    @user.save
+  end
 
   # DELETE /resource
   # def destroy
@@ -47,7 +53,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    params.require(:user).permit(:first_name, :last_name, :address, :personal_description, :email, :password, :password_confirmation)
+    params.require(:user).permit(:first_name, :last_name, :address, :personal_description, :email, :password, :password_confirmation, :avatar)
   end
 
   # If you have extra params to permit, append them to the sanitizer.

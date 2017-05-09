@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-md-9">
+    <ul id="conversations-list">
+      <% @conversations.each do |conversation| %>
+
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="col-md-3">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Chat list</h3>
+      </div>
+      <div class="panel-body">
+        <p><%=current_user.email%></p>
+        <ul>
+          <% current_user.conversations.each do |convo| %>
+            <li><%= link_to convo.opposed_user(current_user).email, conversation_path(convo.id) %></li>
+            <% end %>
+
+            <% current_user.rconversations.each do |convo| %>
+              <li><%= link_to convo.opposed_user(current_user).email, conversation_path(convo.id) %></li>
+              <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

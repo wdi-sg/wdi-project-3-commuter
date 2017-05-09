@@ -7,8 +7,6 @@ development:
   <<: *default
   database: commuter_dev
 
-
-
 test:
   <<: *default
   database: commuter_test
@@ -16,4 +14,5 @@ test:
 production:
   <<: *default
   database: commuter_prod
-  url: <%= ENV['DATABASE_URL'] %>
+  username:
+  password:

@@ -7,6 +7,9 @@ This is the best team ever.
 
 Provide instructions here about how to get your project running on our local machine. Do we just need to clone and open a certain file or do we need to install anything first.
 
+### ERD
+![erd image](http://i.imgur.com/mRDlY6L.png)
+
 ### Prerequisites
 
 What is needed to install and run the project, how do we install them
@@ -14,8 +17,6 @@ What is needed to install and run the project, how do we install them
 ```
 Code example
 
-### ERD
-![erd image](http://i.imgur.com/LS6OLfp.png)
 ```
 
 ### How to Use
@@ -66,5 +67,3 @@ Did you collaborate with others on this project, list them here
 ## Acknowledgments
 
 * Hat tip to anyone who's code was used, for example [this was a useful starting point for creating this template](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2).
-
->>>>>>> 96a300872d343a9d6fad336f7f54255b1fb99570
