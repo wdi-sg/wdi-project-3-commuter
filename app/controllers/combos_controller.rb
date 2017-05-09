@@ -1,16 +1,14 @@
 class CombosController < ApplicationController
     def index
-      @all_combos = Combo.all
-      gon.interests = Combo.all
-    end
-
-    def show
       if(params[:interest_id])
         @all_combos = Combo.find(params[:interest_id])
       else
           @all_combos = Combo.all
           gon.interests = Combo.all
       end
+    end
+
+    def show
     end
 
     def edit
