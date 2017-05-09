@@ -12,7 +12,7 @@ gem 'rails', '~> 5.0.2'
 # gem 'sqlite3'
 # PG
 gem 'pg'
-gem 'bcrypt', '3.1.11', :require => 'bcrypt'
+
 # Carrierwave for Cloudinary
 gem 'carrierwave', '~> 1.0'
 #Cloudinary
@@ -41,7 +41,7 @@ gem 'coffee-rails', '~> 4.2'
 # Use Faker to seed data
 gem 'faker'
 # for windows
-
+gem 'bcrypt', '3.1.11', :require => 'bcrypt'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
