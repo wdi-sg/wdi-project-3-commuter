@@ -1,19 +1,22 @@
-// @import "materialize";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "variables";
 @import "animate";
-@import "home";
+@import "home/style";
+@import "home/team";
+@import "combos/style";
+@import "interest/style";
+@import "travels/style";
 @import "footer";
-@import "prettyPhoto";
 
 .card {
   border-style: solid;
   width: 25%;
   margin-bottom: 10px;
 }
+
 
 body {
   line-height: 1.5;
@@ -53,10 +56,13 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6, {
   font-family: 'Lato', sans-serif;
 }
 
+#header {
+  margin-bottom: 100px;
+}
 
 /****/
 
@@ -137,43 +143,7 @@ h3.txt-tl {
   font-size: 24px;
   line-height: 1.35;
 }
-/****/
 
-.parallax {
-  background-attachment: fixed;
-  background-repeat: repeat-y;
-  background-position: center center;
-}
-
-.bg-image-2 {
-  background: url('red-yellow.jpg') no-repeat center fixed;
-  -webkit-background-size: 100% auto;
-  -moz-background-size: 100% auto;
-  -o-background-size: 100% auto;
-  background-size: 100% auto;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-.section {
-  position: relative;
-  padding: 88px 0 67px;
-  display: block;
-}
-
-.cta-txt h3 {
-  font-size: 32px;
-  margin-bottom: 10px;
-  font-weight: 700;
-  color: #fff;
-}
-
-.cta-txt p {
-  color: #fff;
-}
-/****/
 
 .portfolio-box {
   margin-bottom: 15px;

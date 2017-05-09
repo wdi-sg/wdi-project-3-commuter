@@ -1,12 +1,13 @@
 class PagesController < ApplicationController
+  before_action :authenticate_user!, except: [:home, :login, :signup, :combos, :view_commuters]
     def home
-      end
+    end
 
     def about
     end
 
     def view_commuters
-      redirect_to "http://localhost:3000/combos/show"
+      redirect_to combos_path
     end
 
     def contact_us

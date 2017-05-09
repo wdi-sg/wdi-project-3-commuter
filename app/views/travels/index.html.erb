@@ -1,6 +1,7 @@
 <%= render "partials/nav/travels_index_nav"%>
 
-<div class="travels-index-container">
+<!-- added div container -->
+<div class="travel-container">
 
   <section id="all-travel" class="section">
 
@@ -18,6 +19,7 @@
             Start Route: <%= travel.start_route%><br>
             End Route: <%= travel.end_route %><br>
             Timeslot: <%= travel.timeslot %><br>
+            MRT Line: <%= travel.mrt_line %><br>
 
               <%= link_to "View Route", travel_path(travel.id), class: "button is-primary" %><br /><br />
 

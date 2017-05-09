@@ -1,20 +1,27 @@
-<section id="show-travels" class="section">
-  <h1 class="title">
-    Route ID#<%= @individual_travel.id %>
-    <%= @individual_travel.start_route %>-<%= @individual_travel.end_route %>
-  </h1>
+<%= render "partials/nav/travels_index_nav"%>
 
-<%= link_to "Edit Route", edit_travel_path, class: "button is-primary" %>
+<!-- added div container -->
+<div class="travel-container">
 
-<br />
-<br />
+  <section id="show-travels" class="section">
+    <h1 class="title">
+      Route ID#<%= @individual_travel.id %>
+      <%= @individual_travel.start_route %>-<%= @individual_travel.end_route %>
+    </h1>
 
-<%= form_for @individual_travel, method: :delete do |t| %>
-  <%= t.submit 'Delete Route', class: 'button is-primary' %>
-<% end %>
+    <%= link_to "Edit Route", edit_travel_path, class: "button is-primary" %>
 
-  <pre>
-    <%= params.inspect %>
-    <%= @individual_travel.inspect %>
-  </pre>
-</section>
+    <br/>
+    <br/>
+
+    <%= form_for @individual_travel, method: :delete do |t| %>
+    <%= t.submit 'Delete Route', class: 'button is-primary' %>
+    <% end %>
+
+    <pre>
+      <%= params.inspect %>
+      <%= @individual_travel.inspect %>
+    </pre>
+  </section>
+
+</div>

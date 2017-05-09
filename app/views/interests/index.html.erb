@@ -1,25 +1,30 @@
-<%= render "partials/nav/newInterest_nav"%>
+<%= render "partials/nav/interest_nav"%>
 
-<section id="all-interest" class="section">
-  <div class="container">
-    <%= link_to "New Interest!!!!", new_interest_path, class: "button is-warning" %>
+<!-- add div container by arif -->
+<div class="interest-container">
 
-    <div class="columns">
-      <% @all_interests.each do |interest| %>
-      <div class="column">
-        <p class="notification is-info">
+  <section id="all-interest" class="section">
+    <div class="container">
+      <%= link_to "New Interest!!!!", new_interest_path, class: "button is-warning" %>
 
-          Interest Category: <%= interest.interest_category%><br>
-          Interest: <%= interest.interest %><br>
+      <div class="columns">
+        <% @all_interests.each do |interest| %>
+        <div class="column">
+          <p class="notification is-info">
 
-            <%= link_to "View Interests", interest_path(interest.id), class: "button is-primary" %><br /><br />
+            Interest Category: <%= interest.interest_category%><br>
+            Interest: <%= interest.interest %><br>
 
-            <%= link_to "Edit Interests", edit_interest_path(interest.id), class: "button is-primary" %><br /><br />
+              <%= link_to "View Interests", interest_path(interest.id), class: "button is-primary" %><br /><br />
 
-            <%= link_to "Delete Interests",  interest_path(interest.id), method: :delete , class: "button is-primary" %><br /><br />
-        </p>
+              <%= link_to "Edit Interests", edit_interest_path(interest.id), class: "button is-primary" %><br /><br />
+
+              <%= link_to "Delete Interests",  interest_path(interest.id), method: :delete , class: "button is-primary" %><br /><br />
+          </p>
+        </div>
+        <% end %>
       </div>
-      <% end %>
     </div>
-  </div>
-</section>
+  </section>
+
+</div>
