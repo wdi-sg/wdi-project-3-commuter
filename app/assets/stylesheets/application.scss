@@ -9,6 +9,7 @@
 @import "combos/style";
 @import "interest/style";
 @import "travels/style";
+@import "login/style";
 @import "footer";
 
 .card {
@@ -45,10 +46,6 @@ q:before {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}
-
-.section-padding {
-  padding: 60px 0;
 }
 
 h1,

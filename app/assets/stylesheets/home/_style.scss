@@ -222,6 +222,11 @@
   background-attachment: fixed;
   background-repeat: repeat-y;
   background-position: center center;
+  padding: 150px;
+}
+
+.section-padding {
+  padding: 150px 0;
 }
 
 .bg-image-2 {
@@ -238,7 +243,6 @@
 
 .section {
   position: relative;
-  padding: 88px 0 67px;
   display: block;
 }
 
