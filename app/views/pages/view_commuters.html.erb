@@ -12,10 +12,10 @@
 
   <br><br>
 
-  <form class="filter_form", method="get">
+<form class="filter_form", method="get">
     <% Interest.all.each do |i| %>
-        <%= check_box_tag("interests_category[]", i.interest) %>
-        <%=h i.interest %>
+        <%= check_box_tag("interests_category[]", i.id) %>
+        <%= i.interest %>
     <% end %>
     <input type="submit" value="Filter" />
   </form>
