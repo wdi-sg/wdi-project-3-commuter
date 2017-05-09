@@ -15,9 +15,6 @@ class User < ApplicationRecord
   has_many :interesteds, through: :active_relationships, source: :interested
   has_many :interestlist, through: :passive_relationships, source: :interest
 
-  has_many :combos
-  has_many :travels, through: :combos
-  has_many :interests, through: :combos
 
   has_many :messages
   has_many :conversations, foreign_key: :sender_id
