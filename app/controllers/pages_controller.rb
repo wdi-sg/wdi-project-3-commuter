@@ -9,6 +9,7 @@ class PagesController < ApplicationController
     def view_commuters
       @users = User.all
       @travel = Travel.all
+      @relationships = Relationship.all
 
     end
 
@@ -23,6 +24,8 @@ class PagesController < ApplicationController
 
     def matches
       @relationships = Relationship.where(interest_id: current_user)
+      puts "=============="
+      puts params[:interested_id]
     end
 
     def combos

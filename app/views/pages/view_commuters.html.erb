@@ -21,9 +21,8 @@
   </form>
 </div>
 
-
-
 <% @users.each do |user| %>
+  <% if !current_user.interesteds.include?(user) && !current_user.interestlist.include?(user) %>
 <div class="card">
   <div class="card-block">
     <h4 class="card-title"><%= user.first_name %> <%= user.last_name %></h4>
@@ -37,11 +36,14 @@
           <p class="card-text">Route <%= each_travel.start_route%></p>
 
           <% end %>
-            <% end %>
+    <% end %>
 
+    <%= form_for :Relationship, url: matches_path, method: :post do |f| %>
+      <%= f.hidden_field :user ,value: user.id %>
+      <%= f.submit 'Match & Chat', class: 'btn btn-danger' %>
+    <% end %>
 
-
-    <a href="#" class="card-link">I'm Interested</a>
   </div>
 </div>
+<% end %>
 <% end %>
