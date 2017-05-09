@@ -1,4 +1,5 @@
 class CombosController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
     def index
       @all_combos = Combo.all
       gon.interests = Combo.all
@@ -31,6 +32,9 @@ class CombosController < ApplicationController
           @all_combos = Combo.all
           gon.interests = Combo.all
       end
+    end
+
+    def show
     end
 
     def edit
