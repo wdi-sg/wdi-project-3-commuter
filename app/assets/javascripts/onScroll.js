@@ -10,13 +10,13 @@ $(window).scroll(function() {
   }
 
   // team-member animation
-  if(wScroll > $('.team-row').offset().top - ($(window).height() / 1.2)) {
+  if (wScroll > $('.team-row').offset().top - ($(window).height() / 1.2)) {
 
     console.log("hi");
 
-    $('.team-row .team-col').each(function(i){
+    $('.team-row .team-col').each(function(i) {
 
-      setTimeout(function(){
+      setTimeout(function() {
         $('.team-row .team-col').eq(i).addClass('pop')
       }, 150 * (i + 1))
 
@@ -24,6 +24,35 @@ $(window).scroll(function() {
 
   }
 
+  // about animation
+  if (wScroll > $('.about-row').offset().top - ($(window).height() / 1.2)) {
+
+    console.log("about");
+
+    $('.about-row .about-col').each(function(i) {
+
+      setTimeout(function() {
+        $('.about-row .about-col').eq(i).addClass('pop')
+      }, 150 * (i + 1))
+
+    })
+
+  }
+
+  // steps animation
+  if (wScroll > $('.steps-row').offset().top - ($(window).height() / 1.5)) {
+
+    console.log("steps");
+
+    $('.steps-row .steps-col').each(function(i) {
+
+      setTimeout(function() {
+        $('.steps-row .steps-col').eq(i).addClass('pop')
+      }, 150 * (i + 1))
+
+    })
+
+  }
 
 
 
