@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+
+
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations'}
   # devise_for :users, :controllers => { registrations: 'registrations' }
     root 'pages#home'
@@ -11,7 +13,9 @@ Rails.application.routes.draw do
     get '/contact' => 'pages#contact_us'
     get '/profile' => 'pages#profile'
     get '/dashboard' => 'pages#dashboard'
-    get '/matches' => 'pages#matches'
+    get '/matches' => 'relationships#index'
+    post '/matches' => 'relationships#create'
+    # get '/matches' => 'pages#matches'
     # get '/combos' => 'pages#combos'
     get '/login' => 'pages#login'
     get '/signup' => 'pages#signup'
