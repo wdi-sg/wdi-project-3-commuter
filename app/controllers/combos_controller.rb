@@ -1,4 +1,5 @@
 class CombosController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
     def index
       if(params[:interest_id])
         @all_combos = Combo.find(params[:interest_id])
