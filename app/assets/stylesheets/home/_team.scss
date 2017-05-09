@@ -19,11 +19,19 @@
     }
 }
 
+#team-section {
+  padding: 50px;
+}
+
+.team-row{
+  padding: 50px;
+}
+
 // animate team
 .team-col {
   opacity: 0;
   transform: translateX(50px);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
 
   &.pop{
     opacity: 1;
