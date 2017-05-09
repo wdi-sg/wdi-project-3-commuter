@@ -1,1 +1,67 @@
+<%= render "partials/nav/views_commuters_nav"%>
 
+<div class="combo-container">
+
+<div class="combos-form">
+
+  <section id="all-combo" class="section">
+
+      <div class="filter_options_container">
+
+        <form class="filter_form" , method="get">
+          <%= select("travel_id", "start_route", Travel.all.collect(&:start_route), {:prompt => 'All Routes'}) %><br>
+          <input type="submit" value="Filter"/>
+        </form>
+
+        <br><br>
+
+        <form class="filter_form" , method="get">
+          <% Interest.all.each do |i| %>
+          <%= check_box_tag("interest_id[]", i.id) %>
+          <%=h i.interest %>
+          <% end %>
+          <input type="submit" value="Filter"/>
+        </form>
+
+      </div>
+
+      <div class="columns">
+        <% @all_combos.each do |combo| %>
+        <div class="column">
+          <p class="notification is-info">
+            <% if combo.user.avatar_url %>
+            <%= image_tag combo.user.avatar_url(:display) %>
+            <% end %>
+            <%= combo.user.first_name %><%= combo.user.last_name %>
+            <br/>
+            <%= combo.interest.interest %>
+            <br/>
+            Personal Description:
+            <%= combo.user.personal_description %>
+            <br/>
+            Travel Start:
+            <%= combo.travel.start_route %><br/>
+            Travel End:
+            <%= combo.travel.end_route %><br/>
+            Timeslot:
+            <%= combo.travel.timeslot %><br/>
+            Timeslot:
+            <%= combo.travel.timeslot %><br/>
+          </p>
+
+        <%= form_for(:post) do |interest| %>
+        <%= interest.hidden_field(:interest_id) %>
+         <%= interest.submit 'Match & Chat', class: 'button is-primary' %>
+         <% end %>
+
+        </div>
+        <% end %>
+
+
+      </div>
+
+  </section>
+
+</div>
+
+</div>
