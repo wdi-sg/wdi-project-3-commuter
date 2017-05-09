@@ -1,24 +1,31 @@
-<section id="show-interests" class="section">
-  <h1 class="title">
+<%= render "partials/nav/newInterest_nav"%>
 
-    Interest ID#<%= @individual_interest.id %>
-    <%= @individual_interest.interest_category %>:<%= @individual_interest.interest %>
+<!-- added div container by arif -->
+<div class="interest-container">
 
-  </h1>
+  <section id="show-interests" class="section">
+    <h1 class="title">
 
-<%= link_to "Edit Interest", edit_interest_path, class: "button is-primary" %>
+      Interest ID#<%= @individual_interest.id %>
+      <%= @individual_interest.interest_category %>:<%= @individual_interest.interest %>
 
-<br />
-<br />
+    </h1>
 
-<%= form_for @individual_interest, method: :delete do |i| %>
+    <%= link_to "Edit Interest", edit_interest_path, class: "button is-primary" %>
 
-  <%= i.submit 'Delete Interests', class: 'button is-primary' %>
+    <br/>
+    <br/>
 
-<% end %>
+    <%= form_for @individual_interest, method: :delete do |i| %>
 
-  <pre>
-    <%= params.inspect %>
-    <%= @individual_interest.inspect %>
-  </pre>
-</section>
+    <%= i.submit 'Delete Interests', class: 'button is-primary' %>
+
+    <% end %>
+
+    <pre>
+      <%= params.inspect %>
+      <%= @individual_interest.inspect %>
+    </pre>
+  </section>
+
+</div>

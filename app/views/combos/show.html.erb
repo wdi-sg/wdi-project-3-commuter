@@ -1,6 +1,11 @@
 <%= render "partials/nav/views_commuters_nav"%>
+<% if @travel %>
+hiii
+<%= @travel.inspect %>
+<% end %>
 
-<div class="combos-form">
+<!-- added div by arif -->
+<div class="combo-container">
 
     <section id="all-combo" class="section">
 
@@ -13,16 +18,22 @@
                     <% Interest.all.each do |i| %>
                     <%= check_box_tag("interest_id[]", i.id) %>
                     <%= i.interest %>
-                    <%= i.id %>
                     <% end %>
                     <input type="submit" value="Filter"/>
                 </form>
 
                 <form class="filter_form" , method="get">
                     <% Travel.all.each do |t| %>
-                    <%= check_box_tag("travel_id[]", t.id) %>
-                    <%= t.start_route %>
-                    <%= t.id %>
+                    <%= check_box_tag("timeslot[]", t.timeslot) %>
+                    <%= t.timeslot %>
+                    <% end %>
+                    <input type="submit" value="Filter"/>
+                </form>
+
+                <form class="filter_form" , method="get">
+                    <% Travel.all.each do |t| %>
+                    <%= check_box_tag("mrt_line[]", t.mrt_line) %>
+                    <%= t.mrt_line %>
                     <% end %>
                     <input type="submit" value="Filter"/>
                 </form>
@@ -55,9 +66,6 @@
                 <% end %>
 
             </div>
-
         </div>
-
     </section>
-
 </div>

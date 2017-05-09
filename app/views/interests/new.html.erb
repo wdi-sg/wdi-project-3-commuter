@@ -1,6 +1,13 @@
-<section class="section">
-  <h1 class="title">Create New Interest</h1>
+<%= render "partials/nav/newInterest_nav"%>
 
-  <%= render "interests/form", interest_data: @new_interest %>
+<!-- add div container by arif -->
+<div class="interest-container">
 
-</section>
+  <section class="section">
+    <h1 class="title">Create New Interest</h1>
+
+    <%= render "interests/form", interest_data: @new_interest %>
+
+  </section>
+
+</div>

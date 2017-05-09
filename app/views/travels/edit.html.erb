@@ -1,5 +1,12 @@
-<section class="section">
+<%= render "partials/nav/travels_index_nav"%>
 
-  <%= render "travels/form", travel_data: @individual_travel %>
+<!-- added div container -->
+<div class="travel-container">
 
-</section>
+  <section class="section">
+
+    <%= render "travels/form", travel_data: @individual_travel %>
+
+  </section>
+
+</div>
