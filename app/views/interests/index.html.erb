@@ -1,6 +1,7 @@
 <%= render "partials/nav/interest_nav"%>
 
 <!-- add div container by arif -->
+
 <div class="interest-container">
 
   <section id="all-interest" class="section">
@@ -15,7 +16,7 @@
             Interest Category: <%= interest.interest_category%><br>
             Interest: <%= interest.interest %><br>
 
-              <%= link_to "Add to My Profile",  interest_path(interest.id), method: :post , class: "button is-primary" %><br /><br />
+              <%= link_to "Add to My Profile",  interest_register_path(interest.id), method: :post , class: "button is-primary" %><br /><br />
           </p>
         </div>
         <% end %>
