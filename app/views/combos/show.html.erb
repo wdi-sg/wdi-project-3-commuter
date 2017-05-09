@@ -23,7 +23,6 @@
           <% end %>
           <input type="submit" value="Filter"/>
         </form>
-
       </div>
 
       <div class="columns">
@@ -44,6 +43,14 @@
             <%= combo.travel.end_route %><br/>
             Timeslot:
             <%= combo.travel.timeslot %><br/>
+
+            <!-- match n chat form to submit -->
+            <form class="filter_form" , method="post">
+              <input type="submit" value="Match n Chat"/>
+            </form>
+
+            <!-- # post req will post to Relationship DB
+            # Display results in matches page -->
 
           </p>
         </div>

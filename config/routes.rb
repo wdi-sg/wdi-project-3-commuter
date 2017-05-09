@@ -6,11 +6,12 @@ Rails.application.routes.draw do
     get '/about' => 'pages#about'
     # post '/about' => update_attributes(params[:post])
     get '/chat' => 'home#index', :as => 'chats'
-    # get '/chat/:id' => 'home#show', :as => 'chat'
+    get '/chat/:id' => 'home#show', :as => 'chat'
     get '/commuters' => 'pages#view_commuters'
     get '/contact' => 'pages#contact_us'
     get '/profile' => 'pages#profile'
     get '/dashboard' => 'pages#dashboard'
+    get '/matches' => 'pages#matches'
     # get '/combos' => 'pages#combos'
     get '/login' => 'pages#login'
     get '/signup' => 'pages#signup'

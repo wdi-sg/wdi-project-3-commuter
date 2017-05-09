@@ -11,8 +11,9 @@ class User < ApplicationRecord
   has_many :active_relationships, class_name: 'Relationship', foreign_key: 'interest_id', dependent: :destroy
   has_many :passive_relationships, class_name: 'Relationship', foreign_key: 'interested_id', dependent: :destroy
 
-  has_many :interests, through: :active_relationships, source: :interested
-  has_many :interesteds, through: :passive_relationships, source: :interest
+
+  has_many :interesteds, through: :active_relationships, source: :interested
+  has_many :interestlist, through: :passive_relationships, source: :interest
 
   has_many :combos
   has_many :travels, through: :combos

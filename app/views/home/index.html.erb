@@ -13,14 +13,14 @@
         <h3 class="panel-title">Chat list</h3>
       </div>
       <div class="panel-body">
+        <p><%=current_user.email%></p>
         <ul>
           <% current_user.conversations.each do |convo| %>
-            <%= convo %>
-            <li class = "remove_bullet"><%= link_to convo.opposed_user(current_user).email, conversation_path(convo.id) %></li>
+            <li><%= link_to convo.opposed_user(current_user).email, conversation_path(convo.id) %></li>
             <% end %>
+
             <% current_user.rconversations.each do |convo| %>
-              <%= convo %>
-              <li class = "remove_bullet"><%= link_to convo.opposed_user(current_user).email, conversation_path(convo.id) %></li>
+              <li><%= link_to convo.opposed_user(current_user).email, conversation_path(convo.id) %></li>
               <% end %>
         </ul>
       </div>

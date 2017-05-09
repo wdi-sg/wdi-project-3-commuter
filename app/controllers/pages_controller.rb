@@ -19,6 +19,7 @@ class PagesController < ApplicationController
     end
 
     def matches
+      @relationships = Relationship.where(interest_id: current_user)
     end
 
     def combos
