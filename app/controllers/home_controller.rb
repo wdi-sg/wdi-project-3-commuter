@@ -8,6 +8,8 @@ class HomeController < ApplicationController
   end
 
   def show
-    @convo = Conversation.find(params[:id])
+    @conversation = Conversation.find_by(sender_id: current_user.id, recipient_id: params[:id])
+    puts "========"
+    puts @conversation
   end
 end
