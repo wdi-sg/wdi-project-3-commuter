@@ -15,7 +15,8 @@
             Interest Category: <%= interest.interest_category%><br>
             Interest: <%= interest.interest %><br>
 
-            
+              <%= link_to "Add to My Profile",  interest_path(interest.id), method: :post , class: "button is-primary" %><br /><br />
+
           </p>
         </div>
         <% end %>
