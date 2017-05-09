@@ -10,11 +10,6 @@
             <div class="filter_options_container">
 
                 <form class="filter_form" , method="get">
-                    <%= select("travel_id", "start_route", Travel.all.collect(&:start_route), {:prompt => 'All Routes'}) %><br>
-                    <input type="submit" value="Filter"/>
-                </form>
-
-                <form class="filter_form" , method="get">
                     <% Interest.all.each do |i| %>
                     <%= check_box_tag("interest_id[]", i.id) %>
                     <%= i.interest %>
@@ -22,6 +17,16 @@
                     <% end %>
                     <input type="submit" value="Filter"/>
                 </form>
+
+                <form class="filter_form" , method="get">
+                    <% Travel.all.each do |t| %>
+                    <%= check_box_tag("travel_id[]", t.id) %>
+                    <%= t.start_route %>
+                    <%= t.id %>
+                    <% end %>
+                    <input type="submit" value="Filter"/>
+                </form>
+
             </div>
 
             <br><br>

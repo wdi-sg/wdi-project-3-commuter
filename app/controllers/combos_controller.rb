@@ -6,7 +6,6 @@ class CombosController < ApplicationController
 
     def show
       if(params[:interest_id])
-        puts params[:interest_id]
         @all_combos = Combo.where(interest_id: params[:interest_id])
       else
           @all_combos = Combo.all
