@@ -1,5 +1,3 @@
 class Interest < ApplicationRecord
-  has_many :combos
-  has_many :users, through: :combos
-  has_many :travels, through: :combos
+  has_and_belongs_to_many :users, dependent: :destroy
 end

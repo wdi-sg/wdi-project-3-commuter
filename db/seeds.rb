@@ -30,11 +30,3 @@ Interest.create(
   interest: Faker::Company.buzzword
 )
 end
-
-100.times do
-Combo.create(
-  user_id: rand(100) + 1,
-  travel_id: rand(100) + 1,
-  interest_id: rand(100) + 1
-)
-end
