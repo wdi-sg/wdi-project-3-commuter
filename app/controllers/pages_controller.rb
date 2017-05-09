@@ -7,7 +7,9 @@ class PagesController < ApplicationController
     end
 
     def view_commuters
-      redirect_to combos_path
+      @users = User.all
+      @travel = Travel.all
+
     end
 
     def contact_us

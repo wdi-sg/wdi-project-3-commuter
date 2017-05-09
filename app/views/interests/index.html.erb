@@ -15,11 +15,7 @@
             Interest Category: <%= interest.interest_category%><br>
             Interest: <%= interest.interest %><br>
 
-              <%= link_to "View Interests", interest_path(interest.id), class: "button is-primary" %><br /><br />
-
-              <%= link_to "Edit Interests", edit_interest_path(interest.id), class: "button is-primary" %><br /><br />
-
-              <%= link_to "Delete Interests",  interest_path(interest.id), method: :delete , class: "button is-primary" %><br /><br />
+            
           </p>
         </div>
         <% end %>

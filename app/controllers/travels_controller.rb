@@ -34,6 +34,7 @@ class TravelsController < ApplicationController
 
     #mass assignment way
     @submitted_travel = Travel.new(filter_params)
+    @submitted_travel.user_id = current_user.id
     @submitted_travel.save
     redirect_to profile_path
   end
