@@ -1,5 +1,8 @@
-<h1>Matches</h1>
-<div class="container">
+<%= render "partials/nav/matches_nav"%>
+
+<h1>Matches!!!!!!!!</h1>
+
+<div class="matches-container">
   <% current_user.interesteds.each do |relation| %>
   <%= relation.first_name %>
   <%= form_for :conversation, url: conversations_path do |f| %>
