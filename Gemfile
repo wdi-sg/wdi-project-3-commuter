@@ -17,7 +17,8 @@ gem 'pg'
 gem 'carrierwave', '~> 1.0'
 #Cloudinary
 gem 'cloudinary'
-
+# Chosen
+gem 'chosen-rails'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 #bootstrap

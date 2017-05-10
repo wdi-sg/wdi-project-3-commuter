@@ -1,45 +1,108 @@
 <%= render "partials/nav/views_commuters_nav"%>
 
+<div class="row">
+  <!-- interest -->
+  <div class="col-lg-3">
+    <select data-placeholder=" Interest" class="chosen-select" multiple tabindex="1">
+      <option value=""></option>
+      <option value="United States">United States</option>
+      <option value="United Kingdom">United Kingdom</option>
+      <option value="Afghanistan">Afghanistan</option>
+      <option value="Albania">Albania</option>
+      <option value="Serbia">Serbia</option>
+      <option value="Seychelles">Seychelles</option>
+      <option value="Sierra Leone">Sierra Leone</option>
+      <option value="Singapore">Singapore</option>
+    </select>
+  </div>
+  <!-- Routes -->
+  <div class="col-lg-3">
+    <select data-placeholder=" Routes" class="chosen-select" multiple tabindex="1">
+      <option value=""></option>
+      <option value="United States">United States</option>
+      <option value="United Kingdom">United Kingdom</option>
+      <option value="Afghanistan">Afghanistan</option>
+      <option value="Albania">Albania</option>
+      <option value="Serbia">Serbia</option>
+      <option value="Seychelles">Seychelles</option>
+      <option value="Sierra Leone">Sierra Leone</option>
+      <option value="Singapore">Singapore</option>
+    </select>
+  </div>
+  <!-- Time Slot -->
+  <div class="col-lg-3">
+    <select data-placeholder=" Time Slot" class="chosen-select" multiple tabindex="1">
+      <option value=""></option>
+      <option value="United States">United States</option>
+      <option value="United Kingdom">United Kingdom</option>
+      <option value="Afghanistan">Afghanistan</option>
+      <option value="Albania">Albania</option>
+      <option value="Serbia">Serbia</option>
+      <option value="Seychelles">Seychelles</option>
+      <option value="Sierra Leone">Sierra Leone</option>
+      <option value="Singapore">Singapore</option>
+    </select>
+  </div>
+
+</div>
+
 <h1>Pages#view_commuters</h1>
 <p>Find me in app/views/pages/view_commuters.html.erb</p>
 
 <div class="filter_options_container">
 
-  <form class="filter_form", method="get">
+  <form class="filter_form" , method="get">
     <%= select("end_route", "start_route", Travel.all.collect(&:start_route), {:prompt => 'All Routes'}) %><br>
-    <input type="submit" value="Filter" />
+    <input type="submit" value="Filter"/>
   </form>
 
   <br><br>
 
-<form class="filter_form", method="get">
+  <form class="filter_form" , method="get">
     <% Interest.all.each do |i| %>
-        <%= check_box_tag("interests_category[]", i.id) %>
-        <%= i.interest %>
+    <%= check_box_tag("interests_category[]", i.id) %>
+    <%= i.interest %>
     <% end %>
-    <input type="submit" value="Filter" />
+    <input type="submit" value="Filter"/>
   </form>
 </div>
 
+<div class="users-container">
+
+</div>
+
 <% @users.each do |user| %>
-  <% if !current_user.interesteds.include?(user) && !current_user.interestlist.include?(user) %>
+<% if !current_user.interesteds.include?(user) && !current_user.interestlist.include?(user) %>
+
 <div class="card">
   <div class="card-block">
-    <h4 class="card-title"><%= user.first_name %> <%= user.last_name %></h4>
-    <p class="card-text">Personal Description: <%= user.personal_description %></p>
+    <!-- users name -->
+    <h4 class="card-title">
+      <%= user.first_name %>
+      <%= user.last_name %>
+    </h4>
+    <!-- personal_description -->
+    <p class="card-text">Personal Description:
+      <%= user.personal_description %>
+    </p>
+    <!-- interests -->
     <% user.interests.each do |each_interest| %>
-      <p class="card-text">Interest <%= each_interest.interest %></p>
-      <% end %>
-    <% @travel.each do |each_travel| %>
-        <% if each_travel.user_id === user.id %>
-          <p class="card-text">Route <%= each_travel.start_route%></p>
+    <p class="card-text">Interest
+      <%= each_interest.interest %>
+    </p>
+    <% end %>
 
-          <% end %>
+    <% @travel.each do |each_travel| %>
+    <% if each_travel.user_id === user.id %>
+    <p class="card-text">Route
+      <%= each_travel.start_route%></p>
+
+    <% end %>
     <% end %>
 
     <%= form_for :Relationship, url: matches_path, method: :post do |f| %>
-      <%= f.hidden_field :user ,value: user.id %>
-      <%= f.submit 'Match & Chat', class: 'btn btn-danger' %>
+    <%= f.hidden_field :user ,value: user.id %>
+    <%= f.submit 'Match & Chat', class: 'btn btn-danger' %>
     <% end %>
 
   </div>

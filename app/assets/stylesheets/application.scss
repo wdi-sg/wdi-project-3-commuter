@@ -1,3 +1,7 @@
+/*
+ *= require chosen
+*/
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome-sprockets";
@@ -13,6 +17,8 @@
 @import "login/style";
 @import "signup/style";
 @import "footer";
+@import "views-commuters/bootstrap-chosen-variables";
+@import "views-commuters/bootstrap-chosen";
 
 .card {
   border-style: solid;
