@@ -12,10 +12,10 @@
 
   <br><br>
 
-  <form class="filter_form", method="get">
+<form class="filter_form", method="get">
     <% Interest.all.each do |i| %>
-        <%= check_box_tag("interests_category[]", i.interest) %>
-        <%=h i.interest %>
+        <%= check_box_tag("interests_category[]", i.id) %>
+        <%= i.interest %>
     <% end %>
     <input type="submit" value="Filter" />
   </form>
@@ -26,7 +26,6 @@
 <div class="card">
   <div class="card-block">
     <h4 class="card-title"><%= user.first_name %> <%= user.last_name %></h4>
-    <h6 class="card-subtitle mb-2 text-muted"><%= user.email %></h6>
     <p class="card-text">Personal Description: <%= user.personal_description %></p>
     <% user.interests.each do |each_interest| %>
       <p class="card-text">Interest <%= each_interest.interest %></p>

@@ -69,7 +69,11 @@
 }
 
 .wrapper {
-  padding: 90px 0px 130px;
+  border: 0 solid;
+  border-top: 10px solid $red-pink;
+  padding: 0 0 50px;
+  margin-top: 20px;
+  // padding: 0px 0px 130px;
 }
 
 .top-title {
@@ -132,9 +136,9 @@
 }
 
 .home-header {
-  background: url("singapore-mrt.jpg") no-repeat;
+  background: url("mrt-sun.png") no-repeat;
   background-size: cover;
-  min-height: 610px;
+  min-height: 510px;
 }
 
 .home-header .navbar-default .navbar-brand {
@@ -225,9 +229,6 @@
   padding: 150px;
 }
 
-.section-padding {
-  padding: 150px 0;
-}
 
 .bg-image-2 {
   background: url('banner-img.jpg') no-repeat center fixed;

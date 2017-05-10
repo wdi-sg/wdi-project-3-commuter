@@ -2,6 +2,7 @@ class InterestsController < ApplicationController
     def index
         @all_interests = Interest.all
         gon.interests = Interest.all
+        @users = User.all
     end
 
     def show
@@ -20,6 +21,11 @@ class InterestsController < ApplicationController
     end
 
     def destroy
+    end
+
+    def register
+      interest_id = params[:interest_id]
+      current_user.interests << Interest.find(interest_id)
     end
 
     private

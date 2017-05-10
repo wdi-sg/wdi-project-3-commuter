@@ -1,15 +1,15 @@
 <!--header-->
-<header class="signup-header" id="header">
+<header class="profile-header" id="header">
   <div class="bg-color">
     <!--nav-->
     <nav class="nav navbar-default navbar-fixed-top">
-      <div class="signup-container">
+      <div class="profile-container">
         <div class="col-md-12">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-controls="navbar">
               <span class="fa fa-bars"></span>
             </button>
-            <a href="/users/sign_up" class="navbar-brand">SignUp</a>
+            <a href="/profile" class="navbar-brand">Profile</a>
           </div>
 
           <div class="collapse navbar-collapse navbar-left" id="myleftnavbar">
@@ -24,17 +24,17 @@
 
             <ul class="nav navbar-nav">
               <li>
-                <a href="/commuters">
-                  <span class="glyphicon glyphicon-user"></span>
-                  View Commuter</a>
+                <a href="/travels">
+                  <span class="glyphicon glyphicon-road"></span>
+                  Routes</a>
               </li>
             </ul>
 
             <ul class="nav navbar-nav">
               <li>
-                <a href="/travels">
-                  <span class="glyphicon glyphicon-road"></span>
-                  Routes</a>
+                <a href="/interests">
+                  <span class="glyphicon glyphicon-list"></span>
+                  Interests</a>
               </li>
             </ul>
 
@@ -56,7 +56,6 @@
               <li><%= link_to " Login", new_user_session_path, :class =>'glyphicon glyphicon-log-in'  %></li>
 
               <% end %>
-
 
             </ul>
           </div>

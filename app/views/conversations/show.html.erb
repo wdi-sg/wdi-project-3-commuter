@@ -1,3 +1,7 @@
+<%= render "partials/nav/chat_nav"%>
+
+<div class="chat-container">
+
 <li class="remove_bullet">
   <div class="panel panel-default" data-conversation-id="<%= @conversation.id %>">
     <div class="panel-heading">
@@ -6,8 +10,6 @@
       
 
     </div>
-
-
 
     <div class="panel-body" style="display: none;">
       <div class="messages-list" id="message-box-<%= @conversation.id %>">
@@ -24,3 +26,5 @@
     </div>
   </div>
 </li>
+
+</div>

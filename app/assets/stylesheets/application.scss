@@ -6,14 +6,13 @@
 @import "animate";
 @import "home/style";
 @import "home/team";
+@import "home/about";
+@import "combos/style";
 @import "interest/style";
 @import "travels/style";
 @import "login/style";
+@import "signup/style";
 @import "footer";
-
-#header {
-  margin-bottom: 200px;
-}
 
 .card {
   border-style: solid;
