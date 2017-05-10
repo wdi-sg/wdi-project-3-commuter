@@ -15,4 +15,4 @@ production:
   <<: *default
   database: d11h99fic6o86v
   url: <%= ENV['DATABASE_URL'] %>
-  url: <%= ENV['CLOUDINARY_URL'] %>
+  
