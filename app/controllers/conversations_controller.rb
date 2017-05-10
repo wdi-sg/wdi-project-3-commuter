@@ -25,6 +25,8 @@ class ConversationsController < ApplicationController
        end
     end
 
+    
+
     # @conversation = Conversation.new()
     # @conversation.recipient_id =
     # @conversation.sender_is = current_user.id
