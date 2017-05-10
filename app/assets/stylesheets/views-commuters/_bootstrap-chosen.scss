@@ -1,16 +1,12 @@
-//
-// bootstrap-chosen.scss
-//
-// An alternate stylesheet for Chosen (http://harvesthq.github.com/chosen/).
-// This one is supposed to integrate better with Bootstrap.
-//
-// Submit bugfixes to: http://github.com/alxlit/bootstrap-chosen
-//
-
 @import "bootstrap-chosen-variables";
 
-.chosen-select { width: 100%; }
-.chosen-select-deselect { width: 100%; }
+.chosen-select {
+  width: 100%;
+}
+
+.chosen-select-deselect {
+  width: 100%;
+}
 
 .chosen-container {
   display: inline-block;
@@ -130,8 +126,8 @@
   .chosen-single {
     background-color: $chosen-background;
     -webkit-background-clip: padding-box;
-       -moz-background-clip: padding;
-            background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
     border: $chosen-border;
     @include border-top-radius($chosen-border-radius);
     @include border-bottom-radius($chosen-border-radius);
@@ -194,7 +190,7 @@
 
   .chosen-search {
     margin: 0;
-    padding: 3px 4px;
+    padding: 3px 4px 0 4px;
     position: relative;
     white-space: nowrap;
     z-index: $zindex-dropdown;
@@ -215,8 +211,8 @@
     margin-top: -1px;
     @include border-bottom-radius($chosen-border-radius);
     -webkit-background-clip: padding-box;
-       -moz-background-clip: padding;
-            background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
   }
 }
 
@@ -251,7 +247,7 @@
 
     .search-field {
       margin: 0;
-      padding: 0;
+      padding: 0 0 0 10px;
       white-space: nowrap;
 
       input[type="text"] {
@@ -261,7 +257,7 @@
         color: $gray;
         height: $chosen-multi-height - 8px;
         margin: 0;
-        padding: 4px;
+        padding: 4px 0 0 4px;
         outline: 0;
       }
 
@@ -272,8 +268,8 @@
 
     .search-choice {
       -webkit-background-clip: padding-box;
-         -moz-background-clip: padding;
-              background-clip: padding-box;
+      -moz-background-clip: padding;
+      background-clip: padding-box;
       background-color: $gray-lighter;
       border: $chosen-border;
       @include border-top-radius($chosen-border-radius);
@@ -314,7 +310,7 @@
   }
 
   .chosen-results {
-    margin: 0 0 0 0;
+    margin: 0;
     padding: 0;
   }
 
@@ -350,6 +346,7 @@
   }
 
   .chosen-choices {
+    padding: 0 0 0 7px;
     border: $chosen-focus-border;
     @include border-bottom-radius(0);
     @include box-shadow($chosen-focus-box-shadow);
@@ -443,15 +440,14 @@
     padding: 4px 5px 4px 20px;
   }
 }
-
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
-  .chosen-rtl .chosen-search input[type="text"],
+  .chosen-container .chosen-results-scroll-down span,
+  .chosen-container .chosen-results-scroll-up span,
+  .chosen-container-multi .chosen-choices .search-choice .search-choice-close,
+  .chosen-container-single .chosen-search input[type="text"],
   .chosen-container-single .chosen-single abbr,
   .chosen-container-single .chosen-single div b,
-  .chosen-container-single .chosen-search input[type="text"],
-  .chosen-container-multi .chosen-choices .search-choice .search-choice-close,
-  .chosen-container .chosen-results-scroll-down span,
-  .chosen-container .chosen-results-scroll-up span {
+  .chosen-rtl .chosen-search input[type="text"] {
     background-image: url($chosen-sprite-retina-path) !important;
     background-size: 52px 37px !important;
     background-repeat: no-repeat !important;
