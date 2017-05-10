@@ -1,8 +1,5 @@
 <%= render "partials/nav/views_commuters_nav"%>
 
-<h1>Pages#view_commuters</h1>
-<p>Find me in app/views/pages/view_commuters.html.erb</p>
-
 <div class="filter_options_container">
 
   <form class="filter_form", method="get">
@@ -20,30 +17,44 @@
     <input type="submit" value="Filter" />
   </form>
 </div>
+<br /><br />
 
-<% @users.each do |user| %>
-  <% if !current_user.interesteds.include?(user) && !current_user.interestlist.include?(user) %>
-<div class="card">
-  <div class="card-block">
-    <h4 class="card-title"><%= user.first_name %> <%= user.last_name %></h4>
-    <h6 class="card-subtitle mb-2 text-muted"><%= user.email %></h6>
-    <p class="card-text">Personal Description: <%= user.personal_description %></p>
-    <% user.interests.each do |each_interest| %>
-      <p class="card-text">Interest <%= each_interest.interest %></p>
+  <div class="container-fluid">
+    <div class="row">
+
+      <% @users.each do |user| %>
+      <div class="col-sm-4">
+
+        <div class="card">
+          <div class="card-block">
+            <h4 class="card-title"><%= user.first_name %> <%= user.last_name %></h4>
+            <p class="card-text">Personal Description: <%= user.personal_description %></p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">  My interests are: <ul>
+              <% user.interests.each do |each_interest| %>
+              <li><%= each_interest.interest %></li>
+                <% end %></ul></li>
+            <li class="list-group-item">My travel routes are: <% @travel.each do |each_travel| %>
+                  <% if each_travel.user_id === user.id %>
+                  Start Station:
+                  <%= each_travel.start_route%><br />
+                  End Station:
+                  <%= each_travel.end_route%><br />
+                    <% end %>
+              <% end %></li>
+
+          </ul>
+          <div class="card-block">
+            <%= form_for :Relationship, url: matches_path, method: :post do |f| %>
+              <%= f.hidden_field :user ,value: user.id %>
+              <%= f.submit 'Match & Chat', class: 'btn btn-danger' %>
+            <% end %>
+          </div>
+        </div>
+
+      </div>
       <% end %>
-    <% @travel.each do |each_travel| %>
-        <% if each_travel.user_id === user.id %>
-          <p class="card-text">Route <%= each_travel.start_route%></p>
 
-          <% end %>
-    <% end %>
-
-    <%= form_for :Relationship, url: matches_path, method: :post do |f| %>
-      <%= f.hidden_field :user ,value: user.id %>
-      <%= f.submit 'Match & Chat', class: 'btn btn-danger' %>
-    <% end %>
-
+    </div>
   </div>
-</div>
-<% end %>
-<% end %>
