@@ -35,7 +35,7 @@
               <% user.interests.each do |each_interest| %>
               <li><%= each_interest.interest %></li>
                 <% end %></ul></li>
-            <li class="list-group-item">My travel routes are: <% @travel.each do |each_travel| %>
+            <li class="list-group-item">My travel routes are:<br /> <% @travel.each do |each_travel| %>
                   <% if each_travel.user_id === user.id %>
                   Start Station:
                   <%= each_travel.start_route%><br />
