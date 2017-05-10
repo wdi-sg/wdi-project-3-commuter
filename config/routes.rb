@@ -24,7 +24,6 @@ Rails.application.routes.draw do
 
     resources :travels
     resources :interests
-    resources :combos
     resources :conversations, only: [:create, :show] do
     member do
     post :close

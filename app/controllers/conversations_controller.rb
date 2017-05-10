@@ -59,9 +59,9 @@ class ConversationsController < ApplicationController
   def close
     @conversation = Conversation.find(params[:id])
 
-    session[:conversations].delete(@conversation.id)
+    # session[:conversations].delete(@conversation.id)
 
-    redirect_to chats_path
+    redirect_to matches_path
   end
 
   private
