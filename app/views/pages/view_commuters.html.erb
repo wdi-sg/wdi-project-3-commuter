@@ -68,9 +68,12 @@
 </div>
 <!-- end -->
 <!-- card-title -->
-
 <div class="card-container" id="card-container">
+
   <div class="row">
+    <!-- start -->
+    <% @users.each do |user| %>
+    <% if !current_user.interesteds.include?(user) && !current_user.interestlist.include?(user) %>
     <!-- card -->
     <div class="col-md-4 col-sm-8">
 
@@ -82,98 +85,44 @@
         <!-- info -->
         <div class="info">
           <div class="title">
-            <a target="_blank" href="http://scripteden.com/">NAME</a>
+            <a target="_blank" href="http://scripteden.com/"><%= user.first_name %>
+              <%= user.last_name %></a>
           </div>
-          <div class="desc">Passionate designer</div>
-          <div class="desc">Curious developer</div>
-          <div class="desc">Tech geek</div>
-        </div>
-        <!-- bottom btn -->
-        <div class="bottom">
-          <a class="btn btn-primary btn-twitter btn-sm" href="https://twitter.com/webmaniac">
-            <i class="fa fa-twitter"></i>
-          </a>
-          <a class="btn btn-danger btn-sm" rel="publisher" href="https://plus.google.com/+ahmshahnuralam">
-            <i class="fa fa-google-plus"></i>
-          </a>
-          <a class="btn btn-primary btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam">
-            <i class="fa fa-facebook"></i>
-          </a>
-          <a class="btn btn-warning btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam">
-            <i class="fa fa-behance"></i>
-          </a>
+          <div class="desc">
+            <b>Personal Description:</b>
+            <%= user.personal_description %>
+          </div>
+          <!-- interests -->
+          <% user.interests.each do |each_interest| %>
+          <div class="desc">
+            <b>Interest:</b>
+            <%= each_interest.interest %>
+          </div>
+          <% end %>
+          <!-- travel -->
+          <% @travel.each do |each_travel| %>
+          <% if each_travel.user_id === user.id %>
+          <div class="desc">
+            <b>Routes:</b>
+            <%= each_travel.start_route%>
+          </div>
+          <% end %>
+          <% end %>
+
+          <%= form_for :Relationship, url: matches_path, method: :post do |f| %>
+          <%= f.hidden_field :user ,value: user.id %>
+          <%= f.submit 'Match & Chat', class: 'btn btn-danger' %>
+          <% end %>
+
         </div>
       </div>
     </div>
-    <!-- card -->
-    <div class="col-md-4 col-sm-8">
 
-      <div class="card hovercard">
-        <div class="cardheader"></div>
-        <div class="avatar">
-          <img alt="" src="http://lorempixel.com/100/100/people/9/">
-        </div>
-        <!-- info -->
-        <div class="info">
-          <div class="title">
-            <a target="_blank" href="http://scripteden.com/">Script Eden</a>
-          </div>
-          <div class="desc">Passionate designer</div>
-          <div class="desc">Curious developer</div>
-          <div class="desc">Tech geek</div>
-        </div>
-        <!-- bottom -->
-        <div class="bottom">
-          <a class="btn btn-primary btn-twitter btn-sm" href="https://twitter.com/webmaniac">
-            <i class="fa fa-twitter"></i>
-          </a>
-          <a class="btn btn-danger btn-sm" rel="publisher" href="https://plus.google.com/+ahmshahnuralam">
-            <i class="fa fa-google-plus"></i>
-          </a>
-          <a class="btn btn-primary btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam">
-            <i class="fa fa-facebook"></i>
-          </a>
-          <a class="btn btn-warning btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam">
-            <i class="fa fa-behance"></i>
-          </a>
-        </div>
-      </div>
-    </div </div>
-    <!-- card -->
-    <div class="col-md-4 col-sm-8">
+    <% end %>
+    <% end %>
 
-      <div class="card hovercard">
-        <div class="cardheader"></div>
-        <div class="avatar">
-          <img alt="" src="http://lorempixel.com/100/100/people/9/">
-        </div>
-        <!-- info -->
-        <div class="info">
-          <div class="title">
-            <a target="_blank" href="http://scripteden.com/">Script Eden</a>
-          </div>
-          <div class="desc">Passionate designer</div>
-          <div class="desc">Curious developer</div>
-          <div class="desc">Tech geek</div>
-        </div>
-        <!-- bottom btn -->
-        <div class="bottom">
-          <a class="btn btn-primary btn-twitter btn-sm" href="https://twitter.com/webmaniac">
-            <i class="fa fa-twitter"></i>
-          </a>
-          <a class="btn btn-danger btn-sm" rel="publisher" href="https://plus.google.com/+ahmshahnuralam">
-            <i class="fa fa-google-plus"></i>
-          </a>
-          <a class="btn btn-primary btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam">
-            <i class="fa fa-facebook"></i>
-          </a>
-          <a class="btn btn-warning btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam">
-            <i class="fa fa-behance"></i>
-          </a>
-        </div>
-      </div>
-    </div>
   </div>
+
 </div>
 
 <h1>Pages#view_commuters</h1>
@@ -196,44 +145,3 @@
     <input type="submit" value="Filter"/>
   </form>
 </div>
-
-<div class="users-container"></div>
-
-<% @users.each do |user| %>
-<% if !current_user.interesteds.include?(user) && !current_user.interestlist.include?(user) %>
-
-<div class="card">
-  <div class="card-block">
-    <!-- users name -->
-    <h4 class="card-title">
-      <%= user.first_name %>
-      <%= user.last_name %>
-    </h4>
-    <!-- personal_description -->
-    <p class="card-text">Personal Description:
-      <%= user.personal_description %>
-    </p>
-    <!-- interests -->
-    <% user.interests.each do |each_interest| %>
-    <p class="card-text">Interest
-      <%= each_interest.interest %>
-    </p>
-    <% end %>
-
-    <% @travel.each do |each_travel| %>
-    <% if each_travel.user_id === user.id %>
-    <p class="card-text">Route
-      <%= each_travel.start_route%></p>
-
-    <% end %>
-    <% end %>
-
-    <%= form_for :Relationship, url: matches_path, method: :post do |f| %>
-    <%= f.hidden_field :user ,value: user.id %>
-    <%= f.submit 'Match & Chat', class: 'btn btn-danger' %>
-    <% end %>
-
-  </div>
-</div>
-<% end %>
-<% end %>
