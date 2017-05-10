@@ -17,7 +17,11 @@
     <input type="submit" value="Filter" />
   </form>
 </div>
+
+
+
 <br /><br />
+
 
   <div class="container-fluid">
     <div class="row">
@@ -41,6 +45,10 @@
                   <%= each_travel.start_route%><br />
                   End Station:
                   <%= each_travel.end_route%><br />
+                  MRT Line:
+                  <%= each_travel.mrt_line%><br />
+                  Timeslot:
+                  <%= each_travel.timeslot%><br />
                     <% end %>
               <% end %></li>
 
