@@ -23,7 +23,9 @@ Rails.application.routes.draw do
     post 'register' => 'users#create'
 
     resources :travels
-    resources :interests
+    resources :interests do
+    post :register
+    end
     resources :conversations, only: [:create, :show] do
     member do
     post :close
