@@ -60,6 +60,10 @@ gem 'jbuilder', '~> 2.5'
 
 # Installing gon for my js manipulation
 gem 'gon'
+
+#bootstrap
+gem 'bootstrap-sass', '~> 3.2.0'
+
 gem 'autoprefixer-rails'
 #pry
 gem 'pry'

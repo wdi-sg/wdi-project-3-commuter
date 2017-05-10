@@ -41,7 +41,7 @@ class PagesController < ApplicationController
             #   puts "user is"
             #   puts each
             end
-            @users = @interest_some
+            @users = User.all
             @travel = Travel.all
         else
             @users = User.all
