@@ -20,13 +20,7 @@
 @import "views-commuters/bootstrap-chosen-variables";
 @import "views-commuters/bootstrap-chosen";
 @import "views-commuters/style";
-
-.card {
-  border-style: solid;
-  width: 25%;
-  margin-bottom: 10px;
-}
-
+@import "views-commuters/cards";
 
 body {
   line-height: 1.5;
