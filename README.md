@@ -14,13 +14,14 @@ Your daily mundane commute will never be the same again, in fact its going be an
 Some of our initial ideas...
 
 HOMEPAGE:
+
+
 ![wireframe image 1](http://i.imgur.com/zw636yB.png)
 
 View Commuters Page:
-![wireframe image 2](http://i.imgur.com/IxY8aTj.png)
 
-### ERD
-![erd image](http://i.imgur.com/mRDlY6L.png)
+
+![wireframe image 2](http://i.imgur.com/IxY8aTj.png)
 
 ## Getting Started
 
@@ -61,9 +62,8 @@ Click here for the live version: https://commuter-wdi.herokuapp.com/
 - Heroku
 
 
-## Workflow
-
-Did you write user stories, draw wireframes, use task tracking, produce ERDs? Did you use source control, with regular commits? Include links to them here.
+## ERD
+![erd image](http://i.imgur.com/mRDlY6L.png)
 
 ## Authors
 
