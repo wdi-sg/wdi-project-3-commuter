@@ -10,10 +10,13 @@ At Commuter thats what we thought so too!
 Your precious time could be put to great use, whether if its learning a new skill / language / getting a proof of concept.
 Your daily mundane commute will never be the same again, in fact its going be an enriching and well fulfilling experience.
 
+## ERD
+![erd image](http://i.imgur.com/mRDlY6L.png)
+
 ## Wireframes
 Some of our initial ideas...
 
-HOMEPAGE:
+Homepage:
 
 
 ![wireframe image 1](http://i.imgur.com/zw636yB.png)
@@ -60,10 +63,6 @@ Click here for the live version: https://commuter-wdi.herokuapp.com/
 - Postico
 - PostgreSQL
 - Heroku
-
-
-## ERD
-![erd image](http://i.imgur.com/mRDlY6L.png)
 
 ## Authors
 
