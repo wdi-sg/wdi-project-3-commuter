@@ -34,7 +34,7 @@ Instructions to run the project:
 
 ### Prerequisites
 
-This project is build with ruby on rails and PostgreSQL. Download and install them before continuing to the following steps to install the application.
+This project is built with ruby on rails and PostgreSQL. Download and install them before continuing to the following steps to install the application.
 
 Installing
 
@@ -66,7 +66,7 @@ Click here for the live version: https://commuter-wdi.herokuapp.com/
 
 ## Authors
 
-- [Maria Wilson](https://github.com/hexhex23)
+- [Maria](https://github.com/hexhex23)
 - [Arif](https://github.com/ayepRahman)
 - [Felix](https://github.com/Pegasolta)
 - [Robin](https://github.com/cwxr)
