@@ -15,7 +15,8 @@
   <% end %>
 
   <% current_user.interestlist.each do |relation| %>
-  <b><h2><%= relation.first_name %></h2></b>
+  <b><h2><%= relation.first_name %><%= relation.last_name %></h2></b>
+  <h3><%= relation.email %></h3>
   <%= form_for :conversation, url: conversations_path do |f| %>
     <%= f.hidden_field :recipient, value: relation.id %>
     <%= f.submit 'Chat', class: "btn btn-success"%>
