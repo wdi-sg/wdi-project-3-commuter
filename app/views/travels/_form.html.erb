@@ -3,7 +3,7 @@
     Start Route:
     <%= t.label :start_route, class: 'label' %>
     <p class="control">
-      <%= t.text_field :start_route, class: 'input' %>
+      <%= t.select :start_route, Travel::START_ROUTE, class: 'input' %>
     </p>
   </div>
 
@@ -11,7 +11,7 @@
     End Route:
     <%= t.label :end_route, class: 'label' %>
     <p class="control">
-      <%= t.text_field :end_route, class: 'input' %>
+    <%= t.select :end_route, Travel::END_ROUTE, class: 'input' %>
     </p>
   </div>
 

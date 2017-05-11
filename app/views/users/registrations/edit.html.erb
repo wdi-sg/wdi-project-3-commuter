@@ -1,4 +1,182 @@
-<%= render "partials/nav/signup_nav"%>
+<%= render "partials/nav/profile_nav"%>
+
+<div class="profile-container">
+  <div class="row">
+    <div class="col-md-10 ">
+      <!-- start form_for -->
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "form-horizontal", method: :put }) do |f| %>
+      <%= devise_error_messages! %>
+      <fieldset>
+        <!-- User Name -->
+        <legend>Welcome
+          <b>
+            <i><%= @user.first_name %>
+              <%= @user.last_name %></i>
+          </b>
+        </legend>
+        <!-- first_name -->
+        <div class="form-group">
+
+          <%= f.label :first_name, class: "col-md-4 control-label" %>
+
+          <div class="col-md-4">
+            <div class="input-group">
+              <div class="input-group-addon">
+                <i class="fa fa-user"></i>
+              </div>
+              <%= f.text_field :first_name, autofocus: true, class: "form-control input-md" %>
+            </div>
+          </div>
+
+        </div>
+        <!-- last_name -->
+        <div class="form-group">
+
+          <%= f.label :last_name, class: "col-md-4 control-label" %>
+
+          <div class="col-md-4">
+            <div class="input-group">
+              <div class="input-group-addon">
+                <i class="fa fa-user-circle-o"></i>
+              </div>
+              <%= f.text_field :last_name, autofocus: true, class: "form-control input-md" %>
+            </div>
+          </div>
+
+        </div>
+        <!-- Upload Photo -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="Upload photo">Upload photo</label>
+          <div class="col-md-4">
+            <input id="Upload photo" name="Upload photo" class="input-file" type="file">
+          </div>
+        </div>
+        <!-- personal_description -->
+        <div class="form-group">
+
+          <%= f.label :personal_description, class: "col-md-4 control-label" %>
+
+          <div class="col-md-4">
+            <div class="input-group">
+              <div class="input-group-addon">
+                <i class="fa fa-info"></i>
+              </div>
+              <%= f.text_field :personal_description, autofocus: true, class: "form-control input-md" %>
+            </div>
+          </div>
+
+        </div>
+        <!-- Address -->
+        <div class="form-group">
+
+          <%= f.label :address, class: "col-md-4 control-label" %>
+
+          <div class="col-md-4">
+            <div class="input-group">
+              <div class="input-group-addon">
+                <i class="fa fa-address-card"></i>
+              </div>
+              <%= f.text_field :address, autofocus: true, class: "form-control input-md" %>
+            </div>
+          </div>
+
+        </div>
+        <!-- Email -->
+        <div class="form-group">
+
+          <%= f.label :email, class: "col-md-4 control-label" %>
+
+          <div class="col-md-4">
+            <div class="input-group">
+              <div class="input-group-addon">
+                <i class="fa fa-envelope"></i>
+              </div>
+              <%= f.text_field :email, autofocus: true, class: "form-control input-md" %>
+            </div>
+          </div>
+
+        </div>
+        <!-- password/confirmable -->
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for:
+          <%= resource.unconfirmed_email %></div>
+        <% end %>
+        <!-- password -->
+        <div class="form-group">
+
+          <%= f.label :password, class: "col-md-4 control-label" %>
+
+          <div class="col-md-4">
+            <div class="input-group">
+              <div class="input-group-addon">
+                <i class="fa fa-unlock-alt"></i>
+              </div>
+              <%= f.password_field :password, autocomplete: "off", class: "form-control input-md", placeholder: "6 character's mininum" %>
+
+            </div>
+          </div>
+
+        </div>
+        <!-- confirm -->
+        <div class="form-group">
+
+          <%= f.label :password_confirmation, class: "col-md-4 control-label" %>
+
+          <div class="col-md-4">
+            <div class="input-group">
+              <div class="input-group-addon">
+                <i class="fa fa-unlock"></i>
+              </div>
+              <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control input-md", placeholder: "retype password" %>
+            </div>
+          </div>
+
+        </div>
+        <!-- current password -->
+        <div class="form-group">
+
+          <%= f.label :current_password, class: "col-md-4 control-label" %>
+
+          <div class="col-md-4">
+            <div class="input-group">
+              <div class="input-group-addon">
+                <i class="fa fa-check-square-o"></i>
+              </div>
+              <%= f.password_field :current_password, autocomplete: "off", class: "form-control input-md", placeholder: "type current password to Update!" %>
+            </div>
+          </div>
+
+        </div>
+        <!-- button -->
+        <div class="form-group">
+          <label class="col-md-4 control-label"></label>
+          <div class="col-md-4">
+
+            <%= f.submit "Update", class: "btn btn-success" %>
+
+          </div>
+        </div>
+
+      </fieldset>
+      <% end %>
+      <!-- delete btn -->
+      <div class="form-group">
+        <label class="col-md-4 control-label"></label>
+        <div class="col-md-4 del-col">
+
+          <%= button_to "Delete Account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger del-btn"  %>
+
+        </div>
+      </div>
+    </div>
+    <!-- display pic -->
+    <div class="col-md-2 hidden-xs">
+      <img src="http://websamplenow.com/30/userprofile/images/avatar.jpg" class="img-responsive img-thumbnail ">
+      <% if @user.avatar_url %>
+      <%= image_tag @user.avatar_url(:display) %>
+      <% end %>
+    </div>
+
 
 <h2>Edit<%= resource_name.to_s.humanize %></h2>
 
@@ -14,58 +192,9 @@
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
-  </div>
 
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name, autofocus: true %>
   </div>
-
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_field :address, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :personal_description %><br />
-    <%= f.text_field :personal_description, autofocus: true %>
-  </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</div>
+<%= link_to "Back", :back%>
+</div>

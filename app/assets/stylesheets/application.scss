@@ -1,3 +1,5 @@
+
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome-sprockets";
@@ -6,10 +8,19 @@
 @import "animate";
 @import "home/style";
 @import "home/team";
+@import "home/about";
+@import "combos/style";
 @import "interest/style";
 @import "travels/style";
 @import "login/style";
+@import "signup/style";
 @import "footer";
+@import "views-commuters/bootstrap-chosen-variables";
+@import "views-commuters/bootstrap-chosen";
+@import "views-commuters/style";
+@import "views-commuters/cards";
+@import "profile/style";
+
 
 .card {
   border-color: grey;
@@ -238,8 +249,4 @@ ul {
 
 .remove_bullet {
     list-style-type: none;
-}
-
-.label {
-  color: $orange;
 }
