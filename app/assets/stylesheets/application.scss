@@ -221,3 +221,27 @@ a:hover {
 ul {
   list-style: none;
 }
+
+.hideme {
+  display:none;
+  margin: 0px;
+}
+
+.list-group-item:hover > .hideme{
+    display: block;
+  }
+
+
+.hideme  {
+  .container {
+    margin: 0;
+    padding: 0;
+    .col-md-3 {
+      p {
+        width:80%;
+        text-align: left;
+        word-wrap: break-word;
+      }
+    }
+  }
+}
