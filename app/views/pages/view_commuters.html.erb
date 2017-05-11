@@ -4,63 +4,21 @@
 <div class="views-container" id="search-container">
   <div class="row">
     <!-- Routes Form-->
-    <div class="col-lg-4 col-sm-8">
-      <form class="filter_form" , method="get">
-        <fieldset>
-          <i>
-            <h3>
-              <b>R</b>OUTES<b>:</b>
-            </h3>
-          </i>
-          <%= select("end_route", "start_route", Travel.all.collect{ |x| "#{x.start_route} - #{x.end_route}" }, {:prompt => 'All Routes'},{:class => "chosen-select", :multiple => true, data: { placeholder: " Search Routes"} }) %>
-          <!-- submit button -->
-          <button type="submit" class="btn btn-danger search-btn" value="Filter">Search</button>
-        </fieldset>
-      </form>
-    </div>
+
     <!-- Interest form -->
     <div class="col-lg-4 col-sm-8">
-      <form class="filter_form" , method="get">
-        <fieldset>
-          <i>
-            <h3>
-              <b>I</b>NTEREST<b>:</b>
-            </h3>
-          </i>
-          <%= select(":interest_category", "interest", Interest.all.collect(&:interest), {:prompt => "Interest"}, {:class => "chosen-select", :multiple => true, data: { placeholder: " Select By Interest"} })%>
+      <%= form_for :interest , url:commuters_path do |f| %>
+        <%= f.label "Interest"%>
+        <%= f.collection_select :interest, Interest.all, :id, :interest, {prompt: "Select an Interest"}, {class: "chosen-select"}%>
 
-          <!-- submit button -->
-          <button type="submit" class="btn btn-danger search-btn" value="Filter">Search</button>
-          <!-- end -->
-        </fieldset>
-      </form>
+        <%= f.submit "Search" %>
+      <% end %>
     </div>
+  </div>
+</div>
     <!-- Timeslot -->
-    <div class="col-lg-4 col-sm-8">
-      <form class="filter_form" , method="get">
-        <fieldset>
-          <i>
-            <h3>
-              <b>T</b>IME
-              <b>S</b>LOT<b>:</b>
-            </h3>
-          </i>
-          <select data-placeholder=" Time Slot" class="chosen-select" multiple tabindex="1">
-            <option value=""></option>
-            <option value="Rise & Grind">Rise & Grind 8:00 - 10:00</option>
-            <option value="Late Morning">Late Morning 10:00 - 12:00</option>
-            <option value="Lunch Hour">12:00 - 14:00</option>
-            <option value="Early Afternoon">14:00 - 16:00</option>
-            <option value="Late Afternoon">16:00 - 18:00</option>
-            <option value="After Work">18:00 - 20:00</option>
-            <option value="Working Late">20:00 - 22:00</option>
-          </select>
-          <!-- submit button -->
-          <button type="submit" class="btn btn-danger search-btn" value="Filter">Search</button>
-          <!-- end -->
-        </fieldset>
-      </form>
-    </div>
+
+
     <!-- End Form -->
   </div>
 </div>

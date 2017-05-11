@@ -9,12 +9,13 @@
       <%= link_to "New Interest!!!!", new_interest_path, class: "button is-warning" %> -->
 
       <div class="columns">
-        <% @interest.each do |int| %>
+        <% current_user.interests.each do |int| %>
         <div class="column">
           <p class="notification is-info">
 
             Interest Category: <%= int.interest_category %><br>
             Interest: <%= int.interest %><br>
+            <%= link_to "Delete Interest",  interest_path(int.id), method: :delete , class: "btn btn-danger btn-sm" %>
 
           </p>
         </div>

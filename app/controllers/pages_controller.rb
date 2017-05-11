@@ -6,20 +6,36 @@ class PagesController < ApplicationController
     def about
     end
 
-    def view_commuters
-       if(params[:timeslot])
-       elsif (params[:mrt_line])
-       elsif(params[:interests_category])
-         @interests = params[:interests_category]
-         @interests.each do |each_interest|
-           @interest_some = Interest.includes(:users).find(each_interest).users
-           end
+    def search
+      if(interest_params)
+        #  @interests = params[:interests_category]
+        #  @interests.each do |each_interest|
+           @interest_some = Interest.includes(:users).find(interest_params['interest']).users
+          #  end
            @users = @interest_some
            @travel = Travel.all
        else
            @users = User.all
            @travel = Travel.all
        end
+      render "view_commuters"
+    end
+
+    def view_commuters
+      #
+      # puts "BACK END #{interest_params.inspect} #{interest_params[1]}"
+
+      #  if(interest_params[1])
+      #    @interests = params[:interests_category]
+      #    @interests.each do |each_interest|
+      #      @interest_some = Interest.includes(:users).find(each_interest).users
+      #      end
+      #      @users = @interest_some
+      #      @travel = Travel.all
+      #  else
+           @users = User.all
+           @travel = Travel.all
+      #  end
      end
 
     def contact_us
@@ -42,5 +58,11 @@ class PagesController < ApplicationController
     end
 
     def signup
+    end
+
+    private
+
+    def interest_params
+      params.require(:interest).permit(:interest)
     end
 end

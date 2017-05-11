@@ -3,56 +3,63 @@
 
 COMMUTER looks to match people with similar interests on their daily commute, so that this time can be spent enjoyably and productively.
 
-## Getting Started
+## User Story
+How much time do you spend commuting to work / school on a daily basis?
+Do you feel that your time could be put to better use during your commute?
+At Commuter thats what we thought so too!
+Your precious time could be put to great use, whether if its learning a new skill / language / getting a proof of concept.
+Your daily mundane commute will never be the same again, in fact its going be an enriching and well fulfilling experience.
 
-Provide instructions here about how to get your project running on our local machine. Do we just need to clone and open a certain file or do we need to install anything first.
+## Wireframes
+Some of our initial ideas...
+
+HOMEPAGE:
+![wireframe image 1](http://i.imgur.com/zw636yB.png)
+
+View Commuters Page:
+![wireframe image 2](http://i.imgur.com/IxY8aTj.png)
 
 ### ERD
 ![erd image](http://i.imgur.com/mRDlY6L.png)
 
+## Getting Started
+
+Instructions to run the project:
+1. Clone or download from https://github.com/wdi-sg/wdi-project-3-commuter
+2. git clone into your choice of text editor
+
 ### Prerequisites
 
-What is needed to install and run the project, how do we install them
+This project is build with ruby on rails and PostgreSQL. Download and install them before continuing to the following steps to install the application.
+
+Installing
+
+Fork, clone or download this repository to your desired directory. Install the required GEM files by entering the following code in your terminal in the directory.
 
 ```
-Code example
-
+bundle install
 ```
-
-### How to Use
-
-A step by step guide on how to install and use the project, for example if this is a game, how do we play it.
-
-
+Run the following code to create the database and tables then populate it with seed data.
 ```
-Code example
-```
-
-More steps...
-
-```
-until finished
-```
-
-
-## Tests
-
-Did you write automated tests? If so, how do we run them.
-
-
-```
-Code example
+rails db:create
+rails db:migrate
+rails db:seed
 ```
 
 ## Live Version
 
-Where is this deployed online (github pages, heroku etc), give us the link and any access details we need.
+Click here for the live version: https://commuter-wdi.herokuapp.com/
 
 ## Built With
 
-What did you use to build it, list the technologies, plugins, gems, packages etc.
+- HTML
+- CSS
+- Javascript (jquery)
+- Ruby on Rails
+- Postico
+- PostgreSQL
+- Heroku
 
-* [jQuery](http://jquery.com/) - jQuery for example is something you likely used
 
 ## Workflow
 
@@ -60,10 +67,12 @@ Did you write user stories, draw wireframes, use task tracking, produce ERDs? Di
 
 ## Authors
 
-Did you collaborate with others on this project, list them here
+- [Maria Wilson](https://github.com/hexhex23)
+- [Arif](https://github.com/ayepRahman)
+- [Felix](https://github.com/Pegasolta)
+- [Robin](https://github.com/cwxr)
 
-* **John McClain** - *Responsible for keeping vests white* - [GithubUserName](https://github.com/GithubUserName)
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used, for example [this was a useful starting point for creating this template](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2).
+* SUPER big thanks to our instructor, TAs & fellow classmates for their great help and patience. We would not have done this without your help!
