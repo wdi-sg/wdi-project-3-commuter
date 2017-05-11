@@ -1,6 +1,6 @@
 <%= render "partials/nav/signup_nav"%>
 
-<h2>Edit HELLO <%= resource_name.to_s.humanize %></h2>
+<h2>Edit<%= resource_name.to_s.humanize %></h2>
 
   <% if @user.avatar_url %>
   <%= image_tag @user.avatar_url(:display) %>

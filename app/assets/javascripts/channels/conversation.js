@@ -3,7 +3,8 @@ App.conversation = App.cable.subscriptions.create('ConversationChannel', {
   disconnected: function () {},
   received: function (data) {
     console.log('here at front', data)
-    $(`#message-box-${data.conversation_id}`).append(data.message)
+    // $(`#message-box-${data.conversation_id}`).append(data.message)
+    $('#message-box-' + data.conversation_id).append(data.message)
     var conversation = $('#conversations-list').find("[data-conversation-id='" + data['conversation_id'] + "']")
     //
     // if (data['window'] !== undefined) {
@@ -25,7 +26,7 @@ App.conversation = App.cable.subscriptions.create('ConversationChannel', {
     //   conversation.find('ul').append(data['message'])
     // }
     //
-    var messages_list = $(`#message-box-${data.conversation_id}`)
+    var messages_list = $('#message-box-' + data.conversation_id)
 
     var height = messages_list[0].scrollHeight
     messages_list.scrollTop(height)
