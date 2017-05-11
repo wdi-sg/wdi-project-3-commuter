@@ -71,6 +71,8 @@ gem 'autoprefixer-rails'
 #pry
 gem 'pry'
 
+gem 'redis'
+
 #devise
 gem 'devise'
 gem 'rails_12factor', group: :production
