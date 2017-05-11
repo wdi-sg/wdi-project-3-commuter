@@ -9,7 +9,7 @@ class ConversationsController < ApplicationController
 
     # Conversation.find_by(sender_id: current_user.id, recipient_id: recipient_params["recipient"]) || Conversation.find_by(recipient_id: current_user.id, sender_id: recipient_params["recipient"])
 
-    # puts @conversation.inspect
+     puts " conve #{@conversation.inspect}"
     # puts @conversation.first.id
 
     if @conversation.size > 0
@@ -25,7 +25,7 @@ class ConversationsController < ApplicationController
        end
     end
 
-    
+
 
     # @conversation = Conversation.new()
     # @conversation.recipient_id =
@@ -61,9 +61,7 @@ class ConversationsController < ApplicationController
   def close
     @conversation = Conversation.find(params[:id])
 
-    session[:conversations].delete(@conversation.id)
-
-    redirect_to chats_path
+    redirect_to matches_path
   end
 
   private
@@ -73,9 +71,7 @@ class ConversationsController < ApplicationController
     session[:conversations] << @conversation.id
   end
 
-  def conversated?
-    session[:conversations].include?(@conversation.id)
-  end
+  
 
   def recipient_params
     params.require(:conversation).permit(:recipient)

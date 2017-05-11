@@ -1,8 +1,9 @@
 class TravelsController < ApplicationController
 
   def index
-    @all_travels = Travel.all
-    gon.travels = Travel.all
+    # @all_travels = Travel.all
+    # gon.travels = Travel.all
+    @all_travels = Travel.where(user_id: current_user.id)
   end
 
   def show
