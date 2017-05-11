@@ -12,7 +12,7 @@
 
 // main navbar-default bg color
 .navbar-default {
-  background-color: $red-pink;
+  background-color: rgb(179, 0, 0);
 }
 
 // other pages nav
@@ -33,9 +33,9 @@
 
 .navbar-brand {
   color: #fff;
-  font-size: 34px;
+  font-size: 20px;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 2px;
 }
 
@@ -70,10 +70,9 @@
 
 .wrapper {
   border: 0 solid;
-  border-top: 10px solid $red-pink;
+  border-top: 10px solid rgb(179, 0, 0);
   padding: 0 0 50px;
   margin-top: 20px;
-  // padding: 0px 0px 130px;
 }
 
 .top-title {
@@ -109,7 +108,7 @@
 }
 
 .btn-submit {
-  background: $red-pink;
+  background: rgb(179, 0, 0);
   border: 0px;
   display: inline-block;
   font-size: 16px;
@@ -128,7 +127,7 @@
   -ms-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   margin-top: 25px;
-  border: 2px solid $red-pink;
+  border: 2px solid rgb(179, 0, 0);
 }
 
 .btn-submit:hover {

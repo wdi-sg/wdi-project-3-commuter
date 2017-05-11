@@ -9,7 +9,6 @@
 @import "home/style";
 @import "home/team";
 @import "home/about";
-@import "combos/style";
 @import "interest/style";
 @import "travels/style";
 @import "login/style";
@@ -37,6 +36,14 @@ ul {
 blockquote,
 q {
   quotes: none;
+}
+
+.sec-para {
+  text-align: left;
+}
+
+.txt-para {
+  text-align: left;
 }
 
 blockquote:after,
@@ -68,9 +75,12 @@ h6, {
 }
 
 #header {
-  margin-bottom: 300px;
+  margin-bottom: 150px;
 }
 
+#home-header {
+  margin-bottom: 20px;
+}
 /****/
 
 #cta-1 {
@@ -79,8 +89,8 @@ h6, {
 
 .cta-info {
   border: 0 solid;
-  border-top: 10px solid $red-pink;
-  border-bottom: 10px solid $red-pink;
+  border-top: 10px solid rgb(179, 0, 0);
+  border-bottom: 10px solid rgb(179, 0, 0);
   padding: 40px 0;
 }
 
@@ -170,12 +180,12 @@ h3.txt-tl {
 .btn-send {
   border-radius: 0;
   color: #000;
-  background-color: $red-pink;
+  background-color: rgb(179, 0, 0);
 }
 
 a,
 a:hover {
-  color: $red-pink;
+  color: rgb(179, 0, 0);
 }
 
 .cont-title {
