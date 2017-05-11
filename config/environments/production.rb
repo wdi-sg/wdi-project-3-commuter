@@ -36,8 +36,8 @@ Rails.application.configure do
 
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
-  config.web_socket_server_url = 'wss://commuter-wdi.herokuapp.com/cable'
-  config.action_cable.allowed_request_origins = [ 'https://commuter-wdi.herokuapp.com', 'https://commuter-wdi.herokuapp.com' ]
+   config.action_cable.url = 'https://commuter-wdi.herokuapp.com'
+  config.action_cable.allowed_request_origins = [ 'https://commuter-wdi.herokuapp.com', '/https:\/\/https://commuter-wdi.herokuapp.com*/' ]
   # config.action_cable.allowed_request_origins = ['https://action-cable-example.herokuapp.com', 'http://action-cable-example.herokuapp.com']
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
