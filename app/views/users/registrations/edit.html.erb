@@ -1,6 +1,7 @@
 <%= render "partials/nav/profile_nav"%>
-
+<div class="profile_pic">
 <%= cl_image_tag(current_user.avatar, :width => 200, :height => 200, :crop => :fill, :gravity => :face) %>
+</div>
 
 
 <div class="profile-container">
