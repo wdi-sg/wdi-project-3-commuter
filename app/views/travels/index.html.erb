@@ -5,8 +5,32 @@
 
   <section id="all-travel" class="section">
 
-    <div class="container">
-      <%= link_to "New Route", new_travel_path, class: "btn btn-success btn-lg" %>
+    <h1>Choosing Routes</h1>
+    <p>
+    <ul>
+      <li>Commuter allows you to display your commute through several fields. You can add as many routes as you please.</li>
+      <br />
+      <li><b>Start Route: </b>This is an MRT station selector where you can input the starting point of your MRT commute.</li>
+      <li><b>End Route: </b>This is the second MRT station selector where you can input the end point of your MRT commute.</li>
+      <li><b>Timeslot: </b>Our timeslots are designed to be in 2 hour chunks, so as to include some level of flexibility. If someone is travelling in the same 2 hour slot as you, then the exact times can be worked out through the chat functionality.</li>
+      <li><b>MRT Line: </b>This indicates the MRT line that comprises the majority of your commute.</li>
+      <br />
+      <li>Once you are ready, click on "Add New Route" below!</li>
+    </ul>
+    </p>
+
+    <div class="route_container">
+      <%= link_to "Add New Route", new_travel_path, class: "btn btn-success btn-lg" %>
+      </div>
+
+<h1>My Existing Routes</h1>
+<p>
+  <ul>
+    <li>
+      View any existing routes that you have here. You can also edit or delete them.
+    </li>
+  </ul>
+</p>
 
       <div class="columns">
         <% @all_travels.each do |travel| %>
@@ -15,24 +39,29 @@
 
           <p class="notification is-info">
 
-            Start Route: <%= travel.start_route%><br>
-            End Route: <%= travel.end_route %><br>
-            Timeslot: <%= travel.timeslot %><br>
-            MRT Line: <%= travel.mrt_line %><br>
+            <div class="card card-inverse" style="background-color: #FFC300; border-color: #FFC300;">
+              <div class="card-block">
 
+            <p class="card-text text-center">Start Route: <%= travel.start_route%><br></p>
+            <p class="card-text text-center">End Route: <%= travel.end_route %><br></p>
+            <p class="card-text text-center">imeslot: <%= travel.timeslot %><br></p>
+            <p class="card-text text-center">MRT Line: <%= travel.mrt_line %><br></p>
 
-              <%= link_to "Edit Route", edit_travel_path(travel.id), class: "btn btn-info btn-sm" %>
+              <div class="text-center">
+              <%= link_to "Edit Route", edit_travel_path(travel.id), class: "btn btn-info btn-sm" %></div>
+              <br />
 
-              <%= link_to "Delete Route",  travel_path(travel.id), method: :delete , class: "btn btn-danger btn-sm" %><br /><br />
+              <div class="text-center">
+              <%= link_to "Delete Route",  travel_path(travel.id), method: :delete , class: "btn btn-danger btn-sm" %><br /><br /></div>
 
           </p>
+        </div>
+      </div>
 
         </div>
 
         <% end %>
       </div>
-
-    </div>
 
   </section>
 

@@ -44,7 +44,7 @@ class TravelsController < ApplicationController
   def update
     @updated_travel = Travel.find(params[:id])
     if @updated_travel.update(filter_params)
-      redirect_to root_path
+      redirect_to travels_path
     end
 
     # @updated_travel.save_travel
@@ -54,7 +54,7 @@ class TravelsController < ApplicationController
   def destroy
     @deleted_travel = Travel.find(params[:id])
     @deleted_travel.destroy
-    redirect_to root_path
+    redirect_to travels_path
   end
 
   private
