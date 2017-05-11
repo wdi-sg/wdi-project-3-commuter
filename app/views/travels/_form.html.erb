@@ -1,31 +1,25 @@
 <%= form_for travel_data do |t| %>
   <div class="text-center">
     <%= t.label :start_route, class: 'label' %>
-    <p class="control">
       <%= t.select :start_route, Travel::START_ROUTE, class: 'input' %>
-    </p>
-  </div>
+  </div><br />
 
   <div class="text-center">
     <%= t.label :end_route, class: 'label' %>
-    <p class="control">
     <%= t.select :end_route, Travel::END_ROUTE, class: 'input' %>
-    </p>
-  </div>
+  </div><br />
 
   <div class="text-center">
     <%= t.label :timeslot, class: 'label' %>
-    <p class="control">
       <%= t.select :timeslot, Travel::TIMESLOT, class: 'input' %>
-    </p>
-  </div>
+  </div><br />
 
   <div class="text-center">
     <%= t.label :mrt_line, class: 'label' %>
-    <p class="control">
       <%= t.select :mrt_line, Travel::MRTLINE, class: 'input' %>
-    </p>
+
   </div>
+  <br />
 
   <div class="field">
     <p class="control">
