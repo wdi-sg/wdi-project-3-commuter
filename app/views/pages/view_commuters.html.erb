@@ -93,6 +93,7 @@
                         <%= each_travel.mrt_line%><br/>
                         Timeslot:
                         <%= each_travel.timeslot%><br/>
+                        <br />
                         <% end %>
                         <% end %>
                       </div>
@@ -113,9 +114,10 @@
                     <hr></hr>
                     <div class="list-container">
                       <% user.interests.each do |each_interest| %>
-                      <div class="col-xs-10">
+
                         <p><%= each_interest.interest %></p>
-                      </div>
+                        <br />
+
                       <% end %>
                     </div>
                   </div>
