@@ -36,7 +36,7 @@ Rails.application.configure do
 
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
-  config.action_cable.url = 'wss://commuter-wdi.herokuapp.com/cable'
+  config.web_socket_server_url = 'wss://commuter-wdi.herokuapp.com/cable'
   config.action_cable.allowed_request_origins = [ 'https://commuter-wdi.herokuapp.com', 'https://commuter-wdi.herokuapp.com' ]
   # config.action_cable.allowed_request_origins = ['https://action-cable-example.herokuapp.com', 'http://action-cable-example.herokuapp.com']
 
