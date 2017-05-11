@@ -52,6 +52,12 @@ table {
   border-spacing: 0;
 }
 
+.card-inverse {
+  width: 30%;
+  display: inline-block;
+  align-items: center;
+}
+
 h1,
 h2,
 h3,
@@ -62,7 +68,7 @@ h6, {
 }
 
 #header {
-  margin-bottom: 100px;
+  margin-bottom: 300px;
 }
 
 /****/
