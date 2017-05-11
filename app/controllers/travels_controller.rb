@@ -1,8 +1,9 @@
 class TravelsController < ApplicationController
 
   def index
-    @all_travels = Travel.all
-    gon.travels = Travel.all
+    # @all_travels = Travel.all
+    # gon.travels = Travel.all
+    @all_travels = Travel.where(user_id: current_user.id)
   end
 
   def show
@@ -36,7 +37,7 @@ class TravelsController < ApplicationController
     @submitted_travel = Travel.new(filter_params)
     @submitted_travel.user_id = current_user.id
     @submitted_travel.save
-    redirect_to profile_path
+    redirect_to travels_path
   end
 
   #url: /flight/:id/edit put request

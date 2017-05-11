@@ -1,16 +1,11 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  username: postgres
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-
+  pool: 5
 
 development:
   <<: *default
   database: commuter_dev
-
-  password: 12345
-
 
 test:
   <<: *default
@@ -19,11 +14,5 @@ test:
 
 production:
   <<: *default
-  database: commuter_prod
-  username:
-  password: 12345
-
-production:
-  <<: *default
-  database: <%= ENV['DATABASE_URL'] %>
-  password: 12345
+  database: d11h99fic6o86v
+  url: <%= ENV['DATABASE_URL'] %>

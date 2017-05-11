@@ -8,6 +8,7 @@
   <%= form_for :conversation, url: conversations_path do |f| %>
     <%= f.hidden_field :recipient, value: relation.id %>
     <%= f.submit 'Chat'%>
+    <%= link_to "Delete Chat", relationship_path(relation.id), class: "btn btn-warning", remote: true, method: :delete %>
   <% end %>
   <% end %>
 
@@ -16,6 +17,8 @@
   <%= form_for :conversation, url: conversations_path do |f| %>
     <%= f.hidden_field :recipient, value: relation.id %>
     <%= f.submit 'Chat'%>
+    <%= link_to "Delete Chat", relationship_path(relation.id), class: "btn btn-warning", remote: true, method: :delete %>
+
   <% end %>
   <% end %>
 </div>

@@ -9,14 +9,12 @@
       <%= link_to "New Interest!!!!", new_interest_path, class: "button is-warning" %> -->
 
       <div class="columns">
-        <% @all_interests.each do |interest| %>
+        <% @interest.each do |int| %>
         <div class="column">
           <p class="notification is-info">
 
-            Interest Category: <%= interest.interest_category%><br>
-            Interest: <%= interest.interest %><br>
-
-    <%= link_to "Add to My Profile",  interest_register_path(interest.id), method: :post , class: "button is-primary" %><br /><br />
+            Interest Category: <%= int.interest_category %><br>
+            Interest: <%= int.interest %><br>
 
           </p>
         </div>

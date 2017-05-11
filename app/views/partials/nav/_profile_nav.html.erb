@@ -1,15 +1,15 @@
 <!--header-->
-<header class="profile-header" id="header">
+<header class="edit-header" id="header">
   <div class="bg-color">
     <!--nav-->
     <nav class="nav navbar-default navbar-fixed-top">
-      <div class="profile-container">
+      <div class="edit-container">
         <div class="col-md-12">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-controls="navbar">
               <span class="fa fa-bars"></span>
             </button>
-            <a href="/profile" class="navbar-brand">Profile</a>
+            <a href="/users/edit" class="navbar-brand">Profile</a>
           </div>
 
           <div class="collapse navbar-collapse navbar-left" id="myleftnavbar">
@@ -19,6 +19,14 @@
                 <a href="/">
                   <span class="glyphicon glyphicon-home"></span>
                   Home</a>
+              </li>
+            </ul>
+
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/commuters">
+                  <span class="glyphicon glyphicon-user"></span>
+                  View Commuter</a>
               </li>
             </ul>
 
@@ -56,6 +64,7 @@
               <li><%= link_to " Login", new_user_session_path, :class =>'glyphicon glyphicon-log-in'  %></li>
 
               <% end %>
+
 
             </ul>
           </div>
