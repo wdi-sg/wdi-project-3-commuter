@@ -27,6 +27,7 @@ class InterestsController < ApplicationController
       interest_id = params[:interest_id]
       current_user.interests << Interest.find(interest_id)
       redirect_to edit_user_registration_path
+
     end
 
     private

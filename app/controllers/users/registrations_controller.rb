@@ -10,6 +10,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
+    # @all_interests = Interest.all
     @user.first_name = configure_sign_up_params[:first_name]
     @user.last_name = configure_sign_up_params[:last_name]
     @user.address = configure_sign_up_params[:address]

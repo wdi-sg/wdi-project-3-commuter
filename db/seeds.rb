@@ -30,3 +30,10 @@ Interest.create(
   interest: Faker::Company.buzzword
 )
 end
+
+300.times do
+Interest.create(
+  interest_category: Faker::Company.buzzword,
+  interest: Faker::Company.buzzword
+)
+end

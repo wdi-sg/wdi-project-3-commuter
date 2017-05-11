@@ -24,7 +24,9 @@ Rails.application.routes.draw do
 
     resources :travels
     resources :interests do
-    post :register
+
+      post :register
+
     end
     resources :conversations, only: [:create, :show] do
     member do

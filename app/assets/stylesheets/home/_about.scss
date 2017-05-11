@@ -1,0 +1,23 @@
+@import "variables";
+
+.about-col {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.5s ease-in-out;
+
+  &.pop{
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.steps-col {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.5s ease-in-out;
+
+  &.pop{
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
