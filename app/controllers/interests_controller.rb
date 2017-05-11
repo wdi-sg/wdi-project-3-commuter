@@ -21,18 +21,22 @@ class InterestsController < ApplicationController
     end
 
     def destroy
+      @interest = Interest.find(params[:id])
+      @user = current_user
+
+      @user.interests.delete(@interest)
+      redirect_to myinterests_path
     end
 
     def register
       interest_id = params[:interest_id]
       current_user.interests << Interest.find(interest_id)
-      redirect_to commuters_path
+      redirect_to myinterests_path
 
     end
 
     def display
       @user = User.find(current_user.id)
-      @interest = @user.interests.select("interest", "interest_category")
 
     end
 

@@ -5,14 +5,19 @@ COMMUTER looks to match people with similar interests on their daily commute, so
 
 ## Getting Started
 
-Provide instructions here about how to get your project running on our local machine. Do we just need to clone and open a certain file or do we need to install anything first.
+Instructions to run the project:
+1. Clone or download from https://github.com/wdi-sg/wdi-project-3-commuter
+2. git clone into your  
 
 ### ERD
 ![erd image](http://i.imgur.com/mRDlY6L.png)
 
 ### Prerequisites
 
-What is needed to install and run the project, how do we install them
+You will need to install the following:
+ - Ruby
+ - Rails
+ -
 
 ```
 Code example
