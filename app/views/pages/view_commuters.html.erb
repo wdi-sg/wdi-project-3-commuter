@@ -81,6 +81,7 @@
             </div>
             <!-- info -->
             <div class="info">
+              <!-- username -->
               <div class="title">
                 <a target="_blank" href="http://scripteden.com/"><%= user.first_name %>
                   <%= user.last_name %></a>
@@ -160,18 +161,14 @@
 
               </ul>
 
-          </ul>
+            </div>
 
+            <%= form_for :Relationship, url: matches_path, method: :post do |f| %>
+            <%= f.hidden_field :user ,value: user.id %>
+            <%= f.submit 'Match & Chat', class: 'btn btn-danger btn-bottom' %>
+            <% end %>
+          </div>
         </div>
-
+        <% end %>
       </div>
-      <%= form_for :Relationship, url: matches_path, method: :post do |f| %>
-      <%= f.hidden_field :user ,value: user.id %>
-      <%= f.submit 'Match & Chat', class: 'btn btn-danger btn-bottom' %>
-      <% end %>
     </div>
-
-    <% end %>
-
-  </div>
-</div>

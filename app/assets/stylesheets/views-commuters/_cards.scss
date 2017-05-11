@@ -17,6 +17,16 @@
     box-sizing: border-box;
 }
 
+.card {
+  border-color: grey;
+  border-style: solid;
+  margin: 2px;
+  border-width: 1px;
+  border-color: rgb(160,160,160);
+  margin: 5px;
+  padding: 5px;
+}
+
 .card-container {
   padding: 0 50px 0 50px;
 }
