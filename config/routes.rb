@@ -21,11 +21,15 @@ Rails.application.routes.draw do
     get '/signup' => 'pages#signup'
     get 'register' => 'users#new'
     post 'register' => 'users#create'
+    get '/myinterests' => 'interests#display'
 
     resources :travels
     resources :interests do
       post :register
     end
+
+    resources :relationships, only: [:destroy]
+
     resources :conversations, only: [:create, :show] do
     member do
     post :close

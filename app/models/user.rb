@@ -21,6 +21,7 @@ class User < ApplicationRecord
   has_many :conversations, foreign_key: :sender_id
   has_many :rconversations, foreign_key: :recipient_id, class_name: 'Conversation'
 
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
 
