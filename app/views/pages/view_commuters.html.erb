@@ -4,28 +4,44 @@
 <div class="views-container" id="search-container">
 
   <div class="row">
-    <form class="filter_form" , method="get">
-      <fieldset>
-        <!-- Routes -->
-        <div class="col-lg-4 col-sm-8">
+    <!-- Routes Form-->
+    <div class="col-lg-4 col-sm-8">
+      <form class="filter_form" , method="get">
+        <fieldset>
           <i>
             <h3>
               <b>R</b>OUTES<b>:</b>
             </h3>
           </i>
           <%= select("end_route", "start_route", Travel.all.collect(&:start_route), {:prompt => "All Routes"}, {:class => "chosen-select", :multiple => true, data: { placeholder: " Search Routes"} })%>
-        </div>
-        <!-- interest -->
-        <div class="col-lg-4 col-sm-8">
+          <!-- submit button -->
+          <button type="submit" class="btn btn-danger search-btn" value="Filter">Search</button>
+        </fieldset>
+      </form>
+    </div>
+    <!-- Interest form -->
+    <div class="col-lg-4 col-sm-8">
+      <form class="filter_form" , method="get">
+        <fieldset>
+          <!-- interest -->
           <i>
             <h3>
               <b>I</b>NTEREST<b>:</b>
             </h3>
           </i>
-          <%= select(":interest_category", "interest", Interest.all.collect(&:interest_category), {:prompt => "All Routes"}, {:class => "chosen-select", :multiple => true, data: { placeholder: " Select Interest By Category"} })%>
-        </div>
-        <!-- Time Slot -->
-        <div class="col-lg-4 col-sm-8">
+          <%= select(":interest_category", "interest", Interest.all.collect(&:interest), {:prompt => "Interest"}, {:class => "chosen-select", :multiple => true, data: { placeholder: " Select Interest"} })%>
+
+          <!-- submit button -->
+          <button type="submit" class="btn btn-danger search-btn" value="Filter">Search</button>
+          <!-- end -->
+        </fieldset>
+      </form>
+    </div>
+    <!-- Timeslot -->
+    <div class="col-lg-4 col-sm-8">
+      <form class="filter_form" , method="get">
+        <fieldset>
+          <!-- Time Slot -->
           <i>
             <h3>
               <b>T</b>IME
@@ -33,22 +49,15 @@
             </h3>
           </i>
           <select data-placeholder=" Time Slot" class="chosen-select" multiple tabindex="1">
-            <option value=""></option>
-            <option value="United States">United States</option>
-            <option value="United Kingdom">United Kingdom</option>
-            <option value="Afghanistan">Afghanistan</option>
-            <option value="Albania">Albania</option>
-            <option value="Serbia">Serbia</option>
-            <option value="Seychelles">Seychelles</option>
-            <option value="Sierra Leone">Sierra Leone</option>
-            <option value="Singapore">Singapore</option>
+            <option value="">Time slot here!!!!</option>
           </select>
-        </div>
-        <!-- submit button -->
-        <button type="submit" class="btn btn-danger search-btn">Search</button>
-        <!-- end -->
-      </fieldset>
-    </form>
+          <!-- submit button -->
+          <button type="submit" class="btn btn-danger search-btn" value="Filter">Search</button>
+          <!-- end -->
+        </fieldset>
+      </form>
+    </div>
+    <!-- End Form -->
   </div>
 
 </div>
@@ -59,7 +68,6 @@
   <div class="row card-row">
     <!-- start -->
     <% @users.each do |user| %>
-    <% if !current_user.interesteds.include?(user) && !current_user.interestlist.include?(user) %>
     <!-- card -->
     <div class="col-xs-12 col-md-3 card-col">
 
@@ -74,40 +82,95 @@
             <a target="_blank" href="http://scripteden.com/"><%= user.first_name %>
               <%= user.last_name %></a>
           </div>
-          <div class="desc">
-            <b>Personal Description:</b>
-            <%= user.personal_description %>
-          </div>
-          <!-- interests -->
-          <% user.interests.each do |each_interest| %>
-          <div class="desc">
-            <b>Interest:</b>
-            <%= each_interest.interest %>
-          </div>
-          <% end %>
-          <!-- travel -->
-          <% @travel.each do |each_travel| %>
-          <% if each_travel.user_id === user.id %>
-          <div class="desc">
-            <b>Routes:</b>
-            <%= each_travel.start_route%>
-          </div>
-          <% end %>
-          <% end %>
+          <!-- list group -->
+          <ul class="list-group desc">
+            <!-- personal_description -->
+            <li class="list-group-item">
+              <div class="row toggle" id="dropdown-detail-1" data-toggle="detail-1">
+                <div class="col-xs-10">
+                  <b>Personal Description:</b>
+                </div>
+                <div class="col-xs-2">
+                  <i class="fa fa-chevron-down pull-right"></i>
+                </div>
+              </div>
+              <div id="detail-1">
+                <hr></hr>
+                <div class="container">
+                  <div class="col-md-3">
+                    <p><%= user.personal_description %></p>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- routes -->
+            <li class="list-group-item">
+              <div class="row toggle" id="dropdown-detail-2" data-toggle="detail-2">
+                <div class="col-xs-10">
+                  <b>My travel routes are :</b>
+                </div>
+                <div class="col-xs-2">
+                  <i class="fa fa-chevron-down pull-right"></i>
+                </div>
+              </div>
+              <div id="detail-2">
+                <hr></hr>
+                <div class="container">
+                  <div class="col-md-3">
+                    <% @travel.each do |each_travel| %>
+                    <% if each_travel.user_id === user.id %>
+                    Start Station:
+                    <%= each_travel.start_route%><br/>
+                    End Station:
+                    <%= each_travel.end_route%><br/>
+                    MRT Line:
+                    <%= each_travel.mrt_line%><br/>
+                    Timeslot:
+                    <%= each_travel.timeslot%><br/>
+                    <% end %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- interests -->
+            <li class="list-group-item">
+              <div class="row toggle" id="dropdown-detail-3" data-toggle="detail-3">
+                <div class="col-xs-10">
+                  <b>My interest are :</b>
+                </div>
+                <div class="col-xs-2">
+                  <i class="fa fa-chevron-down pull-right"></i>
+                </div>
+              </div>
+              <div id="detail-3">
+                <hr></hr>
+                <div class="list-container">
+                  <% user.interests.each do |each_interest| %>
+                  <div class="col-xs-10">
+                    <p><%= each_interest.interest %></p>
+                  </div>
+                  <% end %>
+                </div>
+              </div>
+            </li>
 
-          <%= form_for :Relationship, url: matches_path, method: :post do |f| %>
-          <%= f.hidden_field :user ,value: user.id %>
-          <%= f.submit 'Match & Chat', class: 'btn btn-danger btn-bottom' %>
-          <% end %>
+          </ul>
 
-        </div>
-      </div>
+      </ul>
+
     </div>
 
-    <% end %>
-    <% end %>
-
   </div>
+  <%= form_for :Relationship, url: matches_path, method: :post do |f| %>
+  <%= f.hidden_field :user ,value: user.id %>
+  <%= f.submit 'Match & Chat', class: 'btn btn-danger btn-bottom' %>
+  <% end %>
+</div>
+
+<% end %>
+
+</div>
 
 </div>
 

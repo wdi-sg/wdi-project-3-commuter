@@ -1,6 +1,37 @@
 <%= render "partials/nav/matches_nav"%>
 
-<h1>Matches!!!!!!!!</h1>
+
+<div id="modalShareBody" class="modal-body">
+  <div class="panel" id="panelGuest"  >
+    The div where i want the y-scrollbar
+    <div class="row">
+      <div class="matches-container">
+        <% current_user.interesteds.each do |relation| %>
+        <%= relation.first_name %>
+        <%= form_for :conversation, url: conversations_path do |f| %>
+          <%= f.hidden_field :recipient, value: relation.id %>
+          <%= f.submit 'Chat'%>
+        <% end %>
+        <% end %>
+
+        <% current_user.interestlist.each do |relation| %>
+        <%= relation.first_name %>
+        <%= form_for :conversation, url: conversations_path do |f| %>
+          <%= f.hidden_field :recipient, value: relation.id %>
+          <%= f.submit 'Chat'%>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+  <div id="panelDetail" class="panel">
+  here the chat going to be</div>
+</div>
+
+
+<!-- former code -->
+<!-- <h1>Matches!!!!!!!! /relationships/index.html.erb</h1>
 
 <div class="matches-container">
   <% current_user.interesteds.each do |relation| %>
@@ -18,4 +49,4 @@
     <%= f.submit 'Chat'%>
   <% end %>
   <% end %>
-</div>
+</div> -->

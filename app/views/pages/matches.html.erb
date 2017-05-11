@@ -1,20 +1,21 @@
 <%= render "partials/nav/matches_nav"%>
 
+<!-- former codes -->
 <h1>Matches</h1>
 <div class="container">
   <% current_user.interesteds.each do |relation| %>
   <%= relation.first_name %>
   <%= form_for :conversation, url: conversations_path do |f| %>
-    <%= f.hidden_field :recipient, value: relation.id %>
-    <%= f.submit 'Chat'%>
+  <%= f.hidden_field :recipient, value: relation.id %>
+  <%= f.submit 'Chat'%>
   <% end %>
   <% end %>
 
   <% current_user.interestlist.each do |relation| %>
   <%= relation.first_name %>
   <%= form_for :conversation, url: conversations_path do |f| %>
-    <%= f.hidden_field :recipient, value: relation.id %>
-    <%= f.submit 'Chat'%>
+  <%= f.hidden_field :recipient, value: relation.id %>
+  <%= f.submit 'Chat'%>
   <% end %>
   <% end %>
 </div>
