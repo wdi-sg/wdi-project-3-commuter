@@ -25,16 +25,21 @@
       <div class="row card-row">
         <!-- start -->
         <% if @users %>
-        <% @users.each do |user| %>
+        <% @users.each.with_index do |user,index| %>
         <!-- card -->
-        <div class="col-xs-12 col-md-3 card-col">
-      <div class="card hovercard">
-        <div class="cardheader"></div>
-        <% if user.avatar %>
-        <div class="avatar">
-          <%= cl_image_tag(user.avatar, :width => 200, :height => 200, :crop => :fill, :gravity => :face, :radius => :max) %>
-        </div>
+
+        <% if (index+1)%4 == 0%>
+          <div class='row'>
         <% end %>
+
+        <div class="col-xs-12 col-md-3 card-col">
+          <div class="card hovercard">
+            <div class="cardheader"></div>
+            <% if user.avatar %>
+            <div class="avatar">
+              <%= cl_image_tag(user.avatar, :width => 200, :height => 200, :crop => :fill, :gravity => :face, :radius => :max) %>
+            </div>
+            <% end %>
             <!-- info -->
             <div class="info">
               <!-- username -->
@@ -46,7 +51,7 @@
               <ul class="list-group desc">
                 <!-- personal_description -->
                 <li class="list-group-item">
-                  <div class="row toggle" id="dropdown-detail-1" data-toggle="detail-1">
+                  <div class="row toggle" id="dropdown-detail-<%= index %>" data-toggle="detail-1">
                     <div class="col-xs-10">
                       <b>Personal Description:</b>
                     </div>
@@ -54,7 +59,7 @@
                       <i class="fa fa-chevron-down pull-right"></i>
                     </div>
                   </div>
-                  <div id="detail-1">
+                  <div id="detail-1" class="hideme">
                     <hr></hr>
                     <div class="container">
                       <div class="col-md-3">
@@ -73,7 +78,7 @@
                       <i class="fa fa-chevron-down pull-right"></i>
                     </div>
                   </div>
-                  <div id="detail-2">
+                  <div id="detail-2" class="hideme">
                     <hr></hr>
                     <div class="container">
                       <div class="col-md-3">
@@ -103,7 +108,7 @@
                       <i class="fa fa-chevron-down pull-right"></i>
                     </div>
                   </div>
-                  <div id="detail-3">
+                  <div id="detail-3" class='hideme'>
                     <hr></hr>
                     <div class="list-container">
                       <% user.interests.each do |each_interest| %>
@@ -114,7 +119,9 @@
                     </div>
                   </div>
                 </li>
+
               </ul>
+
             </div>
             <%= form_for :Relationship, url: matches_path, method: :post do |f| %>
             <%= f.hidden_field :user ,value: user.id %>
@@ -122,7 +129,12 @@
             <% end %>
           </div>
         </div>
+        <% if (index+1)%4 == 0 %>
+          </div>
+        <% end %>
         <% end %>
         <% end %>
       </div>
     </div>
+  </div>
+</div>

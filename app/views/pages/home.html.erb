@@ -1,35 +1,29 @@
 <%= render "partials/nav/home_nav"%>
 
-<div class="home-container">
   <div class="container text-center">
     <div class="wrapper wow">
       <h2 class="top-title">Welcome To</h2>
       <h5 class="title">Commuter</h5>
       <h6 class="top-title">Re-Energise Your</h6>
       <h6 class="top-title">Daily Commute</h6>
-      <a class="btn btn-submit" href="/users/sign_in">
-        <b>Login</b>
-      </a>
-      <br>
-      <a class="btn btn-submit" href="/users/sign_up">
-        <b>Join Us Commuter!</b>
-      </a>
     </div>
   </div>
-</div>
-</header>
 <!-- === -->
 <section id="cta-1">
 <div class="container">
   <div class="row">
     <div class="cta-info text-center">
       <h2>
-        <i>Commuter
-          <b>Matching</b>
-          individual travelling
-          <br>
-          so they can
-          <b>Share Skill and Interest</b>
+        <i>Kiss goodbye to
+          <b>boring</b>
+          and
+          <b>unproductive</b>
+          daily commutes.<br />
+          Let us
+          <b>match you</b>
+          with your perfect
+          <b>commuter buddy.</b>
+
         </i>
       </h2>
     </div>
@@ -47,12 +41,9 @@
         </h2>
         <hr class="botm-line">
         <p class="sec-para">
-          <b>About Commuter:</b>
-          How much time do you spend commuting to work / school on a daily basis?
-Do you feel that your time could be put to better use during your commute?
-At Commuter thats what we thought so too!
-Your precious time could be put to great use, whether if its learning a new skill / language / getting a proof of concept.
-Your daily mundane commute will never be the same again, in fact its going be an enriching and well fulfilling experience.</p>
+          How much time do you spend commuting to work or school on a daily basis? Do you feel that your time could be put to better use during your commute? At Commuter, we thought so too! Your precious time could be put to great use, whether its learning a new skill, language or getting a proof of concept.<br />
+          <br />
+          <b>Your mundane daily commute will never be the same again.</b> Commuter is a platform where you can find other like-minded people who are travelling on the same route as you. This provides the opportunity for a 30min crash course on bird watching or a language buddy to sharpen your French skills. The choice is yours.</p>
 
       </div>
     </div>
@@ -64,9 +55,9 @@ Your daily mundane commute will never be the same again, in fact its going be an
           <i class="fa fa-pencil"></i>
         </div>
         <div class="icon-text">
-          <h3 class="txt-tl">STEPS 1: Create Your Profile</h3>
-          <p class="txt-para">Let everyone know what you are looking for in your commuter buddy and what you can offer. For example, you could be looking for a quick 30 min Mandarin lesson or even just a simple conversation on current affairs.</p>
-          <p>Include a profile picture and also details on your daily commute.</p>
+          <h3 class="txt-tl">First: Create Your Profile</h3>
+          <p class="txt-para">Let everyone know what you are looking for in your commuter buddy and what you can offer. The more details you add in your personal description, the more effective your matches will be.</p>
+          <p class="txt-para">Add your various interests to your profile, so that other commuters can search for you as their potential commuter buddy. Include a profile picture and also details on your daily commute.</p>
         </div>
       </div>
       <!-- === -->
@@ -75,8 +66,9 @@ Your daily mundane commute will never be the same again, in fact its going be an
           <i class="fa fa-compress"></i>
         </div>
         <div class="icon-text">
-          <h3 class="txt-tl">Step 2: Find a Match</h3>
-          <p class="txt-para">Browse through potential matches on our search page and connect with fellow commuters by letting them know you are interested in sharing your commute with them. If they say yes too, then we have a match.</p>
+          <h3 class="txt-tl">Next: Find a Match</h3>
+          <p class="txt-para">Browse through potential commuter buddies on our <%= link_to "view commuters", commuters_path %> page and connect with fellow commuters by letting them know you are interested in sharing your commute with them.</p>
+          <p class="txt-para">You can also use the chat functionality to organise the finer details of any journey sharing experience.</p>
         </div>
       </div>
       <!-- === -->
@@ -85,8 +77,8 @@ Your daily mundane commute will never be the same again, in fact its going be an
           <i class="fa fa-map-marker"></i>
         </div>
         <div class="icon-text">
-          <h3 class="txt-tl">Step 3: Finally, Go on your Commute!</h3>
-          <p class="txt-para">Re-energise your commute! Meet your commuter buddy and have a good time.</p>
+          <h3 class="txt-tl">Finally: Enjoy!</h3>
+          <p class="txt-para">Re-energise your commute: Meet your commuter buddy and have a good time.</p>
         </div>
       </div>
       <!-- === -->
@@ -96,15 +88,6 @@ Your daily mundane commute will never be the same again, in fact its going be an
 </section>
 <!---->
 <section class="section-padding parallax bg-image-2 section wow" id="cta-2">
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="cta-txt">
-        <h2 class="sub-title text-center">COMMUTER'S JOURNEY</h2>
-      </div>
-    </div>
-  </div>
-</div>
 </section>
 <!---->
 <!-- Team Section -->
@@ -112,34 +95,16 @@ Your daily mundane commute will never be the same again, in fact its going be an
 <div class="container">
   <div class="row">
     <div class="col-lg-12 text-center">
-      <h1 class="section-heading"><b>Our Amazing Team</b></h1>
-      <h3 class="section-subheading text-muted">Your success is our strategy!</h3>
+      <h1 class="section-heading"><b>Commuter Team</b></h1>
     </div>
   </div>
   <div class="row team-row">
     <!-- Maria -->
     <div class="col-sm-3 team-col">
       <div class="team-member">
-        <%= image_tag("maria.jpg", class: "img-responsive img-circle", alt: "no image")  %>
+        <%= image_tag("maria.png", class: "img-responsive img-circle", alt: "no image")  %>
         <h4>Maria Wilson</h4>
         <p class="text-muted">Team Leader</p>
-        <ul class="list-inline social-buttons">
-          <li>
-            <a href="#">
-              <i class="fa fa-twitter"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa fa-facebook"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa fa-linkedin"></i>
-            </a>
-          </li>
-        </ul>
       </div>
     </div>
     <!-- Robin -->
@@ -148,23 +113,6 @@ Your daily mundane commute will never be the same again, in fact its going be an
         <%= image_tag("robin.png", class: "img-responsive img-circle", alt: "no image")  %>
         <h4>Robin Chua</h4>
         <p class="text-muted">Git & Chat Master</p>
-        <ul class="list-inline social-buttons">
-          <li>
-            <a href="#">
-              <i class="fa fa-twitter"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa fa-facebook"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa fa-linkedin"></i>
-            </a>
-          </li>
-        </ul>
       </div>
     </div>
     <!-- Arif -->
@@ -173,23 +121,6 @@ Your daily mundane commute will never be the same again, in fact its going be an
         <%= image_tag("arif.jpg", class: "img-responsive img-circle", alt: "no image")  %>
         <h4>Arif Rahman</h4>
         <p class="text-muted">Lead Designer</p>
-        <ul class="list-inline social-buttons">
-          <li>
-            <a href="#">
-              <i class="fa fa-twitter"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa fa-facebook"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa fa-linkedin"></i>
-            </a>
-          </li>
-        </ul>
       </div>
     </div>
     <!-- felix -->
@@ -198,60 +129,12 @@ Your daily mundane commute will never be the same again, in fact its going be an
         <%= image_tag("felix.JPG", class: "img-responsive img-circle", alt: "no image")  %>
         <h4>Felix Tan</h4>
         <p class="text-muted">Rails Master</p>
-        <ul class="list-inline social-buttons">
-          <li>
-            <a href="#">
-              <i class="fa fa-twitter"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa fa-facebook"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa fa-linkedin"></i>
-            </a>
-          </li>
-        </ul>
       </div>
     </div>
     <!-- name end -->
   </div>
-
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 text-center">
-      <p class="large text-muted">We hope we had impressed you so far and we will continue striving to do so!.</p>
-    </div>
-  </div>
-</div>
 </section>
-<!---->
-<section class="section-padding wow" id="contact">
-<div class="container">
-  <div class="row white">
-    <div class="col-md-8 col-sm-12">
-      <div class="section-title">
-        <h2 class="head-title black">Contact Us</h2>
-        <hr class="botm-line">
-        <p class="sec-para black">Join us Commuter's today!, feel free to contact us!</p>
-      </div>
-    </div>
 
-  </div>
-  <div class="col-md-4 col-sm-10">
-    <div class="location-info">
-      <p class="white">
-        <span aria-hidden="true" class="fa fa-map-marker"></span>8 Claymore Hill, Singapore</p>
-      <p class="white">
-        <span aria-hidden="true" class="fa fa-phone"></span>Phone: +65 commuter</p>
-      <p class="white">
-        <span aria-hidden="true" class="fa fa-envelope"></span>Email:
-        <a href="" class="link-dec">awesome@commuter.com</a>
-      </p>
-    </div>
-  </div>
 </div>
 </div>
 </div>
