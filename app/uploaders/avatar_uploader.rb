@@ -11,4 +11,8 @@ class AvatarUploader < CarrierWave::Uploader::Base
     process :resize_to_fill => [200, 200, :north]
   end
 
+  # def default_url
+  #  "/assets/images/" + ["lordgaben.jpg"].compact.join('_')
+  # end
+
 end

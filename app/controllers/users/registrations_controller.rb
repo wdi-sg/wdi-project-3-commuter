@@ -1,5 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
+  after_action :set_pic, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
@@ -15,8 +16,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user.last_name = configure_sign_up_params[:last_name]
     @user.address = configure_sign_up_params[:address]
     @user.personal_description = configure_sign_up_params[:personal_description]
-    @user.avatar = configure_sign_up_params[:avatar]
+
+
     @user.save
+    puts "AVATAR BE HERE #{@user.inspect}"
 
   end
 
@@ -32,7 +35,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user.last_name = configure_sign_up_params[:last_name]
     @user.address = configure_sign_up_params[:address]
     @user.personal_description = configure_sign_up_params[:personal_description]
-    @user.avatar = configure_sign_up_params[:avatar]
+
+
+      @user.avatar = configure_sign_up_params[:avatar]
+
+
+
     @user.save
   end
 
@@ -56,6 +64,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def configure_sign_up_params
     params.require(:user).permit(:first_name, :last_name, :address, :personal_description, :email, :password, :password_confirmation, :avatar)
   end
+
+
+
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params
