@@ -4,11 +4,12 @@
   <div class="row">
     <!-- Routes Form-->
     <!-- Interest form -->
-    <div class="col-lg-4 col-sm-8">
+    <div class="search_form">
       <%= form_for :interest , url:commuters_path do |f| %>
-        <%= f.label "Interest"%>
+        <%= f.label "Commuter Search", {class: "search_label"} %><br />
         <%= f.collection_select :interest, Interest.all, :id, :interest, {prompt: "Select an Interest"}, {class: "chosen-select"}%>
-        <%= f.submit "Search" %>
+        <br /><br />
+        <%= f.submit "Search", {class: "btn btn-danger"} %>
       <% end %>
     </div>
   </div>
