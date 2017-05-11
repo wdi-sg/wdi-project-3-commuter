@@ -27,16 +27,12 @@ class InterestsController < ApplicationController
       interest_id = params[:interest_id]
       current_user.interests << Interest.find(interest_id)
       redirect_to commuters_path
-<<<<<<< HEAD
-=======
-
     end
 
     def display
       @user = User.find(current_user.id)
       @interest = @user.interests.select("interest", "interest_category")
 
->>>>>>> 30674d367da8237d00fa57ee27cb12191cc2d981
     end
 
     private

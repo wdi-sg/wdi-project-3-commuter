@@ -1,19 +1,8 @@
 <%= render "partials/nav/views_commuters_nav"%>
-<<<<<<< HEAD
 <div class="filter_options_container">
   <br><br>
 <!-- search bar -->
 <div class="views-container" id="search-container">
-=======
-
-
-<div class="filter_options_container">
-  <br><br>
-
-<!-- search bar -->
-<div class="views-container" id="search-container">
-
->>>>>>> 30674d367da8237d00fa57ee27cb12191cc2d981
   <div class="row">
     <form class="filter_form" , method="get">
       <fieldset>
@@ -25,10 +14,6 @@
             </h3>
           </i>
           <%= select("end_route", "start_route", Travel.all.collect{ |x| "#{x.start_route} - #{x.end_route}" }, {:prompt => 'All Routes'},{:class => "chosen-select", :multiple => true, data: { placeholder: " Search Routes"} }) %>
-<<<<<<< HEAD
-=======
-
->>>>>>> 30674d367da8237d00fa57ee27cb12191cc2d981
         </div>
         <!-- interest -->
         <div class="col-lg-4 col-sm-8">
@@ -64,37 +49,19 @@
       </fieldset>
     </form>
   </div>
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 30674d367da8237d00fa57ee27cb12191cc2d981
 </div>
 <!-- end -->
 <!-- card-title -->
 <div class="card-container" id="card-container">
-<<<<<<< HEAD
 <br /><br />
   <div class="container-fluid">
     <div class="row">
-=======
-
-<br /><br />
-
-  <div class="container-fluid">
-    <div class="row">
-
->>>>>>> 30674d367da8237d00fa57ee27cb12191cc2d981
   <div class="row card-row">
     <!-- start -->
     <% @users.each do |user| %>
     <% if !current_user.interesteds.include?(user) && !current_user.interestlist.include?(user) %>
     <!-- card -->
     <div class="col-xs-12 col-md-3 card-col">
-<<<<<<< HEAD
-=======
-
->>>>>>> 30674d367da8237d00fa57ee27cb12191cc2d981
       <div class="card hovercard">
         <div class="cardheader"></div>
         <div class="avatar">
@@ -126,31 +93,15 @@
           </div>
           <% end %>
           <% end %>
-<<<<<<< HEAD
-=======
-
->>>>>>> 30674d367da8237d00fa57ee27cb12191cc2d981
           <%= form_for :Relationship, url: matches_path, method: :post do |f| %>
           <%= f.hidden_field :user ,value: user.id %>
           <%= f.submit 'Match & Chat', class: 'btn btn-danger btn-bottom' %>
           <% end %>
-<<<<<<< HEAD
         </div>
       </div>
     </div>
     <% end %>
     <% end %>
-=======
-
-        </div>
-      </div>
-    </div>
-
-    <% end %>
-    <% end %>
-
-
->>>>>>> 30674d367da8237d00fa57ee27cb12191cc2d981
       <% @users.each do |user| %>
       <div class="col-sm-4">
         <div class="card">
@@ -187,29 +138,4 @@
       <% end %>
     </div>
   </div>
-<<<<<<< HEAD
 </div>
-=======
-
-
-</div>
-
-<!-- former codes -->
-<!-- <div class="filter_options_container">
-
-  <form class="filter_form" , method="get">
-    <%= select("end_route", "start_route", Travel.all.collect(&:start_route), {:prompt => 'All Routes'}) %><br>
-    <input type="submit" value="Filter"/>
-  </form>
-
-  <br><br>
-
-  <form class="filter_form" , method="get">
-    <% Interest.all.each do |i| %>
-    <%= check_box_tag("interests_category[]", i.id) %>
-    <%= i.interest %>
-    <% end %>
-    <input type="submit" value="Filter"/>
-  </form>
-</div> -->
->>>>>>> 30674d367da8237d00fa57ee27cb12191cc2d981
