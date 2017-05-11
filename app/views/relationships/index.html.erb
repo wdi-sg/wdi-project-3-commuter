@@ -1,6 +1,6 @@
 <%= render "partials/nav/matches_nav"%>
 
-<h1>Matches!</h1>
+<h1>Matches</h1>
 
 <div class="matches-container">
   <% current_user.interesteds.each do |relation| %>
@@ -20,9 +20,11 @@
     <%= link_to "Delete Chat", relationship_path(relation.id), class: "btn btn-warning", remote: true, method: :delete %>
 
   <% end %>
+    <br /><br />
   <% end %>
 </div>
 
+  <br /><br />
 
 
 
