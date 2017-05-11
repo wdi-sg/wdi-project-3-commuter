@@ -1,7 +1,7 @@
 
 # Commuter
 
-This is the best team ever.
+COMMUTER looks to match people with similar interests on their daily commute, so that this time can be spent enjoyably and productively.
 
 ## Getting Started
 

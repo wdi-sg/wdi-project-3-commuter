@@ -36,7 +36,7 @@ class TravelsController < ApplicationController
     @submitted_travel = Travel.new(filter_params)
     @submitted_travel.user_id = current_user.id
     @submitted_travel.save
-    redirect_to profile_path
+    redirect_to travels_path
   end
 
   #url: /flight/:id/edit put request
