@@ -1,6 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
-  after_action :set_pic, only: [:create]
+
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
@@ -36,12 +36,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user.address = configure_sign_up_params[:address]
     @user.personal_description = configure_sign_up_params[:personal_description]
 
-
-      @user.avatar = configure_sign_up_params[:avatar]
-
-
-
+      picture = Cloudinary::Uploader.upload(configure_sign_up_params[:avatar])
+      puts "CLOUDINARY #{picture}"
+    @user.avatar = picture['public_id']
     @user.save
+    puts "HIHI #{@user.inspect}"
   end
 
   # DELETE /resource
