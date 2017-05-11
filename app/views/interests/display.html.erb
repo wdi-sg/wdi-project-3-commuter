@@ -1,6 +1,7 @@
 <%= render "partials/nav/interest_nav"%>
 
 <!-- add div container by arif -->
+<h1>My Interests</h1>
 
 <div class="interest-container">
 
@@ -13,12 +14,20 @@
         <div class="column">
           <p class="notification is-info">
 
-            Interest Category: <%= int.interest_category %><br>
-            Interest: <%= int.interest %><br>
-            <%= link_to "Delete Interest",  interest_path(int.id), method: :delete , class: "btn btn-danger btn-sm" %>
+            <div class="card card-inverse" style="background-color: #FFC300; border-color: #FFC300;">
+              <div class="card-block">
+                <h3 class="card-title text-center">Interest: <%= int.interest %><br></h3>
+                <p class="card-text text-center">Interest Category: <%= int.interest_category %></p>
+                <div class="text-center">
+                  <%= link_to "Delete Interest",  interest_path(int.id), method: :delete , class: "btn btn-danger btn-sm" %>
+                </div>
+                    <br /><br />
+              </div>
+            </div>
 
           </p>
         </div>
+
         <% end %>
       </div>
     </div>
