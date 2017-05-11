@@ -4,20 +4,21 @@
 
 <div class="interest-container">
 
-  <!-- <section id="all-interest" class="section">
-    <div class="container">
-
-      <%= link_to "New Interest!!!!", new_interest_path, class: "button is-warning" %> -->
-
       <div class="columns">
         <% @all_interests.each do |interest| %>
         <div class="column">
           <p class="notification is-info">
 
-            Interest Category: <%= interest.interest_category%><br>
-            Interest: <%= interest.interest %><br>
-
-    <%= link_to "Add to My Profile",  interest_register_path(interest.id), method: :post , class: "btn btn-info btn-sm" %><br /><br />
+            <div class="card card-inverse" style="background-color: #FFC300; border-color: #FFC300;">
+              <div class="card-block">
+                <h3 class="card-title text-center">Interest: <%= interest.interest %></h3>
+                <p class="card-text text-center">Interest Category: <%= interest.interest_category%></p>
+                <div class="text-center">
+                <%= link_to "Add to My Profile",  interest_register_path(interest.id), method: :post , class: "btn btn-danger" %>
+                </div>
+                    <br /><br />
+              </div>
+            </div>
 
           </p>
         </div>
