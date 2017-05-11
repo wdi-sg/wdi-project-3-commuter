@@ -1,24 +1,19 @@
 <%= render "partials/nav/views_commuters_nav"%>
-
 <!-- search bar -->
 <div class="views-container" id="search-container">
   <div class="row">
     <!-- Routes Form-->
-
     <!-- Interest form -->
     <div class="col-lg-4 col-sm-8">
       <%= form_for :interest , url:commuters_path do |f| %>
         <%= f.label "Interest"%>
         <%= f.collection_select :interest, Interest.all, :id, :interest, {prompt: "Select an Interest"}, {class: "chosen-select"}%>
-
         <%= f.submit "Search" %>
       <% end %>
     </div>
   </div>
 </div>
     <!-- Timeslot -->
-
-
     <!-- End Form -->
   </div>
 </div>
@@ -33,13 +28,13 @@
         <% @users.each do |user| %>
         <!-- card -->
         <div class="col-xs-12 col-md-3 card-col">
-          <div class="card hovercard">
-            <div class="cardheader"></div>
-            <% if user.avatar_url %>
-            <div class="avatar">
-              <%= image_tag user.avatar_url(:display) %>
-            </div>
-            <% end %>
+      <div class="card hovercard">
+        <div class="cardheader"></div>
+        <% if user.avatar %>
+        <div class="avatar">
+          <%= cl_image_tag(user.avatar, :width => 200, :height => 200, :crop => :fill, :gravity => :face, :radius => :max) %>
+        </div>
+        <% end %>
             <!-- info -->
             <div class="info">
               <!-- username -->
@@ -119,9 +114,7 @@
                     </div>
                   </div>
                 </li>
-
               </ul>
-
             </div>
             <%= form_for :Relationship, url: matches_path, method: :post do |f| %>
             <%= f.hidden_field :user ,value: user.id %>

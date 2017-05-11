@@ -1,6 +1,6 @@
 <%= render "partials/nav/profile_nav"%>
 
-<%= image_tag @user.avatar_url(:display) %>
+<%= cl_image_tag(current_user.avatar, :width => 200, :height => 200, :crop => :fill, :gravity => :face) %>
 
 
 <div class="profile-container">
@@ -51,7 +51,8 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="Upload photo">Upload photo</label><br /><br />
           <div class="col-md-4">
-            <%= f.file_field :avatar %>
+
+          <%= f.file_field(:avatar) %>
           </div>
         </div>
         <!-- personal_description -->
