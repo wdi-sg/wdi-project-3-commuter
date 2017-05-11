@@ -1,0 +1,30 @@
+
+#modalShare {
+    margin-left:-200px;
+    height: 300px;
+ }
+
+@media (max-width: 767px) {
+    #modalShare {
+        width: auto;
+        margin-left: auto;
+    }
+}
+
+#modalShareBody {
+    overflow:hidden;
+}
+
+#panelGuest{
+    width: 35%;
+    float:left;
+    height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-right:solid $red-pink 2px;
+}
+
+#panelDetail{
+    float:left;
+    width: 60%;
+}

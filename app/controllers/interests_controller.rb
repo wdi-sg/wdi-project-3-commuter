@@ -31,6 +31,7 @@ class InterestsController < ApplicationController
     def register
       interest_id = params[:interest_id]
       current_user.interests << Interest.find(interest_id)
+
       redirect_to myinterests_path
 
     end

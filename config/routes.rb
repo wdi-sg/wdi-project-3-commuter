@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     get '/chat' => 'home#index', :as => 'chats'
     get '/chat/:id' => 'home#show', :as => 'chat'
     get '/commuters' => 'pages#view_commuters'
+    post '/commuters' => 'pages#search'
     get '/contact' => 'pages#contact_us'
     get '/profile' => 'pages#profile'
     get '/dashboard' => 'pages#dashboard'

@@ -1,182 +1,132 @@
 <%= render "partials/nav/views_commuters_nav"%>
 
-
-<div class="filter_options_container">
-  <br><br>
-
 <!-- search bar -->
 <div class="views-container" id="search-container">
-
   <div class="row">
-    <form class="filter_form" , method="get">
-      <fieldset>
-        <!-- Routes -->
-        <div class="col-lg-4 col-sm-8">
-          <i>
-            <h3>
-              <b>R</b>OUTES<b>:</b>
-            </h3>
-          </i>
-          <%= select("end_route", "start_route", Travel.all.collect{ |x| "#{x.start_route} - #{x.end_route}" }, {:prompt => 'All Routes'},{:class => "chosen-select", :multiple => true, data: { placeholder: " Search Routes"} }) %>
+    <!-- Routes Form-->
 
-        </div>
-        <!-- interest -->
-        <div class="col-lg-4 col-sm-8">
-          <i>
-            <h3>
-              <b>I</b>NTEREST<b>:</b>
-            </h3>
-          </i>
-          <%= select(":interest", "interest", Interest.all.collect(&:interest), {:prompt => "All Routes"}, {:class => "chosen-select", :multiple => true, data: { placeholder: " Select By Interest "} })%>
-        </div>
-        <!-- Time Slot -->
-        <div class="col-lg-4 col-sm-8">
-          <i>
-            <h3>
-              <b>T</b>IME
-              <b>S</b>LOT<b>:</b>
-            </h3>
-          </i>
-          <select data-placeholder=" Time Slot" class="chosen-select" multiple tabindex="1">
-            <option value=""></option>
-            <option value="Rise & Grind">Rise & Grind 8:00 - 10:00</option>
-            <option value="Late Morning">Late Morning 10:00 - 12:00</option>
-            <option value="Lunch Hour">12:00 - 14:00</option>
-            <option value="Early Afternoon">14:00 - 16:00</option>
-            <option value="Late Afternoon">16:00 - 18:00</option>
-            <option value="After Work">18:00 - 20:00</option>
-            <option value="Working Late">20:00 - 22:00</option>
-          </select>
-        </div>
-        <!-- submit button -->
-        <button type="submit" class="btn btn-danger search-btn">Search</button>
-        <!-- end -->
-      </fieldset>
-    </form>
+    <!-- Interest form -->
+    <div class="col-lg-4 col-sm-8">
+      <%= form_for :interest , url:commuters_path do |f| %>
+        <%= f.label "Interest"%>
+        <%= f.collection_select :interest, Interest.all, :id, :interest, {prompt: "Select an Interest"}, {class: "chosen-select"}%>
+
+        <%= f.submit "Search" %>
+      <% end %>
+    </div>
   </div>
+</div>
+    <!-- Timeslot -->
 
 
+    <!-- End Form -->
+  </div>
 </div>
 <!-- end -->
 <!-- card-title -->
 <div class="card-container" id="card-container">
-
-<br /><br />
-
   <div class="container-fluid">
     <div class="row">
+      <div class="row card-row">
+        <!-- start -->
+        <% @users.each do |user| %>
+        <!-- card -->
+        <div class="col-xs-12 col-md-3 card-col">
+          <div class="card hovercard">
+            <div class="cardheader"></div>
+            <div class="avatar">
+              <%= image_tag("lordgaben.jpg") %>
+            </div>
+            <!-- info -->
+            <div class="info">
+              <!-- username -->
+              <div class="title">
+                <a target="_blank" href="http://scripteden.com/"><%= user.first_name %>
+                  <%= user.last_name %></a>
+              </div>
+              <!-- list group -->
+              <ul class="list-group desc">
+                <!-- personal_description -->
+                <li class="list-group-item">
+                  <div class="row toggle" id="dropdown-detail-1" data-toggle="detail-1">
+                    <div class="col-xs-10">
+                      <b>Personal Description:</b>
+                    </div>
+                    <div class="col-xs-2">
+                      <i class="fa fa-chevron-down pull-right"></i>
+                    </div>
+                  </div>
+                  <div id="detail-1">
+                    <hr></hr>
+                    <div class="container">
+                      <div class="col-md-3">
+                        <p><%= user.personal_description %></p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <!-- routes -->
+                <li class="list-group-item">
+                  <div class="row toggle" id="dropdown-detail-2" data-toggle="detail-2">
+                    <div class="col-xs-10">
+                      <b>My travel routes are :</b>
+                    </div>
+                    <div class="col-xs-2">
+                      <i class="fa fa-chevron-down pull-right"></i>
+                    </div>
+                  </div>
+                  <div id="detail-2">
+                    <hr></hr>
+                    <div class="container">
+                      <div class="col-md-3">
+                        <% @travel.each do |each_travel| %>
+                        <% if each_travel.user_id === user.id %>
+                        Start Station:
+                        <%= each_travel.start_route%><br/>
+                        End Station:
+                        <%= each_travel.end_route%><br/>
+                        MRT Line:
+                        <%= each_travel.mrt_line%><br/>
+                        Timeslot:
+                        <%= each_travel.timeslot%><br/>
+                        <% end %>
+                        <% end %>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <!-- interests -->
+                <li class="list-group-item">
+                  <div class="row toggle" id="dropdown-detail-3" data-toggle="detail-3">
+                    <div class="col-xs-10">
+                      <b>My interest are :</b>
+                    </div>
+                    <div class="col-xs-2">
+                      <i class="fa fa-chevron-down pull-right"></i>
+                    </div>
+                  </div>
+                  <div id="detail-3">
+                    <hr></hr>
+                    <div class="list-container">
+                      <% user.interests.each do |each_interest| %>
+                      <div class="col-xs-10">
+                        <p><%= each_interest.interest %></p>
+                      </div>
+                      <% end %>
+                    </div>
+                  </div>
+                </li>
 
-  <div class="row card-row">
-    <!-- start -->
-    <% @users.each do |user| %>
-    <% if !current_user.interesteds.include?(user) && !current_user.interestlist.include?(user) %>
-    <!-- card -->
-    <div class="col-xs-12 col-md-3 card-col">
+              </ul>
 
-      <div class="card hovercard">
-        <div class="cardheader"></div>
-        <div class="avatar">
-          <%= image_tag("lordgaben.jpg") %>
-        </div>
-        <!-- info -->
-        <div class="info">
-          <div class="title">
-            <a target="_blank" href="http://scripteden.com/"><%= user.first_name %>
-              <%= user.last_name %></a>
-          </div>
-          <div class="desc">
-            <b>Personal Description:</b>
-            <%= user.personal_description %>
-          </div>
-          <!-- interests -->
-          <% user.interests.each do |each_interest| %>
-          <div class="desc">
-            <b>Interest:</b>
-            <%= each_interest.interest %>
-          </div>
-          <% end %>
-          <!-- travel -->
-          <% @travel.each do |each_travel| %>
-          <% if each_travel.user_id === user.id %>
-          <div class="desc">
-            <b>Routes:</b>
-            <%= each_travel.start_route %> - <%= each_travel.end_route %>
-          </div>
-          <% end %>
-          <% end %>
+            </div>
 
-          <%= form_for :Relationship, url: matches_path, method: :post do |f| %>
-          <%= f.hidden_field :user ,value: user.id %>
-          <%= f.submit 'Match & Chat', class: 'btn btn-danger btn-bottom' %>
-          <% end %>
-
-        </div>
-      </div>
-    </div>
-
-    <% end %>
-    <% end %>
-
-
-      <% @users.each do |user| %>
-      <div class="col-sm-4">
-
-        <div class="card">
-          <div class="card-block">
-            <h4 class="card-title"><%= user.first_name %> <%= user.last_name %></h4>
-            <p class="card-text">Personal Description: <%= user.personal_description %></p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">  My interests are: <ul>
-              <% user.interests.each do |each_interest| %>
-              <li><%= each_interest.interest %></li>
-                <% end %></ul></li>
-            <li class="list-group-item">My travel routes are:<br /> <% @travel.each do |each_travel| %>
-                  <% if each_travel.user_id === user.id %>
-                  Start Station:
-                  <%= each_travel.start_route%><br />
-                  End Station:
-                  <%= each_travel.end_route%><br />
-                  MRT Line:
-                  <%= each_travel.mrt_line%><br />
-                  Timeslot:
-                  <%= each_travel.timeslot%><br />
-                    <% end %>
-              <% end %></li>
-
-          </ul>
-          <div class="card-block">
             <%= form_for :Relationship, url: matches_path, method: :post do |f| %>
-              <%= f.hidden_field :user ,value: user.id %>
-              <%= f.submit 'Match & Chat', class: 'btn btn-danger' %>
+            <%= f.hidden_field :user ,value: user.id %>
+            <%= f.submit 'Match & Chat', class: 'btn btn-danger btn-bottom' %>
             <% end %>
           </div>
         </div>
-
+        <% end %>
       </div>
-      <% end %>
-
     </div>
-  </div>
-
-
-</div>
-
-<!-- former codes -->
-<!-- <div class="filter_options_container">
-
-  <form class="filter_form" , method="get">
-    <%= select("end_route", "start_route", Travel.all.collect(&:start_route), {:prompt => 'All Routes'}) %><br>
-    <input type="submit" value="Filter"/>
-  </form>
-
-  <br><br>
-
-  <form class="filter_form" , method="get">
-    <% Interest.all.each do |i| %>
-    <%= check_box_tag("interests_category[]", i.id) %>
-    <%= i.interest %>
-    <% end %>
-    <input type="submit" value="Filter"/>
-  </form>
-</div> -->
