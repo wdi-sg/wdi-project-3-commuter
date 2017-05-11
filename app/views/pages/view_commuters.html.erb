@@ -59,7 +59,7 @@
   <div class="row card-row">
     <!-- start -->
     <% @users.each do |user| %>
-    <% if !current_user.interesteds.include?(user) && !current_user.interestlist.include?(user) %>
+    <% if current_user && !current_user.interesteds.include?(user) && !current_user.interestlist.include?(user) %>
     <!-- card -->
     <div class="col-xs-12 col-md-3 card-col">
       <div class="card hovercard">
