@@ -17,6 +17,16 @@
     box-sizing: border-box;
 }
 
+.card {
+  border-color: grey;
+  border-style: solid;
+  margin: 2px;
+  border-width: 1px;
+  border-color: rgb(160,160,160);
+  margin: 5px;
+  padding: 5px;
+}
+
 .card-container {
   padding: 0 50px 0 50px;
 }
@@ -195,8 +205,6 @@
     overflow: hidden;
     text-align: center;
     background-color: rgba(214, 224, 226, 0.2);
-    height: 500px;
-
 }
 
 .card.hovercard .cardheader {
@@ -248,7 +256,7 @@
 }
 
 .btn-bottom {
-  position: absolute;
+  position: relative;
   bottom: 10px;
   margin: 0 auto;
   text-align: center;
@@ -256,4 +264,8 @@
   // width:32px;
   // height:32px;
   // line-height:18px;
+}
+
+.list-container {
+  margin: 0 auto;
 }

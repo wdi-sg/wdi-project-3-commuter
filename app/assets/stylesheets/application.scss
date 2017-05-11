@@ -20,17 +20,8 @@
 @import "views-commuters/style";
 @import "views-commuters/cards";
 @import "profile/style";
+@import "matches/foo";
 
-
-.card {
-  border-color: grey;
-  border-style: solid;
-  margin: 2px;
-  border-width: 1px;
-  border-color: rgb(160,160,160);
-  margin: 5px;
-  padding: 5px;
-}
 
 body {
   line-height: 1.5;
@@ -71,7 +62,7 @@ h6, {
 }
 
 #header {
-  margin-bottom: 400px;
+  margin-bottom: 100px;
 }
 
 /****/
@@ -128,7 +119,8 @@ h6, {
 }
 
 p {
-  color: #888;
+  text-align:center;
+  vertical-align: middle;
 }
 
 .icon {
@@ -222,31 +214,4 @@ a:hover {
 
 ul {
   list-style: none;
-}
-
-.messages-list {
-  max-height: 200px;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
-.message-sent {
-  position: relative;
-  background-color: #D9EDF7;
-  border-color: #BCE8F1;
-  margin: 5px 20px;
-  padding: 10px;
-  float: right;
-}
-
-.message-received {
-  background-color: #F1F0F0;
-  border-color: #EEEEEE;
-  margin: 5px 20px;
-  padding: 10px;
-  float: left;
-}
-
-.remove_bullet {
-    list-style-type: none;
 }
